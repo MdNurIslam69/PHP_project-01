@@ -2,6 +2,13 @@
 ob_start();
 require_once 'components/header.php';
 
+if (isset($_SESSION['link3Tech'])) {
+    header("Location: index.php");
+    exit();
+}
+
+
+
 // set cookie tryCount = 0
 if (!isset($_COOKIE['tryCount'])) {
     setcookie("tryCount", 0, time() + (60 * 30), "/");
@@ -100,6 +107,15 @@ if (isset($_POST['signIn123'])) {
                         </div>
                     </div>
 
+
+                    <!-- checkbox section -->
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="showPass">
+                        <label class="form-check-label" for="showPass">Show Password</label>
+                    </div>
+
+
+
                     <!-- submit button -->
                     <button type="submit" class="btn btn-primary" name="signIn123">Sign In</button>
 
@@ -114,6 +130,20 @@ if (isset($_POST['signIn123'])) {
 
 </div>
 
+
+<!-- this js for (sign-in) show password in checkbox -->
+<script>
+    const showPass = document.getElementById("showPass");
+    const password = document.getElementById("password");
+
+    showPass.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    });
+</script>
 
 
 

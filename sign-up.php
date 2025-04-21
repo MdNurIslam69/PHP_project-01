@@ -1,5 +1,11 @@
 <?php
+ob_start();
 require_once 'components/header.php';
+
+if (isset($_SESSION['link3Tech'])) {
+    header("Location: index.php");
+    exit();
+}
 
 
 if (isset($_POST['signUp123'])) {
@@ -158,6 +164,7 @@ if (isset($_POST['signUp123'])) {
 
 
 
+<!-- this js for (sign-up) show password in checkbox -->
 <script>
     const showPass = document.getElementById("showPass");
     const password = document.getElementById("password");
