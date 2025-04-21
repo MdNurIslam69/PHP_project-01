@@ -1,0 +1,74 @@
+<?php
+session_start();
+$pageName = basename($_SERVER['PHP_SELF']);
+function sanitize($data)
+{
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
+$conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
+
+?>
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link3 Project</title>
+    <link rel="shortcut icon"
+        href="https://upload.wikimedia.org/wikipedia/en/thumb/5/57/Link3_Technologies_Ltd_Logo.svg/220px-Link3_Technologies_Ltd_Logo.svg.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <!-- bootstrap css link   -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+
+    <!-- toastr css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- css link  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <!-- jquery js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- toastr js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <!-- toastr customaization start  -->
+    <script>
+        toastr.options = {
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "timeOut": "2000",
+            "showMethod": "slideDown",
+
+            // custom css
+            "toastClass": "toastr",
+        }
+    </script>
+    <!-- toastr customaization end  -->
+
+</head>
+
+<body>
+
+    <?php
+    require_once './components/navbar.php';
+    ?>

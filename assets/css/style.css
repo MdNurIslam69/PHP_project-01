@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*.. 
+/* hero section start */
+.bg-primary-subtle {
+  background-color: #6c5ce7 !important;
+}
+
+.hero-contents {
+  text-align: justify;
+}
+
+.fa-brands {
+  color: #6c5ce7 !important;
+  font-size: 1.2rem;
+}
+
+a:hover > .fa-brands {
+  color: white !important;
+  font-size: 1.2rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.hero-btn {
+  background-color: #6c5ce7 !important;
+}
+/*.. 
+/* hero section end */
+
+/*.. 
+/* features product section start */
+
+.forSame-color {
+  color: #6c5ce7 !important;
+}
+/* features product section end */
+
+/* New Arrival Section Start  */
+
+.img-fluids {
+  max-width: 60%;
+  max-height: 60%;
+}
+/* New Arrival Section end  */
+
+/*..
+/* New Arrival Section Start  */
+
+.borders {
+  border: 3px solid #6c5ce7;
+}
+
+/* new carousel section start  */
+
+.product-item {
+  border: 1px solid #2923554e;
+}
+
+.product-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.btns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.btns button {
+  border: none;
+  background-color: aquamarine;
+}
+
+.btns button:hover {
+  background-color: #6c5ce7;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.product-type {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.product-name {
+  transition: all 0.3s ease-in-out;
+}
+
+.product-name:hover {
+  color: #6c5ce7 !important;
+}
+
+.product-price {
+  color: #6c5ce7 !important;
+}
+
+.rating {
+  font-size: 13px;
+}
+
+/* new carousel section end  */
+
+/* footer section start  */
+footer {
+  background-color: #7a6be7e3 !important;
+  color: white;
+}
+
+.list-unstyled li a {
+  text-decoration: none;
+  /* color: rgb(74, 70, 195); */
+  transition: all 0.5s ease-in-out;
+}
+
+.list-unstyled li a:hover {
+  text-decoration: underline;
+  font-size: 20px;
+  color: white;
+}
+/* footer section end  */
+
+.text-warnings {
+  color: #7effd4;
+}
+
+.bg-colorss {
+  background-color: #f1d1eb83;
+}
+
+.toastr {
+  transform: translateY(78px);
+}
