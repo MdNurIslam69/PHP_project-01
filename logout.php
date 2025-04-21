@@ -4,4 +4,4 @@ session_unset();
 header("Location: index.php");
 ?>
 
-<h1>Logout</h1>
+<h1>Log Out</h1>
