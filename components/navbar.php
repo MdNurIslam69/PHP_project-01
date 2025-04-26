@@ -40,52 +40,52 @@
                 <?php
                 if (!isset($_SESSION['link3Tech'])) { ?>
 
-                <li class="nav-item">
-                    <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in.php">Sign
-                        In</a>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in.php">Sign
+                            In</a>
+                        </a>
+                    </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up.php">Sign
-                        Up</a>
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up.php">Sign
+                            Up</a>
+                        </a>
+                    </li>
 
                 <?php } else { ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle me-4" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle me-4" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
 
-                        <?php
+                            <?php
                             $fullNameArray = explode(" ", $_SESSION['link3Tech']['name']);
                             echo $fullNameArray[1];
 
                             ?>
-                    </a>
+                        </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">My Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-
-                        <li><a class="dropdown-item" href="#">Change Password</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="my-profile.php">My Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
 
-                        <li><a class="dropdown-item" href="#">Admin Panel</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                    </ul>
-                </li>
+
+                            <li><a class="dropdown-item" href="#">Admin Panel</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="logout.php">Log out</a></li>
+                        </ul>
+                    </li>
                 <?php } ?>
 
             </ul>

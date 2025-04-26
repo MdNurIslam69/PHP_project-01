@@ -134,6 +134,7 @@ footer {
 }
 /* footer section end  */
 
+/* toastr section start */
 .text-warnings {
   color: #7effd4;
 }
@@ -145,3 +146,11 @@ footer {
 .toastr {
   transform: translateY(78px);
 }
+
+/* toastr section end */
+
+/* my profile page start  */
+/* .choose-gender {
+  color: #6c5ce7 !important;
+  background-color: aqua;
+} */
