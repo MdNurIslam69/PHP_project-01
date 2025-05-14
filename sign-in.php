@@ -81,7 +81,7 @@ if (isset($_POST['signIn123'])) {
     <div class="container">
         <div class="row pt-1">
             <div class="col-md-5 mx-auto my-5 border border-2 border-primary-subtle rounded shadow p-4 bg-light ">
-                <h1 class="mb-3">Sign In</h1>
+                <h1 class="mb-3 text-center">Sign In</h1>
 
                 <form action="" method="post">
 
@@ -133,16 +133,16 @@ if (isset($_POST['signIn123'])) {
 
 <!-- this js for (sign-in) show password in checkbox -->
 <script>
-    const showPass = document.getElementById("showPass");
-    const password = document.getElementById("password");
+const showPass = document.getElementById("showPass");
+const password = document.getElementById("password");
 
-    showPass.addEventListener("click", () => {
-        if (password.type === "password") {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
-    });
+showPass.addEventListener("click", () => {
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+});
 </script>
 
 

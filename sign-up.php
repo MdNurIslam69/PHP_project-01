@@ -94,7 +94,7 @@ if (isset($_POST['signUp123'])) {
     <div class="container">
         <div class="row pt-1">
             <div class="col-md-5 mx-auto my-5 border border-2 border-primary-subtle rounded shadow p-4 bg-light">
-                <h1 class="mb-3">Sign Up</h1>
+                <h1 class="mb-3 text-center">Sign Up</h1>
 
                 <form action="" method="post">
 
@@ -166,19 +166,19 @@ if (isset($_POST['signUp123'])) {
 
 <!-- this js for (sign-up) show password in checkbox -->
 <script>
-    const showPass = document.getElementById("showPass");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
+const showPass = document.getElementById("showPass");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
 
-    showPass.addEventListener("click", () => {
-        if (password.type === "password") {
-            password.type = "text";
-            confirmPassword.type = "text";
-        } else {
-            password.type = "password";
-            confirmPassword.type = "password";
-        }
-    });
+showPass.addEventListener("click", () => {
+    if (password.type === "password") {
+        password.type = "text";
+        confirmPassword.type = "text";
+    } else {
+        password.type = "password";
+        confirmPassword.type = "password";
+    }
+});
 </script>
 
 

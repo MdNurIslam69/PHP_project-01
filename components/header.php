@@ -1,14 +1,19 @@
 <?php
 session_start();
 $pageName = basename($_SERVER['PHP_SELF']);
+
 function sanitize($data)
 {
-    return htmlspecialchars(stripslashes(trim($data)));
+    if (is_array($data)) {
+        return array_map('sanitize', $data); // Recursively sanitize array elements
+    }
+    return htmlspecialchars(stripslashes($data));
 }
 
 $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 
 ?>
+
 
 
 <!doctype html>
@@ -53,17 +58,26 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 
     <!-- toastr customaization start  -->
     <script>
-        toastr.options = {
-            "progressBar": true,
-            "positionClass": "toast-top-center",
-            "timeOut": "2000",
-            "showMethod": "slideDown",
+    toastr.options = {
+        "progressBar": true,
+        "positionClass": "toast-top-center",
+        "timeOut": "2000",
+        "showMethod": "slideDown",
 
-            // custom css
-            "toastClass": "toastr",
-        }
+        // custom css
+        "toastClass": "toastr",
+    }
     </script>
     <!-- toastr customaization end  -->
+
+
+    <!-- quill editor css link  -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
+
 
 </head>
 
