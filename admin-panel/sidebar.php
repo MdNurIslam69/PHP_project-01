@@ -8,8 +8,21 @@
                 aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="./"><img src="images/myIcon.png" class="rounded w-50 h-50 m-3" alt="Logo"></a>
+            <a class="navbar-brand" href="./"><img src="images/myIcon.png" class="rounded w-50 h-50 m-3 myIcons-1"
+                    alt="Logo"></a>
             <a class="navbar-brand hidden" href="./"><img src="./images/mylogo2.png" alt="Logo"></a>
+
+
+            <!-- its for admin Dashboard logo responsive -->
+            <style>
+                .myIcons-1 {
+                    @media screen and (max-width: 576px) {
+                        width: 50px !important;
+                        margin-top: 1px !important;
+
+                    }
+                }
+            </style>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
