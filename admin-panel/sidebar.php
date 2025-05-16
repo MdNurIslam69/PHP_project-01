@@ -15,27 +15,32 @@
 
             <!-- its for admin Dashboard logo responsive -->
             <style>
-                .myIcons-1 {
-                    @media screen and (max-width: 576px) {
-                        width: 50px !important;
-                        margin-top: 1px !important;
+            .myIcons-1 {
+                @media screen and (max-width: 576px) {
+                    width: 50px !important;
+                    margin-top: 1px !important;
 
-                    }
                 }
+            }
             </style>
         </div>
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="./"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Slider</a>
+
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
+
+                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
+
+
                         <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Add New Slider</a></li>
 
                     </ul>
@@ -52,13 +57,30 @@
 
                 <h3 class="menu-title">E-commerce</h3><!-- /.menu-title -->
 
-                <li class="menu-item-has-children dropdown">
+                <li
+                    class="menu-item-has-children dropdown <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "show" : null ?>">
+
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Products</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">All Products</a>
+                        aria-expanded="<?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? true : false ?>">
+                        <i class="menu-icon fa fa-tasks"></i>Products</a>
+                    <ul
+                        class="sub-menu children dropdown-menu <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "show" : null ?>">
+
+
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="product-categories.php"
+                                style="font-weight: <?= $pageName == "product-categories.php" ? "bold" : "regular" ?>">Categories</a>
                         </li>
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Add New Products</a>
+
+
+                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="allProducts.php"
+                                style="font-weight: <?= $pageName == "allProducts.php" ? "bold" : "regular" ?>">All
+                                Products</a>
+                        </li>
+
+
+                        <li><i class="menu-icon ti-themify-logo"></i><a href="addNewProduct.php"
+                                style="font-weight: <?= $pageName == "addNewProduct.php" ? "bold" : "regular" ?>">Add
+                                New Products</a>
                         </li>
                     </ul>
                 </li>
