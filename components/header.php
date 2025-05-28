@@ -22,9 +22,10 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Link3 Project</title>
-    <link rel="shortcut icon"
-        href="https://upload.wikimedia.org/wikipedia/en/thumb/5/57/Link3_Technologies_Ltd_Logo.svg/220px-Link3_Technologies_Ltd_Logo.svg.png">
+    <title>Imran's Project</title>
+
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="./admin-panel/images/favicon.png" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -40,11 +41,13 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 
 
+    <!-- css link  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
     <!-- toastr css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-    <!-- css link  -->
-    <link rel="stylesheet" href="assets/css/style.css">
 
 
     <!-- jquery js link -->
@@ -58,15 +61,15 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 
     <!-- toastr customaization start  -->
     <script>
-    toastr.options = {
-        "progressBar": true,
-        "positionClass": "toast-top-center",
-        "timeOut": "2000",
-        "showMethod": "slideDown",
+        toastr.options = {
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "timeOut": "2000",
+            "showMethod": "slideDown",
 
-        // custom css
-        "toastClass": "toastr",
-    }
+            // custom css
+            "toastClass": "toastr",
+        }
     </script>
     <!-- toastr customaization end  -->
 
@@ -75,7 +78,6 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
 
 
 

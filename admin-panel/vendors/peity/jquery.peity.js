@@ -6,7 +6,7 @@
 // Released under MIT license.
 (function($, document, Math, undefined) {
   var peity = $.fn.peity = function(type, options) {
-    if (svgSupported) {
+    if (.heroSection-svgSupported) {
       this.each(function() {
         var $this = $(this)
         var chart = $this.data('_peity')
@@ -44,14 +44,14 @@
 
   var PeityPrototype = Peity.prototype
 
-  var svgElement = PeityPrototype.svgElement = function(tag, attrs) {
+  var .heroSection-svgElement = PeityPrototype..heroSection-svgElement = function(tag, attrs) {
     return $(
-      document.createElementNS('http://www.w3.org/2000/svg', tag)
+      document.createElementNS('http://www.w3.org/2000/.heroSection-svg', tag)
     ).attr(attrs)
   }
 
   // https://gist.github.com/madrobby/3201472
-  var svgSupported = 'createElementNS' in document && svgElement('svg', {})[0].createSVGRect
+  var .heroSection-svgSupported = 'createElementNS' in document && .heroSection-svgElement('.heroSection-svg', {})[0].create.heroSection-svgRect
 
   PeityPrototype.draw = function() {
     var opts = this.opts
@@ -68,15 +68,15 @@
   }
 
   PeityPrototype.prepare = function(width, height) {
-    if (!this.$svg) {
+    if (!this.$.heroSection-svg) {
       this.$el.hide().after(
-        this.$svg = svgElement('svg', {
+        this.$.heroSection-svg = .heroSection-svgElement('.heroSection-svg', {
           "class": "peity"
         })
       )
     }
 
-    return this.$svg
+    return this.$.heroSection-svg
       .empty()
       .data('_peity', this)
       .attr({
@@ -137,13 +137,13 @@
 
       var diameter = opts.radius * 2
 
-      var $svg = this.prepare(
+      var $.heroSection-svg = this.prepare(
         opts.width || diameter,
         opts.height || diameter
       )
 
-      var width = $svg.width()
-        , height = $svg.height()
+      var width = $.heroSection-svg.width()
+        , height = $.heroSection-svg.height()
         , cx = width / 2
         , cy = height / 2
 
@@ -181,7 +181,7 @@
               , y1 = cy - radius
               , y2 = cy - innerRadius
 
-            $node = svgElement('path', {
+            $node = .heroSection-svgElement('path', {
               d: [
                 'M', cx, y1,
                 'A', radius, radius, 0, 1, 1, x2, y1,
@@ -191,7 +191,7 @@
               'data-value': value,
             })
           } else {
-            $node = svgElement('circle', {
+            $node = .heroSection-svgElement('circle', {
               cx: cx,
               cy: cy,
               'data-value': value,
@@ -220,7 +220,7 @@
 
           cumulative += value
 
-          $node = svgElement('path', {
+          $node = .heroSection-svgElement('path', {
             d: d.join(" "),
             'data-value': value,
           })
@@ -228,7 +228,7 @@
 
         $node.attr('fill', fill.call(this, value, i, values))
 
-        $svg.append($node)
+        $.heroSection-svg.append($node)
       }
     }
   )
@@ -258,10 +258,10 @@
       var max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max))
         , min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
 
-      var $svg = this.prepare(opts.width, opts.height)
+      var $.heroSection-svg = this.prepare(opts.width, opts.height)
         , strokeWidth = opts.strokeWidth
-        , width = $svg.width()
-        , height = $svg.height() - strokeWidth
+        , width = $.heroSection-svg.width()
+        , height = $.heroSection-svg.height() - strokeWidth
         , diff = max - min
 
       var xScale = this.x = function(input) {
@@ -291,8 +291,8 @@
       coords.push(width, zero)
 
       if (opts.fill) {
-        $svg.append(
-          svgElement('polygon', {
+        $.heroSection-svg.append(
+          .heroSection-svgElement('polygon', {
             fill: opts.fill,
             points: coords.join(' ')
           })
@@ -300,8 +300,8 @@
       }
 
       if (strokeWidth) {
-        $svg.append(
-          svgElement('polyline', {
+        $.heroSection-svg.append(
+          .heroSection-svgElement('polyline', {
             fill: 'none',
             points: coords.slice(2, coords.length - 2).join(' '),
             stroke: opts.stroke,
@@ -328,9 +328,9 @@
         , max = Math.max.apply(Math, opts.max == undefined ? values : values.concat(opts.max))
         , min = Math.min.apply(Math, opts.min == undefined ? values : values.concat(opts.min))
 
-      var $svg = this.prepare(opts.width, opts.height)
-        , width = $svg.width()
-        , height = $svg.height()
+      var $.heroSection-svg = this.prepare(opts.width, opts.height)
+        , width = $.heroSection-svg.width()
+        , height = $.heroSection-svg.height()
         , diff = max - min
         , padding = opts.padding
         , fill = this.fill()
@@ -371,8 +371,8 @@
           if (max > 0 && diff) y1--
         }
 
-        $svg.append(
-          svgElement('rect', {
+        $.heroSection-svg.append(
+          .heroSection-svgElement('rect', {
             'data-value': value,
             fill: fill.call(this, value, i, values),
             x: x,

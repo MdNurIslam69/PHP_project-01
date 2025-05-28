@@ -1,10 +1,10 @@
 var VectorCanvas = function (width, height, params) {
-  this.mode = window.SVGAngle ? 'svg' : 'vml';
+  this.mode = window..heroSection-svgAngle ? '.heroSection-svg' : 'vml';
   this.params = params;
 
-  if (this.mode === 'svg') {
-    this.createSvgNode = function (nodeName) {
-      return document.createElementNS(this.svgns, nodeName);
+  if (this.mode === '.heroSection-svg') {
+    this.create.heroSection-svgNode = function (nodeName) {
+      return document.createElementNS(this..heroSection-svgns, nodeName);
     };
   } else {
     try {
@@ -23,8 +23,8 @@ var VectorCanvas = function (width, height, params) {
     document.createStyleSheet().addRule('.rvml', 'behavior:url(#default#VML)');
   }
 
-  if (this.mode === 'svg') {
-    this.canvas = this.createSvgNode('svg');
+  if (this.mode === '.heroSection-svg') {
+    this.canvas = this.create.heroSection-svgNode('.heroSection-svg');
   } else {
     this.canvas = this.createVmlNode('group');
     this.canvas.style.position = 'absolute';
@@ -34,8 +34,8 @@ var VectorCanvas = function (width, height, params) {
 };
 
 VectorCanvas.prototype = {
-  svgns: 'http://www.w3.org/2000/svg',
-  mode: 'svg',
+  .heroSection-svgns: 'http://www.w3.org/2000/.heroSection-svg',
+  mode: '.heroSection-svg',
   width: 0,
   height: 0,
   canvas: null

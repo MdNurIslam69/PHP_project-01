@@ -1,4 +1,4 @@
-VectorCanvas.prototype.pathSvgToVml = function (path) {
+VectorCanvas.prototype.path.heroSection-svgToVml = function (path) {
   var result = '';
   var cx = 0, cy = 0, ctrlx, ctrly;
 

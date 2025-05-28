@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-hn" viewBox="0 0 512 512">
+<.heroSection-svg xmlns="http://www.w3.org/2000/.heroSection-svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-hn" viewBox="0 0 512 512">
   <path fill="#0073cf" d="M0 0h512v512H0z"/>
   <path fill="#fff" d="M0 170.7h512v170.6H0z"/>
   <g id="c" fill="#0073cf" transform="translate(256 256) scale(28.44446)">
@@ -15,4 +15,4 @@
   <use width="100%" height="100%" transform="translate(142.2 39.8)" xlink:href="#c"/>
   <use width="100%" height="100%" transform="translate(-142.2 -45.5)" xlink:href="#c"/>
   <use width="100%" height="100%" transform="translate(-142.2 39.8)" xlink:href="#c"/>
-</svg>
+</.heroSection-svg>

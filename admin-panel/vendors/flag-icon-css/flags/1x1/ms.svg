@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ms" viewBox="0 0 512 512">
+<.heroSection-svg xmlns="http://www.w3.org/2000/.heroSection-svg" id="flag-icon-css-ms" viewBox="0 0 512 512">
   <path fill="#006" d="M0 0h512v512H0z"/>
   <g fill-rule="evenodd">
     <path fill="#fff" d="M281.5 231h201l-.2 144c1.7 57.8-34.1 93.7-100 109.9-47-11.7-101-36-101-108.3l.2-145.7z"/>
@@ -36,4 +36,4 @@
     <path fill="#fff" d="M120 0v189.5h48.1V.1h-48zM0 63.3v63.2h288.2V63.2H0z"/>
     <path fill="#c00" d="M0 75.8v38h288.2v-38H0zM129.7.1v189.4h28.8V.1h-28.8zM0 189.5l96-63.1h21.5l-96 63.1H0zM0 .1l96 63.1H74.7L0 14.2V.1zm170.6 63.1L266.7.1h21.5L192 63.2h-21.5zm117.6 126.3l-96-63.1h21.4l74.6 49v14.1z"/>
   </g>
-</svg>
+</.heroSection-svg>

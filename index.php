@@ -3,959 +3,234 @@ require_once './components/header.php';
 ?>
 
 
-<!-- hero section-1 start -->
-<div class="container mt-5 ">
-    <div class="row mb-3">
-        <div class="col-md-6  d-flex flex-column justify-content-center">
-            <h1 class="forSame-color">Welcome to My Test Website</h1>
-            <p class="my-3 hero-contents">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                A quo deserunt asperiores itaque
-                obcaecati quae ipsam vitae aliquid repudiandae sequi. Ipsam provident magnam dolor eaque quibusdam
-                sequi, eveniet praesentium suscipit aliquam. Doloribus, aliquid voluptatem. Corporis sunt, dignissimos
-                sequi error fugit tempore quia, dolorum omnis minus atque ab? Vel, iure debitis?
+<!-- hero section start -->
+
+<div class=" heroSection-color">
+    <div class="container row py-5 mx-auto d-flex align-items-center justify-content-between px-lg-0 px-md-0">
+        <div class="col-lg-5 d-flex flex-column justify-content-center col-md-5 mt-4 position-relative">
+            <h1 class="forSame-color" style="font-size: 35px;">Welcome to Imran_Store Website</h1>
+            <p class="my-3 hero-contents">Explore a World of Quality, Style, and Convenience—Your Ultimate Destination
+                For
+                Premium Products, Unbeatable Prices, and Effortless Shopping. We've Got You Covered Whether You're
+                Hunting For The Latest Fashion, Essential Gadgets, or Everyday Items. Enjoy Easy Shopping, Secure
+                Checkout, and Fast Delivery, Making Your Experience Seamless. Start Your Smart Shopping Journey Today!
             </p>
 
 
             <!-- social media link  -->
             <div class="social-media mt-3">
-                <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary "><i
+                <a href="https://www.facebook.com/md.nurislam6" target="_blank" class="btn btn-outline-primary "><i
                         class="fa-brands fa-facebook  "></i></a>
 
-                <a href="https://twitter.com" target="_blank" class="btn btn-outline-primary "><i
-                        class="fa-brands fa-twitter"></i></a>
+                <a href="https://x.com/MdNurIslam21050" target="_blank" class="btn btn-outline-primary "><i
+                        class="fa-brands fa-x"></i></a>
 
-                <a href="https://instagram.com" target="_blank" class="btn btn-outline-primary "><i
+                <a href="https://www.instagram.com/md_nur_islam5" target="_blank" class="btn btn-outline-primary "><i
                         class="fa-brands fa-instagram"></i></a>
 
-                <a href="https://linkedin.com" target="_blank" class="btn btn-outline-primary "><i
+                <a href="https://www.linkedin.com/in/mdnurislam1" target="_blank" class="btn btn-outline-primary "><i
                         class="fa-brands fa-linkedin"></i></a>
 
-                <a href="https://github.com" target="_blank" class="btn btn-outline-primary "><i
+                <a href="https://github.com/MdNurIslam69" target="_blank" class="btn btn-outline-primary "><i
                         class="fa-brands fa-github"></i></a>
 
                 <br>
 
-                <a href="https://google.com" target="_blank" class="btn btn-primary mt-3 hero-btn">Go somewhere</a>
+                <a href="https://www.behance.net/mdnurislam73" target="_blank"
+                    class="btn btn-primary mt-3 hero-btn col-md mb-5">Go
+                    somewhere</a>
             </div>
 
         </div>
 
-        <div class="col-md-6">
-            <img src="./assets/img/pro-img-hero.jpeg" class="img-fluid" alt="hero-image">
+        <div class="col-lg-6 col-md-6 p-0 mt-4"
+            style="border-left: 25px solid #6d5ce8; border-top-left-radius: 25px; border-bottom-left-radius: 150px;">
+            <img src="./assets/img/pro-img-hero.jpeg" class="img-fluid heroImg-redious" alt="hero-image"
+                style="border-bottom-left-radius: 130px;">
         </div>
-        <hr>
     </div>
 
-    <!-- hero section-1 end -->
+    <div class="z-index ">
+        <svg xmlns="http://www.w3.org/2000/heroSection-svg" class="heroSection-svg" viewBox=" 0 0 1440 300">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,192L60,186.7C120,181,240,171,360,186.7C480,203,600,245,720,261.3C840,277,960,267,1080,261.3C1200,256,1320,256,1380,256L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+            </path>
+        </svg>
+    </div>
+</div>
+
+<!-- hero section end -->
+
+<!-- hero section-1 bottom (hr) -->
+<div>
+    <hr class="container heroSection-hr">
+</div>
 
 
 
-    <!-- hero section-2 start -->
-    <div class="container col-md-12 d-flex  gap-md-5 gap-sm-2 ">
-        <!-- features product section start  -->
-        <div class="row mt-5 col-4 ">
+
+<!-- hero section-2 start -->
+<div class="container d-lg-flex d-md-flex gap-lg-5 gap-md-4">
+    <!-- features product section start  -->
+    <div class="row mt-5 col-lg-2 col-md-4 col-sm-12">
+        <div class="">
+            <h2 class="forSame-color text-center text-decoration-underline mb-4 h5" style="margin-top: 5px;">Features
+                Products</h2>
+
+            <div class="row">
+                <?php
+                // select random 5 products from the database
+                $featuresProductsQuery = "SELECT * FROM products ORDER BY RAND() LIMIT 5";
+
+                $featuresProductsResult = $conn->query($featuresProductsQuery);
+                while ($product = $featuresProductsResult->fetch_assoc()):
+                ?>
+                <div class="col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                            class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                            style="height: 100%; width: 100%;">
+                        <div class="card-body ">
+                            <h5 class="card-title text-truncate"
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <?= $product['name'] ?></h5>
+
+                            <div
+                                class="d-flex gap-lg-0 gap-md-2 gap-sm-3 py-2 justify-content-lg-between justify-content-md-between px-lg-0 px-md-2 ">
+                                <p class="" style="font-size: 14px;">Price:
+                                    <span
+                                        class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                        <?= number_format($product['regular_price']) ?></span>
+                                </p>
+
+                                <p class="priceFontSize" style="font-size: 14px; "><span
+                                        class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                    <?= number_format($product['sales_price']) ?></p>
+                            </div>
+
+                            <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns "
+                                style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                Details</a>
+                        </div>
+
+                    </div>
+                </div>
+                <?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+    <!-- features product section end  -->
+
+    <!-- <hr> -->
+
+    <div class="col-lg-10 col-md-8 col-sm-12 ">
+
+        <!-- New Arrival Section start -->
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h2 class="forSame-color text-center text-decoration-underline mb-4">New Arrival </h2>
+
+                <div class="row">
+                    <?php
+                    // select random 5 products from the database
+                    $featuresProductsQuery = "SELECT * FROM products ORDER BY RAND() LIMIT 8";
+
+                    $featuresProductsResult = $conn->query($featuresProductsQuery);
+                    while ($product = $featuresProductsResult->fetch_assoc()):
+                    ?>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4 ">
+                        <div class="card h-100">
+                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                style="height: 100%; width: 100%;">
+                            <div class="card-body ">
+                                <h5 class="card-title text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?= $product['name'] ?></h5>
+
+                                <div class="d-flex  gap-md-3 gap-sm-3 py-2">
+                                    <p class="h6">Price: <span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            <?= number_format($product['regular_price']) ?></span>
+                                    </p>
+
+                                    <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                        <?= number_format($product['sales_price']) ?></p>
+                                </div>
+
+                                <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
+                                    style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                    Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </div>
+        <!-- New Arrival Section end -->
+
+
+        <!-- 50% Discount Section start  -->
+        <div class="row">
             <div class="col-md-12">
-                <h2 class="forSame-color text-center text-decoration-underline mb-4">Features Products</h2>
+                <h2 class="forSame-color text-center my-4  text-decoration-underline">Best Sellers Books</h2>
 
-                <div
-                    class="d-flex flex-wrap justify-content-center text-center border border-1 border-info-subtle rounded ">
-                    <div>
-                        <img src="https://sw6.arbeitsschutz-express.de/thumbnail/fa/55/7d/1712603885/018ebf2538fb7268a7b93e48f746f65f_280x280.webp"
-                            alt="Features-img-1" class="img-fluid">
-                        <div class="d-flex gap-3 justify-content-center">
-                            <p>T-Shirt</p>
-                            <p><span class="fw-bold">ID:</span> 001</p>
-                        </div>
-                        <p class="fw-bold  mb-5 text-center">BDT 1560 TK</p>
-                    </div>
+                <div class="row border border-1 border-danger-subtle rounded">
 
 
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkelTEnLfVycgYoCljcsHrJoVfk0Be1zmEEzoXP6TWdfI_0JnZQTrvGwzO9WY1Dtxe4_w&usqp=CAU"
-                            alt="Features-img-2" class="img-fluid">
-                        <div class="d-flex gap-3 justify-content-center">
-                            <p>T-Shirt</p>
-                            <p><span class="fw-bold">ID:</span> 002</p>
-                        </div>
-                        <p class="fw-bold mb-5 text-center">BDT 1160 TK</p>
-                    </div>
-
-
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREExOJQyBTo7t9SnvMMhpKhXDlhrIzd2FSxQ&s"
-                            alt="Features-img-3" class="img-fluid">
-                        <div class="d-flex gap-3 justify-content-center">
-                            <p>T-Shirt</p>
-                            <p><span class="fw-bold">ID:</span> 003</p>
-                        </div>
-                        <p class="fw-bold mb-5 text-center">BDT 1460 TK</p>
-                    </div>
-
-
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXynO9b2r29oqdxRx-B9GS5z3cWadCXPqK2Q&s"
-                            alt="Features-img-4" class="img-fluid">
-                        <div class="d-flex gap-3 justify-content-center">
-                            <p>T-Shirt</p>
-                            <p><span class="fw-bold">ID:</span> 004</p>
-                        </div>
-                        <p class="fw-bold mb-5 text-center">BDT 1560 TK</p>
-                    </div>
-
-
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcHYKTmMlSgQyk-qhqKKXNUdwXEeCTXruRpw&s"
-                            alt="Features-img-5" class="img-fluid">
-                        <div class="d-flex gap-3 justify-content-center">
-                            <p>T-Shirt</p>
-                            <p><span class="fw-bold">ID:</span> 005</p>
-                        </div>
-                        <p class="fw-bold mb-5 text-center">BDT 1760 TK</p>
-                    </div>
 
                 </div>
             </div>
         </div>
-        <!-- features product section end  -->
+        <!-- 50% Discount Section end -->
 
 
+        <!-- Best Sellers Section start -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="forSame-color text-center my-4  text-decoration-underline">Best Sellers</h2>
 
-        <div class="container justify-content-center col-8 ">
+                <div class="row border border-1 border-dark-subtle rounded">
 
-            <!-- New Arrival Section start -->
-            <div class="row mt-4">
-                <div class="col-md-12 ">
-                    <h2 class="forSame-color text-center my-4  text-decoration-underline">New Arrival</h2>
-
-
-                    <div class="row border border-1 border-primary-subtle rounded">
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/716Y8V7fU3L._AC_SL1500_.jpg"
-                                alt="New-Arrival-img-1" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 001</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 4560 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/41fRhXpuQgL._AC_.jpg" alt="New-Arrival-img-2"
-                                class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center ">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 002</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 4060 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/51p81JkuYWL._AC_SL1080_.jpg"
-                                alt="New-Arrival-img-3" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 003</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 9060 TK</p>
-                        </div>
-
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/51JeLRpZ3sL._AC_UY1000_.jpg"
-                                alt="New-Arrival-img-4" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 004</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 4660 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/81FHNGC7JYL._AC_UY1000_.jpg"
-                                alt="New-Arrival-img-5" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 005</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 6060 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://m.media-amazon.com/images/I/51oRQ5l6VFL._AC_UY1000_.jpg"
-                                alt="New-Arrival-img-6" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>New Blazer</p>
-                                <p><span class="fw-bold">ID:</span> 006</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 8060 TK</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- New Arrival Section end -->
-
-
-            <!-- 50% Discount Section start  -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="forSame-color text-center my-4  text-decoration-underline">Best Sellers Books</h2>
-
-                    <div class="row border border-1 border-danger-subtle rounded">
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/free-vector/spring-sale-flyer-template-with-photo_23-2148445810.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-1" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 001</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 490 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/free-psd/feel-nature-template-poster_23-2148607908.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-2" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center ">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 002</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 230 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/free-psd/fashion-collection-poster-template_23-2151233776.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-3" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 003</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 300 TK</p>
-                        </div>
-
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/free-vector/business-magazine-cover-template-with-photo_23-2147842270.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-4" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 004</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 460 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/premium-vector/nature-magazine-cover-template-with-photo_23-2147842275.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-5" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 005</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 360 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://img.freepik.com/premium-vector/nature-magazine-cover-template-with-photo_23-2147843814.jpg?ga=GA1.1.690690620.1738027198&semt=ais_hybrid&w=740"
-                                alt="best-seller-img-6" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Magazine Book pdf</p>
-                                <p><span class="fw-bold">ID:</span> 006</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 260 TK</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- 50% Discount Section end -->
-
-
-            <!-- Best Sellers Section start -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="forSame-color text-center my-4  text-decoration-underline">Best Sellers</h2>
-
-                    <div class="row border border-1 border-dark-subtle rounded">
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/128206/pexels-photo-128206.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-1" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 001</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 1560 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/277390/pexels-photo-277390.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-2" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center ">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 002</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 2060 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/2113994/pexels-photo-2113994.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-3" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 003</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 3060 TK</p>
-                        </div>
-
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-4" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 004</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 4660 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/280250/pexels-photo-280250.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-5" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 005</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 3060 TK</p>
-                        </div>
-
-
-                        <div class="text-center col-md-4 col-sm-6">
-                            <img src="https://images.pexels.com/photos/295884/pexels-photo-295884.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                                alt="best-seller-img-6" class="img-fluids">
-                            <div class="d-flex gap-3 justify-content-center">
-                                <p>Stylish Watch</p>
-                                <p><span class="fw-bold">ID:</span> 006</p>
-                            </div>
-                            <p class="fw-bold  mb-5 ">BDT 2060 TK</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- Best Sellers Section end -->
-
-        </div>
-    </div>
-    <!-- hero section-2 end -->
-
-
-
-    <br>
-    <br>
-    <br>
-
-
-
-    <!-- new carousel section start-->
-    <div class="container">
-
-        <div class="row my-5">
-            <h1 class="text-center">New Arrival Products</h1>
-            <p class="fw-light w-75 mx-auto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
-                aliquam?
-                Magnam delectus adipisicing!</p>
-        </div>
-
-        <div class="row g-4 my-5 mx-auto owl-carousel owl-theme">
-
-            <!-- 1 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2 buttons">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
 
 
                 </div>
-
-            </div>
-
-            <!-- 2 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- 3 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- 4 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- 5 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- 6 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- 7 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- 8 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-            <!-- 9 -->
-            <div class="col product-item mx-auto ">
-
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D"
-                        alt="" class="img-fluid d-block mx-auto ">
-                    <span class="heart-icon">
-                        <i class="far fa-heart"></i>
-                    </span>
-
-                    <div class="row btns w-100 mx-auto text-center">
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-cart-plus"></i> Add to Cart
-                        </button>
-
-                        <button type="button" class="col-6 py-2">
-                            <i class="fa fa-binoculars"></i> View
-                        </button>
-                    </div>
-
-                </div>
-
-
-                <div class="product-info p-3">
-                    <span class="product-type">Macbook Pro 2018, M Series</span>
-                    <a href="#" class="d-block text-dark text-decoration-none py-2 product-name">Lorem ipsum dolor sit
-                        amet
-                        consectetur
-                        adipisicing</a>
-                    <span class="product-price">$ 1200.50</span>
-
-                    <div class="rating d-flex mt-1">
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span>
-                            <i class="fa fa-star"></i>
-                        </span>
-
-                        <span> (37 reviews)</span>
-
-                    </div>
-
-
-                </div>
-
             </div>
         </div>
-
+        <!-- Best Sellers Section end -->
 
     </div>
-    <!-- new carousel section end-->
+</div>
+<!-- hero section-2 end -->
 
+
+
+<br>
+<br>
+<br>
+
+
+
+<!-- new carousel section start-->
+<div class="container">
+
+    <div class="row my-5">
+        <h1 class="text-center">New Arrival Products</h1>
+        <p class="fw-light w-75 mx-auto text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam,
+            aliquam?
+            Magnam delectus adipisicing!</p>
+    </div>
 
 
 
 </div>
+<!-- new carousel section end-->
+
+
+
+
+
 
 
 

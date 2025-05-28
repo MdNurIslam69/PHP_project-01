@@ -175,6 +175,9 @@ if ($getCategoryResult->num_rows > 0) {
                 </form>
 
 
+
+                <!-- edit_product_popup--section -->
+                <!-- .. -->
                 <?php if (isset($_GET['eid'])) { ?>
 
                 <h2 class="my-3">Edit Category</h2>
@@ -233,7 +236,8 @@ if ($getCategoryResult->num_rows > 0) {
     <?php } else { ?>
 
 
-    <!-- delete_product_popup -->
+    <!-- delete_product_popup--section-->
+    <!-- .. -->
     <div class="container">
         <div
             style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 9999;">

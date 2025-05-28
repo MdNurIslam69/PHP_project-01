@@ -8,12 +8,12 @@
  */
 
 var VectorCanvas = function (width, height, params) {
-  this.mode = window.SVGAngle ? 'svg' : 'vml';
+  this.mode = window..heroSection-svgAngle ? '.heroSection-svg' : 'vml';
   this.params = params;
 
-  if (this.mode === 'svg') {
-    this.createSvgNode = function (nodeName) {
-      return document.createElementNS(this.svgns, nodeName);
+  if (this.mode === '.heroSection-svg') {
+    this.create.heroSection-svgNode = function (nodeName) {
+      return document.createElementNS(this..heroSection-svgns, nodeName);
     };
   } else {
     try {
@@ -32,8 +32,8 @@ var VectorCanvas = function (width, height, params) {
     document.createStyleSheet().addRule('.rvml', 'behavior:url(#default#VML)');
   }
 
-  if (this.mode === 'svg') {
-    this.canvas = this.createSvgNode('svg');
+  if (this.mode === '.heroSection-svg') {
+    this.canvas = this.create.heroSection-svgNode('.heroSection-svg');
   } else {
     this.canvas = this.createVmlNode('group');
     this.canvas.style.position = 'absolute';
@@ -43,8 +43,8 @@ var VectorCanvas = function (width, height, params) {
 };
 
 VectorCanvas.prototype = {
-  svgns: 'http://www.w3.org/2000/svg',
-  mode: 'svg',
+  .heroSection-svgns: 'http://www.w3.org/2000/.heroSection-svg',
+  mode: '.heroSection-svg',
   width: 0,
   height: 0,
   canvas: null
@@ -147,7 +147,7 @@ var JQVMap = function (params) {
     path.id = map.getCountryId(key);
     map.countries[key] = path;
 
-    if (this.canvas.mode === 'svg') {
+    if (this.canvas.mode === '.heroSection-svg') {
       path.setAttribute('class', 'jqvmap-region');
     } else {
       jQuery(path).addClass('jqvmap-region');
@@ -156,7 +156,7 @@ var JQVMap = function (params) {
     jQuery(this.rootGroup).append(path);
   }
 
-  jQuery(params.container).delegate(this.canvas.mode === 'svg' ? 'path' : 'shape', 'mouseover mouseout', function (e) {
+  jQuery(params.container).delegate(this.canvas.mode === '.heroSection-svg' ? 'path' : 'shape', 'mouseover mouseout', function (e) {
     var containerPath = e.target,
       code = e.target.id.split('_').pop(),
       labelShowEvent = jQuery.Event('labelShow.jqvmap'),
@@ -187,7 +187,7 @@ var JQVMap = function (params) {
     }
   });
 
-  jQuery(params.container).delegate(this.canvas.mode === 'svg' ? 'path' : 'shape', 'click', function (regionClickEvent) {
+  jQuery(params.container).delegate(this.canvas.mode === '.heroSection-svg' ? 'path' : 'shape', 'click', function (regionClickEvent) {
 
     var targetPath = regionClickEvent.target;
     var code = regionClickEvent.target.id.split('_').pop();
@@ -1047,7 +1047,7 @@ JQVMap.prototype.zoomOut = function () {
 };
 
 VectorCanvas.prototype.applyTransformParams = function (scale, transX, transY) {
-  if (this.mode === 'svg') {
+  if (this.mode === '.heroSection-svg') {
     this.rootGroup.setAttribute('transform', 'scale(' + scale + ') translate(' + transX + ', ' + transY + ')');
   } else {
     this.rootGroup.coordorigin = (this.width - transX) + ',' + (this.height - transY);
@@ -1057,8 +1057,8 @@ VectorCanvas.prototype.applyTransformParams = function (scale, transX, transY) {
 
 VectorCanvas.prototype.createGroup = function (isRoot) {
   var node;
-  if (this.mode === 'svg') {
-    node = this.createSvgNode('g');
+  if (this.mode === '.heroSection-svg') {
+    node = this.create.heroSection-svgNode('g');
   } else {
     node = this.createVmlNode('group');
     node.style.width = this.width + 'px';
@@ -1077,8 +1077,8 @@ VectorCanvas.prototype.createGroup = function (isRoot) {
 
 VectorCanvas.prototype.createPath = function (config) {
   var node;
-  if (this.mode === 'svg') {
-    node = this.createSvgNode('path');
+  if (this.mode === '.heroSection-svg') {
+    node = this.create.heroSection-svgNode('path');
     node.setAttribute('d', config.path);
 
     if (this.params.borderColor !== null) {
@@ -1119,7 +1119,7 @@ VectorCanvas.prototype.createPath = function (config) {
     node.style.height = this.height + 'px';
     node.fillcolor = JQVMap.defaultFillColor;
     node.stroked = false;
-    node.path = VectorCanvas.pathSvgToVml(config.path);
+    node.path = VectorCanvas.path.heroSection-svgToVml(config.path);
 
     var scale = this.createVmlNode('skew');
     scale.on = true;
@@ -1151,7 +1151,7 @@ VectorCanvas.prototype.createPath = function (config) {
   return node;
 };
 
-VectorCanvas.prototype.pathSvgToVml = function (path) {
+VectorCanvas.prototype.path.heroSection-svgToVml = function (path) {
   var result = '';
   var cx = 0, cy = 0, ctrlx, ctrly;
 
@@ -1256,7 +1256,7 @@ VectorCanvas.prototype.pathSvgToVml = function (path) {
 };
 
 VectorCanvas.prototype.setSize = function (width, height) {
-  if (this.mode === 'svg') {
+  if (this.mode === '.heroSection-svg') {
     this.canvas.setAttribute('width', width);
     this.canvas.setAttribute('height', height);
   } else {

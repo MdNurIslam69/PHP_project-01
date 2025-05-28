@@ -168,7 +168,7 @@ class Converter:
 
     scale = (bbox[2]-bbox[0]) / width
 
-    # generate SVG paths
+    # generate .heroSection-svg paths
     for geometry in geometries:
       geom = geometry.geom
       if self.buffer_distance:

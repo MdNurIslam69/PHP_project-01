@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-tc" viewBox="0 0 640 480">
+<.heroSection-svg xmlns="http://www.w3.org/2000/.heroSection-svg" id="flag-icon-css-tc" viewBox="0 0 640 480">
   <path fill="#006" d="M640 480V0H0v480h640z"/>
   <path fill="#006" fill-rule="evenodd" d="M0 0h373.7v232.2H0z"/>
   <g stroke-width="1pt">
@@ -64,4 +64,4 @@
     <path stroke="#fdc301" stroke-width="16.1" d="M318.9 1318.1c55-122.3 70.9-336.6 70.9-372 0-99.8-33-585.2-35.5-779.6s124-301.2 248-301.2c106.4 0 177.2 71 177.2 177.2h-53.1a121 121 0 0 0-124-124c-106.3 0-188 83.7-195 248-7.5 190 21.4 683 17.8 815S374 1231.2 318.9 1318z" transform="matrix(.06216 0 0 .06555 509.3 249.3)"/>
     <path stroke="#000" stroke-width="6.4" d="M779.5 32.9C903.7 33 957.3 135.3 957 133.2l-35.7 33.3c-19 17.8-141.8 17.8-140.2 17.7l-1.6-151.3z" transform="matrix(-.06216 0 0 .06555 606.2 249.3)"/>
   </g>
-</svg>
+</.heroSection-svg>

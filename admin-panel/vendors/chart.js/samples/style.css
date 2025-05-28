@@ -1,9 +1,10 @@
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 
-body, html {
+body,
+html {
 	color: #333538;
-	font-family: 'Lato', sans-serif;
+	font-family: "Lato", sans-serif;
 	line-height: 1.6;
 	padding: 0;
 	margin: 0;
@@ -44,7 +45,7 @@ a:hover {
 
 @media (max-width: 400px) {
 	.wrapper.col-2 {
-		width: 100%
+		width: 100%;
 	}
 }
 
@@ -79,13 +80,27 @@ a:hover {
 	text-decoration: none;
 }
 
-.btn-chartjs { background-color: #f27173; }
-.btn-chartjs:hover { background-color: #e25f5f; }
-.btn-docs:hover { background-color: #2793db; }
-.btn-docs { background-color: #36A2EB; }
-.btn-docs:hover { background-color: #2793db; }
-.btn-gh { background-color: #444; }
-.btn-gh:hover { background-color: #333; }
+.btn-chartjs {
+	background-color: #f27173;
+}
+.btn-chartjs:hover {
+	background-color: #e25f5f;
+}
+.btn-docs:hover {
+	background-color: #2793db;
+}
+.btn-docs {
+	background-color: #36a2eb;
+}
+.btn-docs:hover {
+	background-color: #2793db;
+}
+.btn-gh {
+	background-color: #444;
+}
+.btn-gh:hover {
+	background-color: #333;
+}
 
 .btn-on {
 	border-style: inset;
@@ -98,11 +113,11 @@ a:hover {
 }
 
 .chartjs-title::before {
-	background-image: url(logo.svg);
+	background-image: url(logo..heroSection-svg);
 	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: 40px;
-	content: 'Chart.js | ';
+	content: "Chart.js | ";
 	color: #f27173;
 	font-weight: 600;
 	padding-left: 48px;
@@ -159,26 +174,40 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-	.samples-category { width: 33%; }
+	.samples-category {
+		width: 33%;
+	}
 }
 
 @media (max-width: 512px) {
-	.samples-category { width: 50%; }
+	.samples-category {
+		width: 50%;
+	}
 }
 
 @media (max-width: 420px) {
-	.chartjs-caption { font-size: 1.05rem; }
-	.chartjs-title::before { content: ''; }
-	.chartjs-links a { flex-direction: column; }
-	.chartjs-links .fa { margin: 0 }
-	.samples-category { width: 100%; }
+	.chartjs-caption {
+		font-size: 1.05rem;
+	}
+	.chartjs-title::before {
+		content: "";
+	}
+	.chartjs-links a {
+		flex-direction: column;
+	}
+	.chartjs-links .fa {
+		margin: 0;
+	}
+	.samples-category {
+		width: 100%;
+	}
 }
 
 .analyser table {
 	color: #333;
 	font-size: 0.9rem;
 	margin: 8px 0;
-	width: 100%
+	width: 100%;
 }
 
 .analyser th {

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-bv" viewBox="0 0 640 480">
+<.heroSection-svg xmlns="http://www.w3.org/2000/.heroSection-svg" id="flag-icon-css-bv" viewBox="0 0 640 480">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".7" d="M0 0h640v480H0z"/>
@@ -10,4 +10,4 @@
     <path fill="#003897" d="M196.7-25.4H261v535.7h-64.5z"/>
     <path fill="#003897" d="M-27.6 224.8h698v63.5h-698z"/>
   </g>
-</svg>
+</.heroSection-svg>

@@ -7,38 +7,43 @@
         <section class="mb-4">
             <!-- Facebook -->
             <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
-                href="https://www.facebook.com" target="_blank" role="button"><i class="fab fa-facebook"></i></a>
+                href="https://www.facebook.com/md.nurislam6" target="_blank" role="button"><i
+                    class="fab fa-facebook"></i></a>
 
             <!-- Twitter -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://www.twitter.com"
-                target="_blank" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
+                href="https://x.com/MdNurIslam21050" target="_blank" role="button"><i class="fab fa-x"></i></a>
 
-            <!-- Google -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="https://www.quora.com"
-                target="_blank" role="button"><i class="fab fa-quora"></i></a>
+            <!-- Quora -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39"
+                href="https://www.quora.com/profile/Md-Nur-Islam-411" target="_blank" role="button"><i
+                    class="fab fa-quora"></i></a>
 
             <!-- Instagram -->
             <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
-                href="https://www.instagram.com" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+                href="https://www.instagram.com/md_nur_islam5" target="_blank" role="button"><i
+                    class="fab fa-instagram"></i></a>
 
             <!-- Linkedin -->
             <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca"
-                href="https://www.linkedin.com" target="_blank" role="button"><i class="fab fa-linkedin-in"></i></a>
+                href="https://www.linkedin.com/in/mdnurislam1" target="_blank" role="button"><i
+                    class="fab fa-linkedin-in"></i></a>
+
             <!-- Github -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://www.github.com"
-                target="_blank" role="button"><i class="fab fa-github"></i></a>
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333"
+                href="https://github.com/MdNurIslam69" target="_blank" role="button"><i class="fab fa-github"></i></a>
         </section>
         <!-- Section: Social media -->
 
 
         <!-- Section: Form -->
         <section class="">
-            <form action="">
+            <form action="POST">
                 <!--Grid row-->
-                <div class="row d-flex justify-content-center align-items-center mb-2">
+                <div class="row d-flex justify-content-center align-items-center mb-2 text-center">
                     <!--Grid column-->
-                    <div class="col-auto">
-                        <p class="pt-2">
+                    <div class="col-auto" style="margin-top: 22px;">
+                        <p class="">
                             <strong>Sign up for our newsletter</strong>
                         </p>
                     </div>
@@ -57,10 +62,10 @@
                     <!--Grid column-->
 
                     <!--Grid column-->
-                    <div class="col-auto">
+                    <div class="col-auto subscribeBTN" style="margin-top: 30px;">
 
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary mb-4">
+                        <button type="submit" class="btn btn-primary mb-4 ">
                             Subscribe
                         </button>
                     </div>
@@ -74,35 +79,33 @@
 
         <!-- Section: Text -->
         <section class=" mb-5">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                distinctio earum repellat quaerat voluptatibus placeat nam,
-                commodi optio pariatur est quia magnam eum harum
-            </p>
+            <p>Imran_Store Brings You a Wide Range Of Quality Products At Unbeatable Prices. Enjoy a Seamless Online
+                Shopping Experience With Fast Delivery, Secure Payments, and Friendly Support. Shop Smart, Shop Safe,
+                and Discover Everyday Essentials With Ease At Imran_Store.</p>
         </section>
         <!-- Section: Text -->
 
 
         <!-- Section: Links -->
-        <section class="">
+        <section class="mt-3">
             <!--Grid row-->
             <div class="row">
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-decoration-underline">Vegetables</h5>
+                    <h5 class="text-uppercase text-decoration-underline">Our Brands</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-warnings">Coliflower</a>
+                            <a href="#!" class="text-warnings">ZARA</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings footers">Spinach</a>
+                            <a href="#!" class="text-warnings footers">Splash</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings footers">Tomato</a>
+                            <a href="#!" class="text-warnings footers">Sailors</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings footers">Broccoli</a>
+                            <a href="#!" class="text-warnings footers">addidas</a>
                         </li>
                     </ul>
                 </div>
@@ -110,20 +113,20 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-decoration-underline">Fruits</h5>
+                    <h5 class="text-uppercase text-decoration-underline">Finalcial Partner</h5>
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class=" text-warnings">Strawberry</a>
+                            <a href="#!" class=" text-warnings">Islami Bank</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">Avocado</a>
+                            <a href="#!" class="text-warnings">MTB Bank</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">BlueBerry</a>
+                            <a href="#!" class="text-warnings">Brack Bank</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">PineApple</a>
+                            <a href="#!" class="text-warnings">IFDC</a>
                         </li>
                     </ul>
                 </div>
@@ -131,20 +134,20 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-decoration-underline">Fish</h5>
+                    <h5 class="text-uppercase text-decoration-underline mt-lg-0 mt-md-5">Our Branch's</h5>
 
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled ">
                         <li>
-                            <a href="#!" class=" text-warnings">Salmon</a>
+                            <a href="#!" class=" text-warnings">Dhaka</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">Hilsha</a>
+                            <a href="#!" class="text-warnings">Chittagong</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">Shark</a>
+                            <a href="#!" class="text-warnings">Feni</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">Carfu</a>
+                            <a href="#!" class="text-warnings">Sylhet</a>
                         </li>
                     </ul>
                 </div>
@@ -152,20 +155,25 @@
 
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase text-decoration-underline">Devices</h5>
+                    <h5 class="text-uppercase text-decoration-underline mt-lg-0 mt-md-5">Contact Us</h5>
 
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled  ">
                         <li>
-                            <a href="#!" class=" text-warnings">Macbook Pro</a>
+                            <a href="#!" class="text-warnings"><i class="fas fa-location-dot text-warnings"></i> 1212,
+                                Dhaka - Bangladesh</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">Mac Mini</a>
+                            <a href="#!" class="text-warnings"><i class="fas fa-envelope text-warnings"></i>
+                                example25@gmail.com</a>
+                        </li>
+
+                        <li>
+                            <a href="#!" class="text-warnings"><i class="fas fa-phone text-warnings"></i> + 1 23 4338
+                                7632</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-warnings">iPhone 12 Pro max</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-warnings">Samsung Galaxy</a>
+                            <a href="#!" class="text-warnings"><i class="fas fa-print text-warnings"></i> + 1 89 6838
+                                7634</a>
                         </li>
                     </ul>
                 </div>
@@ -180,7 +188,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        ©2025 All Copyright Reserved by...<a class="text-warnings fst-italic"
+        ©2025 All Copyright Reserved Imran_Store...by_<a class="text-warnings fst-italic opacity-75"
             href="https://www.linkedin.com/in/mdnurislam1" target="_blank">Imran</a>
     </div>
     <!-- Copyright -->

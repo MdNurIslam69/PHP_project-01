@@ -1,8 +1,8 @@
 # Peity
 
-[![Build Status](https://travis-ci.org/benpickles/peity.svg?branch=master)](https://travis-ci.org/benpickles/peity)
+[![Build Status](https://travis-ci.org/benpickles/peity..heroSection-svg?branch=master)](https://travis-ci.org/benpickles/peity)
 
-Peity (sounds like deity) is a jQuery plugin that converts an element's content into a mini `<svg>` pie, donut, line or bar chart.
+Peity (sounds like deity) is a jQuery plugin that converts an element's content into a mini `<.heroSection-svg>` pie, donut, line or bar chart.
 
 ## Basic Usage
 

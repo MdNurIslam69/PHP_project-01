@@ -14,10 +14,10 @@ Use either the Bootstrap mark (a capital **B**) or the standard logo (just **Boo
 
 <div class="bd-brand-logos">
   <div class="bd-brand-item">
-    <img class="svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="Bootstrap" width="144" height="144">
+    <img class=".heroSection-svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid..heroSection-svg" alt="Bootstrap" width="144" height="144">
   </div>
   <div class="bd-brand-item inverse">
-    <img class="svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-outline.svg" alt="Bootstrap" width="144" height="144">
+    <img class=".heroSection-svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-outline..heroSection-svg" alt="Bootstrap" width="144" height="144">
   </div>
 </div>
 <div class="bd-brand-logos">
@@ -31,17 +31,17 @@ Use either the Bootstrap mark (a capital **B**) or the standard logo (just **Boo
 
 ## Download mark
 
-Download the Bootstrap mark in one of three styles, each available as an SVG file. Right click, Save as.
+Download the Bootstrap mark in one of three styles, each available as an .heroSection-svg file. Right click, Save as.
 
 <div class="bd-brand-logos">
   <div class="bd-brand-item">
-    <img class="svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid.svg" alt="Bootstrap" width="144" height="144">
+    <img class=".heroSection-svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-solid..heroSection-svg" alt="Bootstrap" width="144" height="144">
   </div>
   <div class="bd-brand-item inverse">
-    <img class="svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-outline.svg" alt="Bootstrap" width="144" height="144">
+    <img class=".heroSection-svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-outline..heroSection-svg" alt="Bootstrap" width="144" height="144">
   </div>
   <div class="bd-brand-item inverse">
-    <img class="svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-punchout.svg" alt="Bootstrap" width="144" height="144">
+    <img class=".heroSection-svg" src="{{ site.baseurl }}/docs/{{ site.docs_version }}/assets/brand/bootstrap-punchout..heroSection-svg" alt="Bootstrap" width="144" height="144">
   </div>
 </div>
 
@@ -66,7 +66,7 @@ The project and framework should always be referred to as **Bootstrap**. No Twit
 
 ## Colors
 
-Our docs and branding use a handful of primary colors to differentiate what *is* Bootstrap from what *is in* Bootstrap. In other words, if it's purple, it's representative of Bootstrap.
+Our docs and branding use a handful of primary colors to differentiate what _is_ Bootstrap from what _is in_ Bootstrap. In other words, if it's purple, it's representative of Bootstrap.
 
 <div class="bd-brand">
   <div class="color-swatches">

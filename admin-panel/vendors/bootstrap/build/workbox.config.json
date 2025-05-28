@@ -1,8 +1,6 @@
 {
   "globDirectory": "./",
-  "globPatterns": [
-    "_gh_pages/**/*.{html,css,js,json,png,svg}"
-  ],
+  "globPatterns": ["_gh_pages/**/*.{html,css,js,json,png,.heroSection-svg}"],
   "swSrc": "./site/sw.js",
   "swDest": "./_gh_pages/sw.js"
 }
