@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class=" text-center ">
+<footer class=" text-center" id="footerSection">
     <!-- Grid container -->
     <div class="container p-4">
 
@@ -86,15 +86,16 @@
         <!-- Section: Text -->
 
 
+        <!-- footer card section -->
         <!-- Section: Links -->
         <section class="mt-3">
             <!--Grid row-->
-            <div class="row">
+            <div class="row pt-5">
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 justify-content-center">
                     <h5 class="text-uppercase text-decoration-underline">Our Brands</h5>
 
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0 text-start footerCard">
                         <li>
                             <a href="#!" class="text-warnings">ZARA</a>
                         </li>
@@ -112,10 +113,10 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 justify-content-center">
                     <h5 class="text-uppercase text-decoration-underline">Finalcial Partner</h5>
 
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0 text-start footerCard">
                         <li>
                             <a href="#!" class=" text-warnings">Islami Bank</a>
                         </li>
@@ -133,10 +134,10 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 justify-content-center">
                     <h5 class="text-uppercase text-decoration-underline mt-lg-0 mt-md-5">Our Branch's</h5>
 
-                    <ul class="list-unstyled ">
+                    <ul class="list-unstyled text-start footerCard">
                         <li>
                             <a href="#!" class=" text-warnings">Dhaka</a>
                         </li>
@@ -154,10 +155,10 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 justify-content-center">
                     <h5 class="text-uppercase text-decoration-underline mt-lg-0 mt-md-5">Contact Us</h5>
 
-                    <ul class="list-unstyled  ">
+                    <ul class="list-unstyled text-start footerCard4">
                         <li>
                             <a href="#!" class="text-warnings"><i class="fas fa-location-dot text-warnings"></i> 1212,
                                 Dhaka - Bangladesh</a>
@@ -208,6 +209,7 @@
 
 
 
+<!-- sign-in form validation -->
 <div>
     <?php
     if (isset($_POST['email']) && isset($_POST['Password'])) {

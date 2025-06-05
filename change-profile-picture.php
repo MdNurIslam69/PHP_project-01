@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$title = "Change Profile Picture | Imran_Store";
 require_once './components/header.php';
 
 if (!isset($_SESSION['link3Tech'])) {
@@ -96,9 +97,9 @@ if (isset($_POST['changeProfilePicture'])) {
                         <?php
                         if (!isset($_SESSION['link3Tech']['picture'])) {
                         ?>
-                            <span class="text-muted translate-middle"
-                                style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
-                                id="imgDropText">Image Drop Here</span>
+                        <span class="text-muted translate-middle"
+                            style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
+                            id="imgDropText">Image Drop Here</span>
 
                         <?php
                         }
@@ -131,24 +132,24 @@ if (isset($_POST['changeProfilePicture'])) {
 
 
 <script>
-    $('#profile_picture').change(function() {
-        const file = this.files[0];
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            $('#ppimg').attr('src', event.target.result);
-        }
-        reader.readAsDataURL(file);
-    })
+$('#profile_picture').change(function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        $('#ppimg').attr('src', event.target.result);
+    }
+    reader.readAsDataURL(file);
+})
 
 
-    // it's for hide span_(drop image text)
-    document.getElementById('ppimg').addEventListener('click', function() {
-        const span = document.getElementById('imgDropText');
-        if (span) {
-            span.style.display = 'none';
+// it's for hide span_(drop image text)
+document.getElementById('ppimg').addEventListener('click', function() {
+    const span = document.getElementById('imgDropText');
+    if (span) {
+        span.style.display = 'none';
 
-        }
-    });
+    }
+});
 </script>
 
 

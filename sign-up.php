@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$title = "Sign Up | Imran_Store";
 require_once 'components/header.php';
 
 if (isset($_SESSION['link3Tech'])) {
@@ -40,14 +41,20 @@ if (isset($_POST['signUp123'])) {
         }
     }
 
+
     // password section 
     if (empty($password)) {
-        $errPassword = "please write your password";
-    } elseif (!preg_match("/^[a-zA-Z0-9@#$%*^!+=&]{8,}$/", $password)) {
-        $errPassword = "Password must be at least 8 characters and 1 special character";
+        $errPassword = "Write your new password";
+    } elseif (strlen($password) < 8) {
+        $errPassword = "Password must be at least 8 characters";
+    } elseif (strlen($password) > 15) {
+        $errPassword = "Password must not exceed 15 characters";
+    } elseif (!preg_match("/[@#$%*^!+=&]/", $password)) {
+        $errPassword = "Password must include at least one special character";
     } else {
         $crrPassword = $password;
     }
+
 
     // confirm password section 
     if (empty($confirmPassword)) {
@@ -89,12 +96,12 @@ if (isset($_POST['signUp123'])) {
 
 
 <!-- Sign In Form -->
-<div class=" bg-colorss">
+<section style="background-color: #d9ebeaa9;">
 
     <div class="container">
-        <div class="row pt-1">
+        <div class="row py-3">
             <div class="col-md-5 mx-auto my-5 border border-2 border-primary-subtle rounded shadow p-4 bg-light">
-                <h1 class="mb-3 text-center">Sign Up</h1>
+                <h1 class="mb-3 text-center text-decoration-underline">Sign Up</h1>
 
                 <form action="" method="post">
 
@@ -149,10 +156,10 @@ if (isset($_POST['signUp123'])) {
 
 
                     <!-- submit button -->
-                    <button type="submit" class="btn btn-primary" name="signUp123">Sign Up</button>
+                    <button type="submit" class="btn btn-primary px-3" name="signUp123">Sign Up</button>
 
                     <!-- internal sign-up section -->
-                    <p class="mt-3">Already have an account? <a href="sign-in.php">Sign In</a></p>
+                    <p class="mt-3 text-center">Already have an account? <a href="sign-in.php">Sign In</a></p>
                 </form>
 
             </div>
@@ -160,25 +167,25 @@ if (isset($_POST['signUp123'])) {
 
     </div>
 
-</div>
+</section>
 
 
 
 <!-- this js for (sign-up) show password in checkbox -->
 <script>
-const showPass = document.getElementById("showPass");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
+    const showPass = document.getElementById("showPass");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
 
-showPass.addEventListener("click", () => {
-    if (password.type === "password") {
-        password.type = "text";
-        confirmPassword.type = "text";
-    } else {
-        password.type = "password";
-        confirmPassword.type = "password";
-    }
-});
+    showPass.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+            confirmPassword.type = "text";
+        } else {
+            password.type = "password";
+            confirmPassword.type = "password";
+        }
+    });
 </script>
 
 

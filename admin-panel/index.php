@@ -1,6 +1,8 @@
 <?php
+$title = "Dashboard | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
+
 
 ?>
 

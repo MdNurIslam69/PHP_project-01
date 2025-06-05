@@ -1,4 +1,5 @@
 <?php
+$title = "All Products | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
 
@@ -38,8 +39,9 @@ $result = $conn->query($sql);
     <div class="breadcrumbs">
         <div class="col-12">
             <div class="page-header ">
-                <div class="page-title align-middle">
-                    <h1>All Products</h1>
+                <div class="page-title align-middle mt-4">
+                    <h1 class=" text-center mb-0 text-primary h1" style="text-decoration: underline; font-size: 40px;">
+                        All Products</h1>
 
 
 
@@ -106,6 +108,7 @@ $result = $conn->query($sql);
                             $regular_price = mysqli_real_escape_string($conn, $_POST['regular_price']);
                             $sales_price = mysqli_real_escape_string($conn, $_POST['sales_price']);
                             $category_id = mysqli_real_escape_string($conn, $_POST['category_id']);
+                            $description = mysqli_real_escape_string($conn, $_POST['description']);
 
                             // Validation
                             if (empty($name)) {
@@ -120,9 +123,12 @@ $result = $conn->query($sql);
                             if (empty($category_id)) {
                                 $errCategory_id = "Please update category";
                             }
+                            if (empty($description)) {
+                                $errDescription = "Please update description";
+                            }
 
                             // Only continue if no validation errors
-                            if (!isset($errName) && !isset($errRegular_price) && !isset($errSales_price) && !isset($errCategory_id)) {
+                            if (!isset($errName) && !isset($errRegular_price) && !isset($errSales_price) && !isset($errCategory_id) && !isset($errDescription)) {
                                 // If image is uploaded
                                 if (!empty($_FILES['images']['name'])) {
                                     $image = basename($_FILES['images']['name']);
@@ -141,12 +147,13 @@ $result = $conn->query($sql);
 
                                 // Safe SQL update
                                 $updateProductQuery = "UPDATE `products` 
-                                    SET `name`='$name', 
-                                        `regular_price`='$regular_price', 
-                                        `sales_price`='$sales_price', 
-                                        `category_id`='$category_id', 
-                                        `images`='$image' 
-                                    WHERE `id`='$id'";
+                                SET `name`='$name', 
+                                    `regular_price`='$regular_price', 
+                                    `sales_price`='$sales_price', 
+                                    `images`='$image', 
+                                    `category_id`='$category_id', 
+                                    `description`='$description'
+                                WHERE `id`='$id'";
 
                                 if ($conn->query($updateProductQuery)) {
                                     echo "<script>toastr.success('Product updated successfully');
@@ -224,8 +231,8 @@ $result = $conn->query($sql);
 
                                 <!-- category id section-->
                                 <div class="mb-3">
-                                    <select name="category_id" class="form-control 
-                            <?= isset($errCategory_id) ? "is-invalid" : null ?>">
+                                    <select name="category_id"
+                                        class="form-control <?= isset($errCategory_id) ? "is-invalid" : null ?>">
                                         <option value="">Select Category</option>
                                         <?php
                                             $getCategoryResult = $conn->query("SELECT * FROM `products_category`");
@@ -244,6 +251,18 @@ $result = $conn->query($sql);
 
                                     <div class="invalid-feedback">
                                         <?= isset($errCategory_id) ? $errCategory_id : null ?>
+                                    </div>
+                                </div>
+
+
+                                <!-- description section -->
+                                <div class="mb-3">
+                                    <textarea name="description" rows="2" placeholder="Write New Description"
+                                        class="form-control <?= isset($errDescription) ? "is-invalid" : null ?>"><?= htmlspecialchars($description ?? $product['description'] ?? '') ?></textarea>
+
+
+                                    <div class="invalid-feedback">
+                                        <?= isset($errDescription) ? $errDescription : null ?>
                                     </div>
                                 </div>
 

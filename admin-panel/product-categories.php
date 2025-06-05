@@ -1,4 +1,5 @@
 <?php
+$title = "Product Categories | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
 
@@ -98,10 +99,12 @@ if ($getCategoryResult->num_rows > 0) {
     ?>
 
     <div class="breadcrumbs">
-        <div class="col-12">
+        <div class="col-12 justify-content-center d-flex">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Categories</h1>
+                    <h1 class=" text-center mt-4 mb-4 text-primary h1"
+                        style="text-decoration: underline; font-size: 40px;">
+                        All Categorie Section</h1>
                 </div>
             </div>
         </div>
@@ -109,81 +112,81 @@ if ($getCategoryResult->num_rows > 0) {
 
 
     <?php if (!isset($_GET['did'])) { ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <?php if (!isset($categories)) { ?>
-                <h2 class="mb-3">No Categories Found</h2>
-                <?php } else { ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <?php if (!isset($categories)) { ?>
+                        <h2 class="mb-3">No Categories Found</h2>
+                    <?php } else { ?>
 
-                <h2 class="mb-3">All Categories</h2>
+                        <h2 class="mb-3">All Categories</h2>
 
-                <table class="table table-bordered table-striped" id="categoryList">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        <table class="table table-bordered table-striped" id="categoryList">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
 
-                        <?php
+                                <?php
                                 $i = 1;
                                 do {
 
                                 ?>
-                        <tr>
-                            <th scope="row"><?= $i++ ?></th>
-                            <td><?= $categories['name'] ?></td>
-                            <td>
-                                <a href="product-categories.php?eid=<?= $categories['id'] ?>"
-                                    class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="product-categories.php?did=<?= $categories['id'] ?>"
-                                    class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <th scope="row"><?= $i++ ?></th>
+                                        <td><?= $categories['name'] ?></td>
+                                        <td>
+                                            <a href="product-categories.php?eid=<?= $categories['id'] ?>"
+                                                class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a href="product-categories.php?did=<?= $categories['id'] ?>"
+                                                class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
+                                        </td>
+                                    </tr>
 
-                        <?php
+                                <?php
                                 } while ($categories = $getCategoryResult->fetch_assoc());
                                 ?>
 
-                    </tbody>
-                </table>
-                <?php } ?>
-            </div>
+                            </tbody>
+                        </table>
+                    <?php } ?>
+                </div>
 
 
 
-            <div class="col-md-6">
+                <div class="col-md-6">
 
-                <h2 class="mb-3">Add New Category</h2>
+                    <h2 class="mb-3">Add New Category</h2>
 
-                <form action="" method="post">
-                    <div class="mb-3">
-                        <input type="text" placeholder="Category Name"
-                            class="form-control <?= isset($errName) ? 'is-invalid' : null ?>" name="name">
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <input type="text" placeholder="Category Name"
+                                class="form-control <?= isset($errName) ? 'is-invalid' : null ?>" name="name">
 
-                        <div class="invalid-feedback">
-                            <?= isset($errName) ? $errName : null ?>
+                            <div class="invalid-feedback">
+                                <?= isset($errName) ? $errName : null ?>
+                            </div>
                         </div>
-                    </div>
 
-                    <button type="submit" class="btn btn-primary" name="addCategory">Add Category</button>
+                        <button type="submit" class="btn btn-primary" name="addCategory">Add Category</button>
 
-                </form>
-
+                    </form>
 
 
-                <!-- edit_product_popup--section -->
-                <!-- .. -->
-                <?php if (isset($_GET['eid'])) { ?>
 
-                <h2 class="my-3">Edit Category</h2>
+                    <!-- edit_product_popup--section -->
+                    <!-- .. -->
+                    <?php if (isset($_GET['eid'])) { ?>
+
+                        <h2 class="my-3">Edit Category</h2>
 
 
-                <?php
+                        <?php
 
                         $categoryList = $_GET['eid'];
                         $getCategoryQuery = "SELECT * FROM `products_category` WHERE `id` = '$categoryList'";
@@ -194,76 +197,76 @@ if ($getCategoryResult->num_rows > 0) {
                         }
                         ?>
 
-                <?php
+                        <?php
                         if (isset($categories)) {
                         ?>
 
-                <form action="" method="post">
+                            <form action="" method="post">
 
-                    <input type="hidden" name="updateCategoryId" value="<?= $categories['id'] ?>">
+                                <input type="hidden" name="updateCategoryId" value="<?= $categories['id'] ?>">
 
-                    <input type="hidden" name="oldCategoryName" value="<?= $categories['name'] ?>">
+                                <input type="hidden" name="oldCategoryName" value="<?= $categories['name'] ?>">
 
-                    <div class="mb-3">
-                        <input type="text" placeholder="Category Name"
-                            class="form-control <?= isset($errUpName) ? 'is-invalid' : null ?>" name="name"
-                            value="<?= $categories['name'] ?>">
+                                <div class="mb-3">
+                                    <input type="text" placeholder="Category Name"
+                                        class="form-control <?= isset($errUpName) ? 'is-invalid' : null ?>" name="name"
+                                        value="<?= $categories['name'] ?>">
 
-                        <div class="invalid-feedback">
-                            <?= isset($errUpName) ? $errUpName : null ?>
-                        </div>
+                                    <div class="invalid-feedback">
+                                        <?= isset($errUpName) ? $errUpName : null ?>
+                                    </div>
 
-                    </div>
+                                </div>
 
-                    <button type="submit" class="btn btn-primary" name="updateCategoryBTN">Update Category</button>
+                                <button type="submit" class="btn btn-primary" name="updateCategoryBTN">Update Category</button>
 
-                    <a href="product-categories.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>
-                        Cancel</a>
-                </form>
+                                <a href="product-categories.php" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i>
+                                    Cancel</a>
+                            </form>
 
-                <?php } else { ?>
-                <h2 class="mb-3">No Category Found</h2>
-                <?php } ?>
-                <?php } ?>
+                        <?php } else { ?>
+                            <h2 class="mb-3">No Category Found</h2>
+                        <?php } ?>
+                    <?php } ?>
 
 
 
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     <?php } else { ?>
 
 
-    <!-- delete_product_popup--section-->
-    <!-- .. -->
-    <div class="container">
-        <div
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+        <!-- delete_product_popup--section-->
+        <!-- .. -->
+        <div class="container">
             <div
-                style="background: #fff; max-width: 400px; width: 90%; padding: 1.5rem; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center;">
+                style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+                <div
+                    style="background: #fff; max-width: 400px; width: 90%; padding: 1.5rem; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center;">
 
-                <h3 style="margin-bottom: 3rem; font-size: 1.25rem; color: purple;">Are you sure you want to delete
-                    this
-                    product?</h3>
+                    <h3 style="margin-bottom: 3rem; font-size: 1.25rem; color: purple;">Are you sure you want to delete
+                        this
+                        product?</h3>
 
-                <form method="post" action=""
-                    style="display: flex; align-items: center; justify-content: center; gap: 3rem;">
+                    <form method="post" action=""
+                        style="display: flex; align-items: center; justify-content: center; gap: 3rem;">
 
-                    <input type="hidden" name="categoryId" value="<?= $_GET['did'] ?>">
+                        <input type="hidden" name="categoryId" value="<?= $_GET['did'] ?>">
 
-                    <button type="submit" name="deleteCategory"
-                        style="background: #e74c3c; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer;  font-weight: bold;">Yes</button>
+                        <button type="submit" name="deleteCategory"
+                            style="background: #e74c3c; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer;  font-weight: bold;">Yes</button>
 
 
-                    <a href="product-categories.php"
-                        style="background: #3498db; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: bold;">No</a>
+                        <a href="product-categories.php"
+                            style="background: #3498db; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: bold;">No</a>
 
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
     <?php } ?>
 </div>
@@ -272,11 +275,11 @@ if ($getCategoryResult->num_rows > 0) {
 
 
 <script>
-$("#categoryList").DataTable({
-    "lengthMenu": [4, 5, 10, 25, 50, 100],
-    "pageLength": 5
+    $("#categoryList").DataTable({
+        "lengthMenu": [4, 5, 10, 25, 50, 100],
+        "pageLength": 5
 
-});
+    });
 </script>
 
 

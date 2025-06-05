@@ -52,7 +52,7 @@ if (isset($_POST['place_order'])) {
         }
         // clear cart
         unset($_SESSION['cart']);
-        echo "<script>toastr.success('Order placed successfully!');setTimeout(() => { window.location = 'index.php' }, 2000);</script>";
+        echo "<script>toastr.success('Order placed successfully!');setTimeout(() => { window.location = 'my-orders.php' }, 2000);</script>";
     } else {
         echo "<script>toastr.error('Failed to place order!');</script>";
     }
@@ -68,7 +68,7 @@ if (isset($_POST['place_order'])) {
 <!-- checkout section  -->
 <div class="container py-4 gap-lg-5">
 
-    <h1 class="text-primary mb-5 text-center text-decoration-underline mt-4">Checkout</h1>
+    <h1 class="text-primary mb-5 text-center text-decoration-underline mt-4">Products Checkout</h1>
     <div class="row">
 
         <div class="col-lg-4 col-md-5 col-sm-12 mt-2">
@@ -109,7 +109,13 @@ if (isset($_POST['place_order'])) {
                         required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary " name="place_order">Place Order</button>
+                <button type="submit" class="btn btn-primary viewDetailsBtnsSingle1" name="place_order">Place
+                    Order</button>
+
+
+                <a href="cart.php" class="btn btn-warning text-white viewDetailsBtnsSingle2 "><i
+                        class="fa-solid fa-arrow-left"></i>
+                    Back</a>
             </form>
         </div>
 
@@ -122,8 +128,8 @@ if (isset($_POST['place_order'])) {
 
             <h3 class="mb-4 text-center text-decoration-underline mt-md-3">Order Summary</h3>
 
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered table-striped" style="border: 2px solid black !important;">
+                <thead class="table-dark">
                     <tr>
                         <th class="text-center">Quantity</th>
                         <th class="text-center">Product Name</th>
@@ -145,21 +151,21 @@ if (isset($_POST['place_order'])) {
                                 $subTotal = $product['sales_price'] * $quantity;
                                 $total += $subTotal; // ✅ Add to total
                     ?>
-                                <tr>
-                                    <td class="text-center align-middle"><?= $quantity ?></td>
-                                    <td><?= $product['name'] ?></td>
-                                    <td class="text-center align-middle">
-                                        <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
-                                        <?= number_format($subTotal) ?>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        <?php endforeach; ?>
+                    <tr>
+                        <td class="text-center align-middle"><?= $quantity ?></td>
+                        <td><?= $product['name'] ?></td>
+                        <td class="text-center align-middle">
+                            <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
+                            <?= number_format($subTotal) ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="2" class="text-end fw-bold">Total <i
+                        <td colspan="2" class="fw-bold text-end">Total <i
                                 class="fa-solid fa-bangladeshi-taka-sign px-1 fw-bold"></i> = </td>
                         <td class="text-center fw-bold">
                             <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>

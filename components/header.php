@@ -2,6 +2,7 @@
 session_start();
 $pageName = basename($_SERVER['PHP_SELF']);
 
+
 function sanitize($data)
 {
     if (is_array($data)) {
@@ -22,7 +23,7 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imran's Project</title>
+    <title><?= $title ?? basename($_SERVER['PHP_SELF']); ?></title>
 
     <!-- favicon link -->
     <link rel="shortcut icon" href="./admin-panel/images/favicon.png" type="image/x-icon">
@@ -61,15 +62,15 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 
     <!-- toastr customaization start  -->
     <script>
-        toastr.options = {
-            "progressBar": true,
-            "positionClass": "toast-top-center",
-            "timeOut": "2000",
-            "showMethod": "slideDown",
+    toastr.options = {
+        "progressBar": true,
+        "positionClass": "toast-top-center",
+        "timeOut": "2000",
+        "showMethod": "slideDown",
 
-            // custom css
-            "toastClass": "toastr",
-        }
+        // custom css
+        "toastClass": "toastr",
+    }
     </script>
     <!-- toastr customaization end  -->
 
@@ -78,6 +79,13 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
+
+    <!-- data table css link (for front-end)-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css">
+
+    <script src="https://cdn.datatables.net/2.3.0/js/dataTables.min.js"> </script>
 
 
 

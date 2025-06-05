@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$title = "Sign In | Imran_Store";
 require_once 'components/header.php';
 
 if (isset($_SESSION['link3Tech'])) {
@@ -75,13 +76,13 @@ if (isset($_POST['signIn123'])) {
 
 
 <!-- Sign In Form -->
-<div class=" bg-colorss ">
+<section style="background-color: #d9ebeaa9;">
 
 
     <div class="container">
-        <div class="row pt-1">
+        <div class="row py-3">
             <div class="col-md-5 mx-auto my-5 border border-2 border-primary-subtle rounded shadow p-4 bg-light ">
-                <h1 class="mb-3 text-center">Sign In</h1>
+                <h1 class="mb-4 text-center text-decoration-underline">Sign In</h1>
 
                 <form action="" method="post">
 
@@ -108,19 +109,26 @@ if (isset($_POST['signIn123'])) {
                     </div>
 
 
-                    <!-- checkbox section -->
-                    <div class="mb-4 form-check">
-                        <input type="checkbox" class="form-check-input" id="showPass">
-                        <label class="form-check-label" for="showPass">Show Password</label>
+                    <div class="d-flex justify-content-between my-2 mt-3">
+                        <!-- checkbox section -->
+                        <div class="mb-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="showPass">
+                            <label class="form-check-label" for="showPass">Show Password</label>
+                        </div>
+
+
+
+                        <p><a href="forget-password.php">Forget Password?</a></p>
                     </div>
 
-
-
                     <!-- submit button -->
-                    <button type="submit" class="btn btn-primary" name="signIn123">Sign In</button>
+                    <button type="submit" class="btn btn-primary px-3" name="signIn123">Sign In</button>
 
                     <!-- internal sign-up section -->
-                    <p class="mt-3">Don't have an account? <a href="sign-up.php">Sign Up</a></p>
+                    <p class="mt-3 text-center">Don't have an account? <a href="sign-up.php">Sign Up</a></p>
+
+
+                    <!-- forget password -->
                 </form>
 
             </div>
@@ -128,21 +136,21 @@ if (isset($_POST['signIn123'])) {
 
     </div>
 
-</div>
+</section>
 
 
 <!-- this js for (sign-in) show password in checkbox -->
 <script>
-const showPass = document.getElementById("showPass");
-const password = document.getElementById("password");
+    const showPass = document.getElementById("showPass");
+    const password = document.getElementById("password");
 
-showPass.addEventListener("click", () => {
-    if (password.type === "password") {
-        password.type = "text";
-    } else {
-        password.type = "password";
-    }
-});
+    showPass.addEventListener("click", () => {
+        if (password.type === "password") {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+    });
 </script>
 
 

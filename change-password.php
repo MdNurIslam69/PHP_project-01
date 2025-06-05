@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$title = "Change Password | Imran_Store";
 require_once './components/header.php';
 
 

@@ -1,4 +1,5 @@
 <?php
+$title = "Add New Product | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
 
@@ -9,6 +10,8 @@ if (isset($_POST['addProduct'])) {
     $regular_price = sanitize($_POST['regular_price']);
     $sale_price = sanitize($_POST['sales_price']);
     $category_id = sanitize($_POST['category_id']);
+    $description = sanitize($_POST['description']);
+
 
     $image = $_FILES['images'];
     $imageName = $image['name'];
@@ -53,6 +56,16 @@ if (isset($_POST['addProduct'])) {
     } else {
         $crrCategory_id = $conn->real_escape_string($category_id);
     }
+
+    // description section
+    if (empty($description)) {
+        $errDescription = "Please enter a description";
+        $hasError = true;
+    } else {
+        $crrDescription = $conn->real_escape_string($description);
+    }
+
+
     // image section
     if (empty($imageName)) {
         $errImage = "Please upload an image";
@@ -75,8 +88,8 @@ if (isset($_POST['addProduct'])) {
 
             if (move_uploaded_file($imageTmpName, $uploadFilePath)) {
                 // Insert the product into the database
-                $sql = "INSERT INTO `products`(`name`, `regular_price`, `sales_price`, `category_id`, `images`) 
-                        VALUES('$crrName', '$crrRegular_price', '$crrSales_price', '$crrCategory_id', '$crrImage')";
+                $sql = "INSERT INTO `products`(`name`, `regular_price`, `sales_price`, `images`, `category_id`, `description`) 
+                        VALUES('$crrName', '$crrRegular_price', '$crrSales_price', '$crrImage', '$crrCategory_id', '$crrDescription')";
                 if ($conn->query($sql) === TRUE) {
                     echo "<script>toastr.success('Product added successfully');
                     setTimeout(() => {
@@ -99,20 +112,21 @@ if (isset($_POST['addProduct'])) {
     <?php require_once('topBar.php'); ?>
 
     <div class="breadcrumbs">
-        <div class="col-12">
+        <div class="col-12 justify-content-center d-flex">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Add New Product</h1>
+                    <h1 class=" mb-4 mt-4 text-primary text-center"
+                        style="text-decoration: underline; font-size: 40px;">Add New Product</h1>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center d-flex">
             <div class="col-md-6">
 
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data" class="mt-3">
                     <!-- Name section -->
                     <div class="mb-3">
                         <input type="text" placeholder="Product Name"
@@ -162,15 +176,26 @@ if (isset($_POST['addProduct'])) {
                             $getCategoryResult = $conn->query("SELECT * FROM `products_category`");
                             while ($category = $getCategoryResult->fetch_assoc()) {
                             ?>
-                                <option value="<?= $category['id'] ?>"
-                                    <?= isset($category_id) && $category_id == $category['id'] ? 'selected' : null ?>>
-                                    <?= $category['name'] ?></option>
+                            <option value="<?= $category['id'] ?>"
+                                <?= isset($category_id) && $category_id == $category['id'] ? 'selected' : null ?>>
+                                <?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
                         <div class="invalid-feedback">
                             <?= isset($errCategory_id) ? $errCategory_id : null ?>
                         </div>
                     </div>
+
+
+                    <!-- description section -->
+                    <div class="mb-3">
+                        <textarea name="description" placeholder="Product Description" rows="3"
+                            class="form-control <?= isset($errDescription) ? 'is-invalid' : null ?>"><?= isset($description) ? htmlspecialchars($description) : null ?></textarea>
+                        <div class="invalid-feedback">
+                            <?= isset($errDescription) ? $errDescription : null ?>
+                        </div>
+                    </div>
+
 
                     <!-- Submit -->
                     <div class="mb-3">

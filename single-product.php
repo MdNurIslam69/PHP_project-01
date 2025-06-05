@@ -17,8 +17,10 @@ if (isset($_POST['addToCart'])) {
         }
         echo "<script>toastr.success('Product added to cart success!');
         setTimeout(() => {
-            window.location = window.location.href }, 2000);
+            window.location = `shop.php` }, 2000);
         </script>";
+    } else {
+        echo "<script>toastr.error('Product add failed!');</script>";
     }
 }
 
@@ -69,16 +71,15 @@ $product = $getProductResult->fetch_assoc();
                         <?= number_format($product['sales_price']) ?></p>
                 </div>
 
-                <p class="productDescriptionP" style=" text-align: justify; max-width: 700px;">Lorem ipsum dolor sit
-                    amet
-                    consectetur adipisicing
-                    elit. Minima
-                    blanditiis iusto
-                    distinctio?
-                    iusto distinctio blanditiis
-                    distinctio?
-                    Similique veritatis aperiam necessitatibus obcaecati cum illum quis aliquam non dolorivelit
-                    dolorem, neque deserunt harum, veniam eos.</p>
+                <!-- this is ready function (for product description), when build new website, just copy & paste this function -->
+                <!-- <p class="productDescriptionP" style=" text-align: justify; max-width: 700px;">
+                    <?= $product['description'] ?></p> -->
+
+                <p class="productDescriptionP" style=" text-align: justify; max-width: 700px;">
+                    <?= $product['description'] ?>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                    provident dolores repellat volu
+                    officiis velit commodi distinctii debitis voluptates quia, asperiores fugit quis culpa laborum
+                    natus. Est, praesentium provident dolores repellat voluptas repellendus minus!</p>
 
 
                 <form action="" class=" d-inline-block" method="POST">
@@ -90,7 +91,7 @@ $product = $getProductResult->fetch_assoc();
                 </form>
 
 
-                <a href="index.php" class="btn btn-warning text-white viewDetailsBtnsSingle2 "><i
+                <a href="shop.php" class="btn btn-warning text-white viewDetailsBtnsSingle2 "><i
                         class="fa-solid fa-arrow-left"></i> Back</a>
                 <p class=" d-lg-none d-md-none d-sm-block"></p>
 
@@ -101,7 +102,10 @@ $product = $getProductResult->fetch_assoc();
 
 
 
-
+<script>
+// change title to product name
+document.title = "<?= htmlspecialchars($product['name']) ?> | Imran_Store";
+</script>
 
 
 

@@ -1,12 +1,11 @@
 <?php
 ob_start();
+$title = "My Profile | Imran_Store";
 require_once './components/header.php';
 
 $genderList = ['Male', 'Female', 'Others'];
 
 $allCountryList = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Federated States of Micronesia", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "North Macedonia", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthelemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Türkiye", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States", "Uzbekistan", "Vanuatu", "Venezuela", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe"];
-
-
 
 
 
@@ -108,7 +107,7 @@ if (isset($_POST['updateProfile'])) {
 
     <div class="row mt-1">
         <div class="col-md-5 mx-auto my-5 border border-2 border-primary-subtle rounded shadow p-4 bg-light">
-            <h1 class="mb-4 text-center">My Profile</h1>
+            <h1 class="mb-3 text-center text-decoration-underline">My Profile</h1>
 
             <form action="" method="post">
 
@@ -165,9 +164,9 @@ if (isset($_POST['updateProfile'])) {
                         <option value="">Select Country</option>
 
                         <?php foreach ($allCountryList as $countries) { ?>
-                            <option value="<?= $countries ?>"
-                                <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
-                                <?= $countries ?></option>
+                        <option value="<?= $countries ?>"
+                            <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
+                            <?= $countries ?></option>
                         <?php } ?>
                     </select>
 
@@ -182,11 +181,12 @@ if (isset($_POST['updateProfile'])) {
                     <label for="address" class="form-label">Address:</label>
 
                     <textarea class="form-control <?= isset($errAddress) ? 'is-invalid' : null; ?>" name="address"
-                        rows="3" style="display: none;" id="hiddenAddress">
+                        rows="5" style="display: none;" id="hiddenAddress">
                     <?= htmlspecialchars_decode($address ?? $userInfo['address'] ?? null); ?>
                     </textarea>
 
-                    <div id="editor" class="<?= isset($errAddress) ? "border border-danger" : null; ?>">
+                    <div id="editor" style="min-height: 62px !important;"
+                        class="<?= isset($errAddress) ? "border border-danger" : null; ?>">
                         <?= htmlspecialchars_decode($address ?? $userInfo['address'] ?? null); ?></div>
 
 
@@ -197,28 +197,34 @@ if (isset($_POST['updateProfile'])) {
                 </div>
 
 
-
-
-
                 <!-- Submit section -->
-                <button type="submit" class="btn btn-primary" name="updateProfile">Update Profile</button>
+                <div class="d-flex justify-content-between pt-3">
+                    <button type="submit" class="btn btn-primary" name="updateProfile">Update Profile</button>
 
+                    <!-- delete user section -->
+                    <a href="deleteUser-account.php" class="btn btn-danger">Delete Account</a>
+                </div>
             </form>
+
         </div>
+
     </div>
 </div>
 
 
+
+
+
 <!-- quill editor -->
 <script>
-    const quill = new Quill('#editor', {
-        theme: 'snow',
+const quill = new Quill('#editor', {
+    theme: 'snow',
 
-    });
-    $('#editor').on('keyup', function() {
-        const html = quill.root.innerHTML;
-        $('#hiddenAddress').val(html);
-    });
+});
+$('#editor').on('keyup', function() {
+    const html = quill.root.innerHTML;
+    $('#hiddenAddress').val(html);
+});
 </script>
 
 
