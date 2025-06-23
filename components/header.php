@@ -11,7 +11,7 @@ function sanitize($data)
     return htmlspecialchars(stripslashes($data));
 }
 
-$conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
+$conn = mysqli_connect('127.0.0.1', 'root', '', 'imran_store');
 
 ?>
 
@@ -62,15 +62,15 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'link3Tech');
 
     <!-- toastr customaization start  -->
     <script>
-    toastr.options = {
-        "progressBar": true,
-        "positionClass": "toast-top-center",
-        "timeOut": "2000",
-        "showMethod": "slideDown",
+        toastr.options = {
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "timeOut": "2000",
+            "showMethod": "slideDown",
 
-        // custom css
-        "toastClass": "toastr",
-    }
+            // custom css
+            "toastClass": "toastr",
+        }
     </script>
     <!-- toastr customaization end  -->
 

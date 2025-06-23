@@ -3,13 +3,13 @@ ob_start();
 $title = "Change Profile Picture | Imran_Store";
 require_once './components/header.php';
 
-if (!isset($_SESSION['link3Tech'])) {
+if (!isset($_SESSION['imran_store'])) {
     header('location: sign-in.php');
     exit();
 }
 
 // pg_fetch_object 
-$userId = $_SESSION['link3Tech']['id'];
+$userId = $_SESSION['imran_store']['id'];
 
 if (isset($_POST['changeProfilePicture'])) {
 
@@ -38,7 +38,7 @@ if (isset($_POST['changeProfilePicture'])) {
 
         if (move_uploaded_file($tempImages, $targetFile)) {
             // delete old image
-            $oldImage = $_SESSION['link3Tech']['picture'];
+            $oldImage = $_SESSION['imran_store']['picture'];
             if (file_exists($oldImage)) {
                 unlink($oldImage);
             }
@@ -52,7 +52,7 @@ if (isset($_POST['changeProfilePicture'])) {
             $mainResult = mysqli_query($conn, $query);
 
             if ($mainResult) {
-                $_SESSION['link3Tech']['picture'] = $targetFile;
+                $_SESSION['imran_store']['picture'] = $targetFile;
                 echo "<script>toastr.success('Image uploaded successfully');
                 setTimeout(() => {
                     window.location.href = 'change-profile-picture.php';
@@ -85,7 +85,7 @@ if (isset($_POST['changeProfilePicture'])) {
                 <div class="mb-3">
                     <label for="profile_picture" class="form-label">
 
-                        <img src="<?= isset($_SESSION['link3Tech']['picture']) ? $_SESSION['link3Tech']['picture'] : './assets/img/demo-profile-picture.jpg' ?>"
+                        <img src="<?= isset($_SESSION['imran_store']['picture']) ? $_SESSION['imran_store']['picture'] : './assets/img/demo-profile-picture.jpg' ?>"
                             onerror="this.onerror=null; this.src='./assets/img/demo-profile-picture.jpg';" alt=""
                             class="img-fluid mb-3 rounded-circle"
                             style="width: 200px; height: 200px; object-fit: cover; cursor: pointer; position: relative;"
@@ -95,11 +95,11 @@ if (isset($_POST['changeProfilePicture'])) {
                         <br>
 
                         <?php
-                        if (!isset($_SESSION['link3Tech']['picture'])) {
+                        if (!isset($_SESSION['imran_store']['picture'])) {
                         ?>
-                        <span class="text-muted translate-middle"
-                            style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
-                            id="imgDropText">Image Drop Here</span>
+                            <span class="text-muted translate-middle"
+                                style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
+                                id="imgDropText">Image Drop Here</span>
 
                         <?php
                         }
@@ -132,24 +132,24 @@ if (isset($_POST['changeProfilePicture'])) {
 
 
 <script>
-$('#profile_picture').change(function() {
-    const file = this.files[0];
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        $('#ppimg').attr('src', event.target.result);
-    }
-    reader.readAsDataURL(file);
-})
+    $('#profile_picture').change(function() {
+        const file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            $('#ppimg').attr('src', event.target.result);
+        }
+        reader.readAsDataURL(file);
+    })
 
 
-// it's for hide span_(drop image text)
-document.getElementById('ppimg').addEventListener('click', function() {
-    const span = document.getElementById('imgDropText');
-    if (span) {
-        span.style.display = 'none';
+    // it's for hide span_(drop image text)
+    document.getElementById('ppimg').addEventListener('click', function() {
+        const span = document.getElementById('imgDropText');
+        if (span) {
+            span.style.display = 'none';
 
-    }
-});
+        }
+    });
 </script>
 
 

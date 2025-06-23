@@ -76,10 +76,7 @@ $product = $getProductResult->fetch_assoc();
                     <?= $product['description'] ?></p> -->
 
                 <p class="productDescriptionP" style=" text-align: justify; max-width: 700px;">
-                    <?= $product['description'] ?>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                    provident dolores repellat volu
-                    officiis velit commodi distinctii debitis voluptates quia, asperiores fugit quis culpa laborum
-                    natus. Est, praesentium provident dolores repellat voluptas repellendus minus!</p>
+                    <?= $product['description'] ?></p>
 
 
                 <form action="" class=" d-inline-block" method="POST">

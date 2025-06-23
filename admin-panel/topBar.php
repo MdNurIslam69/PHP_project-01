@@ -24,7 +24,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <img class="user-avatar rounded-circle" style="width: 50px; height: 50px; object-fit: cover;"
-                            src=" <?= isset($_SESSION['link3Tech']['picture']) ? "../" . $_SESSION['link3Tech']['picture'] : "../assets/img/demo-profile-picture.jpg" ?>"
+                            src=" <?= isset($_SESSION['imran_store']['picture']) ? "../" . $_SESSION['imran_store']['picture'] : "../assets/img/demo-profile-picture.jpg" ?>"
                             alt="User Avatar">
                     </a>
 

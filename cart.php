@@ -104,7 +104,7 @@ if (isset($_POST['remove_from_cart'])) {
                         <td class="text-center fw-bold p-0"
                             style="border: 1px solid black !important; border-right: none !important;">
                             <i class="fa-solid fa-bangladeshi-taka-sign pe-2 text-muted"></i>
-                            <?= number_format($total) ?>cecec
+                            <?= number_format($total) ?>
                         </td>
                     </tr>
                 </tfoot>
@@ -112,7 +112,7 @@ if (isset($_POST['remove_from_cart'])) {
             </table>
 
             <?php else: ?>
-            <p class="text-center">Your cart is empty!</p>
+            <h4 class="text-center my-5 fw-bold">Your cart is empty!</h4>
             <?php endif; ?>
 
         </div>

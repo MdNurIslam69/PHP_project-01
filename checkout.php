@@ -3,60 +3,65 @@ require_once './components/header.php';
 
 
 if (isset($_POST['place_order'])) {
-    // get user id
-    $userId = $_POST['user_id'] ?? null;
-    if ($userId == null) {
-        echo "<script>toastr.error('User not found!');setTimeout(() => { window.location = sign-up.php }, 2000);</script>";
+    // Get user ID
+    $userId = $_SESSION['imran_store']['id'] ?? $_POST['user_id'] ?? null;
+    if (!$userId) {
+        echo "<script>toastr.error('User not found!'); setTimeout(() => { window.location = 'sign-up.php'; }, 2000);</script>";
         exit();
     }
 
+    $name = $conn->real_escape_string($_POST['name'] ?? '');
+    $email = $conn->real_escape_string($_POST['email'] ?? '');
+    $phone_number = $conn->real_escape_string($_POST['phone_number'] ?? '');
+    $address = $conn->real_escape_string($_POST['address'] ?? '');
+    $payment_method = $conn->real_escape_string($_POST['payment_method'] ?? 'Cash_on_delivery');
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['phone_number'];
-    $address = $_POST['address'];
+    // ✅ Add status
+    $status = 'Pending';
 
-    // product in cart
+    // Calculate total
     $cart = $_SESSION['cart'] ?? [];
     $total = 0;
     foreach ($cart as $id => $quantity) {
         $getProductQuery = "SELECT * FROM `products` WHERE `id` = $id";
         $getProductResult = $conn->query($getProductQuery);
-
         if ($getProductResult->num_rows > 0) {
             $product = $getProductResult->fetch_assoc();
             $total += $product['sales_price'] * $quantity;
         }
     }
 
-    // insert order into database
-    $orderQuery = "INSERT INTO `orders`(`user_id`, `name`, `phone_number`, `address`, `total`) 
-               VALUES ('$userId', '$name', '$phone_number', '$address', '$total')";
-
-
+    // ✅ Correct INSERT
+    $orderQuery = "INSERT INTO `orders`
+    (`user_id`, `name`, `phone_number`, `address`, `total`, `payment_method`, `status`)
+    VALUES
+    ('$userId', '$name', '$phone_number', '$address', '$total', '$payment_method', '$status')";
 
     if ($conn->query($orderQuery)) {
         $orderId = $conn->insert_id;
 
-        // insert order items into database
+        // Insert order items
         foreach ($cart as $id => $quantity) {
             $getProductQuery =  "SELECT * FROM `products` WHERE `id` = $id";
             $getProductResult = $conn->query($getProductQuery);
-
             if ($getProductResult->num_rows > 0) {
                 $product = $getProductResult->fetch_assoc();
                 $subtotal = $product['sales_price'] * $quantity;
-                $orderItemQuery = "INSERT INTO `order_items`(`order_id`, `product_id`, `quantity`, `sub_total`) VALUES ($orderId, $id, $quantity, $subtotal)";
+                $orderItemQuery = "INSERT INTO `order_items`
+                (`order_id`, `product_id`, `quantity`, `total_amount`)
+                VALUES
+                ($orderId, $id, $quantity, $subtotal)";
                 $conn->query($orderItemQuery);
             }
         }
-        // clear cart
+
         unset($_SESSION['cart']);
-        echo "<script>toastr.success('Order placed successfully!');setTimeout(() => { window.location = 'my-orders.php' }, 2000);</script>";
+        echo "<script>toastr.success('Order placed successfully!'); setTimeout(() => { window.location = 'my-orders.php'; }, 2000);</script>";
     } else {
-        echo "<script>toastr.error('Failed to place order!');</script>";
+        echo "<script>toastr.error('Failed to place order: " . addslashes($conn->error) . "');</script>";
     }
 }
+
 
 
 
@@ -71,28 +76,29 @@ if (isset($_POST['place_order'])) {
     <h1 class="text-primary mb-5 text-center text-decoration-underline mt-4">Products Checkout</h1>
     <div class="row">
 
+        <!-- billing address section -->
         <div class="col-lg-4 col-md-5 col-sm-12 mt-2">
 
             <h3 class="mb-4 text-center text-decoration-underline">Billing Address</h3>
 
             <form action="" method="post" class=" mb-sm-2 ">
                 <!-- login ser id in hidden field -->
-                <input type="hidden" name="user_id" value="<?= $_SESSION['link3Tech']['id'] ?? null ?>">
-                <input type="hidden" name="user_email" value="<?= $_SESSION['link3Tech']['email'] ?? null ?>">
+                <input type="hidden" name="user_id" value="<?= $_SESSION['imran_store']['id'] ?? null ?>">
+                <input type="hidden" name="user_email" value="<?= $_SESSION['imran_store']['email'] ?? null ?>">
 
 
                 <!-- name section -->
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required
-                        value="<?= $_SESSION['link3Tech']['name'] ?? null ?>">
+                        value="<?= $_SESSION['imran_store']['name'] ?? null ?>">
                 </div>
 
                 <!-- email section -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address:</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
-                        required value="<?= $_SESSION['link3Tech']['email'] ?? null ?>">
+                        required value="<?= $_SESSION['imran_store']['email'] ?? null ?>">
                 </div>
 
                 <!-- number section -->
@@ -120,6 +126,9 @@ if (isset($_POST['place_order'])) {
         </div>
 
 
+
+
+        <!-- order summary section -->
         <div class="col-lg-8 col-md-7 col-sm-12 mt-lg-0  mt-md-4">
 
             <p class="d-lg-block d-md-none d-sm-block">
@@ -196,9 +205,8 @@ if (isset($_POST['place_order'])) {
                         </div>
                     </div>
 
+
                     <!-- pay now -->
-
-
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="payment_method" id="pay_now" value="pay_now">
                         <label class="form-check-label" for="pay_now">Pay Now</label>
@@ -211,8 +219,8 @@ if (isset($_POST['place_order'])) {
                 </div>
 
                 <div class="col-lg-8 col-md-7">
-                    <img src="assets/img/payment_method.jpg" alt="payment_method"
-                        class=" mt-3 border border-primary rounded-4" id="payment_method" style="max-width: 100%;">
+                    <img src="assets/img/payment_method.jpg" alt="payment_method" class=" mt-3 rounded-4"
+                        id="payment_method" style="max-width: 100%; border: 1px solid #6d5ce8 !important;">
                 </div>
 
             </div>

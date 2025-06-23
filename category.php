@@ -39,7 +39,8 @@ if ($result->num_rows > 0) {
             <div class="card h-100">
                 <img src="./assets/img/products/<?= $product['images'] ?>"
                     alt="<?= htmlspecialchars($product['name']) ?>" class="card-img-top img-thumbnail p-2"
-                    style="height: 200px; object-fit: contain;">
+                    style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
+
                 <div class="card-body">
                     <h5 class="card-title text-truncate"
                         style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">

@@ -114,8 +114,9 @@ require_once './components/header.php';
                                     <?= number_format($product['sales_price']) ?></p>
                             </div>
 
-                            <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns "
-                                style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                            <a href="single-product.php?id=<?= $product['id'] ?>"
+                                class="viewDetailsBtns futuresProductsBTN"
+                                style="color: white; background-color: #6d5ce8; text-decoration: none; border-radius: 5px;">View
                                 Details</a>
                         </div>
 
@@ -213,7 +214,7 @@ require_once './components/header.php';
                                     at Home Still Spark</h5>
                                 <p class="h6 text-info ps-3">$20.89</p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -242,7 +243,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -271,7 +272,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -300,7 +301,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -329,7 +330,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -358,7 +359,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -387,7 +388,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -416,7 +417,7 @@ require_once './components/header.php';
                                     <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                                 </p>
                             </a>
-                            <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3"
+                            <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
                                 <svg width="12" height="12" viewbox="0 0 12 12" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -475,8 +476,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -501,8 +502,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -528,8 +529,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -555,8 +556,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -584,8 +585,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -611,8 +612,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -640,8 +641,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -667,8 +668,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -695,8 +696,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -723,8 +724,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -751,8 +752,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -780,8 +781,8 @@ require_once './components/header.php';
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">

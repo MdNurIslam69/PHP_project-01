@@ -503,3 +503,17 @@ footer {
     margin-top: -15px !important;
   }
 }
+
+@media screen and (max-width: 1750px) {
+  .futuresProductsBTN {
+    font-size: 14px !important;
+    padding: 7px 9px !important;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .futuresProductsBTN {
+    font-size: 16px !important;
+    padding: 9px 12px !important;
+  }
+}

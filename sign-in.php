@@ -3,7 +3,7 @@ ob_start();
 $title = "Sign In | Imran_Store";
 require_once 'components/header.php';
 
-if (isset($_SESSION['link3Tech'])) {
+if (isset($_SESSION['imran_store'])) {
     header("Location: index.php");
     exit();
 }
@@ -57,7 +57,7 @@ if (isset($_POST['signIn123'])) {
                     echo "<script>toastr.error('Incorrect Password');</script>";
                     setcookie("tryCount", $_COOKIE['tryCount'] + 1, time() + (60 * 30), "/");
                 } else {
-                    $_SESSION['link3Tech'] = $user;
+                    $_SESSION['imran_store'] = $user;
                     echo "
                     <script>
                     toastr.success('Sign in Successfully');

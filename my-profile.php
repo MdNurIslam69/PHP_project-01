@@ -9,13 +9,13 @@ $allCountryList = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
 
 
 
-if (!isset($_SESSION['link3Tech'])) {
+if (!isset($_SESSION['imran_store'])) {
     header('location: sign-in.php');
     exit();
 }
 
 // pg_fetch_object 
-$userId = $_SESSION['link3Tech']['id'];
+$userId = $_SESSION['imran_store']['id'];
 $userInfo = $conn->query("SELECT * FROM `users` WHERE `id` = '$userId'")->fetch_assoc();
 
 
@@ -81,7 +81,7 @@ if (isset($_POST['updateProfile'])) {
         $sql = "UPDATE `users` SET `name` = '$crrName', `email` = '$crrEmail', `gender` = '$crrGender', `address` = '$crrAddress', `country` = '$crrCountry' WHERE id = '$userId'";
 
         if ($conn->query($sql)) {
-            $_SESSION['link3Tech'] = $conn->query("SELECT * FROM `users` WHERE `id` = $userId")->fetch_assoc();
+            $_SESSION['imran_store'] = $conn->query("SELECT * FROM `users` WHERE `id` = $userId")->fetch_assoc();
             echo "<script>toastr.success('User Update Successfully');
         //  setTimeout(() => {
         //      window.location.href = 'index.php';
@@ -164,9 +164,9 @@ if (isset($_POST['updateProfile'])) {
                         <option value="">Select Country</option>
 
                         <?php foreach ($allCountryList as $countries) { ?>
-                        <option value="<?= $countries ?>"
-                            <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
-                            <?= $countries ?></option>
+                            <option value="<?= $countries ?>"
+                                <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
+                                <?= $countries ?></option>
                         <?php } ?>
                     </select>
 
@@ -217,14 +217,14 @@ if (isset($_POST['updateProfile'])) {
 
 <!-- quill editor -->
 <script>
-const quill = new Quill('#editor', {
-    theme: 'snow',
+    const quill = new Quill('#editor', {
+        theme: 'snow',
 
-});
-$('#editor').on('keyup', function() {
-    const html = quill.root.innerHTML;
-    $('#hiddenAddress').val(html);
-});
+    });
+    $('#editor').on('keyup', function() {
+        const html = quill.root.innerHTML;
+        $('#hiddenAddress').val(html);
+    });
 </script>
 
 

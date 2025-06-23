@@ -34,8 +34,8 @@ $productsResult = $conn->query($productsQuery);
                 <h4 class="text-primary mb-3 text-center text-decoration-underline">Categories</h4>
 
                 <?php while ($category = $categoriesResult->fetch_assoc()): ?>
-                <a href="category.php?id=<?= $category['id'] ?>"
-                    class="list-group-item list-group-item-action <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>"><?= htmlspecialchars($category['name']) ?></a>
+                    <a href="category.php?id=<?= $category['id'] ?>"
+                        class="list-group-item list-group-item-action <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>"><?= htmlspecialchars($category['name']) ?></a>
 
                 <?php endwhile; ?>
 
@@ -49,28 +49,28 @@ $productsResult = $conn->query($productsQuery);
             <div class="row">
 
                 <?php while ($product = $productsResult->fetch_assoc()): ?>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/img/products/<?= $product['images'] ?>"
-                            alt="<?= htmlspecialchars($product['product_name']) ?>"
-                            class="card-img-top img-thumbnail p-2"
-                            style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="card h-100">
+                            <img src="./assets/img/products/<?= $product['images'] ?>"
+                                alt="<?= htmlspecialchars($product['product_name']) ?>"
+                                class="card-img-top img-thumbnail p-2"
+                                style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
 
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate"
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <?= htmlspecialchars($product['product_name']) ?>
-                            </h5>
+                            <div class="card-body">
+                                <h5 class="card-title text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?= htmlspecialchars($product['product_name']) ?>
+                                </h5>
 
-                            <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
+                                <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
 
-                            <p class="card-text">Price: $<?= number_format($product['sales_price']) ?></p>
-                            <a href="single-product.php?id=<?= $product['product_id'] ?>" class="btn btn-primary">View
-                                Details</a>
+                                <p class="card-text">Price: $<?= number_format($product['sales_price']) ?></p>
+                                <a href="single-product.php?id=<?= $product['product_id'] ?>" class="btn btn-primary">View
+                                    Details</a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endwhile; ?>
 
 
@@ -117,7 +117,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -143,7 +143,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -170,7 +170,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -197,7 +197,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -226,7 +226,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -253,7 +253,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -282,7 +282,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -309,7 +309,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -337,7 +337,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -365,7 +365,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -393,7 +393,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -422,7 +422,7 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-2 d-flex align-items-center justify-content-center border rounded-3" href="#"
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
                         style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
@@ -469,32 +469,32 @@ $productsResult = $conn->query($productsQuery);
                     $featuresProductsResult = $conn->query($featuresProductsQuery);
                     while ($product = $featuresProductsResult->fetch_assoc()):
                     ?>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4 ">
-                        <div class="card h-100">
-                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                                style="height: 100%; width: 100%;">
-                            <div class="card-body ">
-                                <h5 class="card-title text-truncate"
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    <?= $product['name'] ?></h5>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 ">
+                            <div class="card h-100">
+                                <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                    class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                    style="height: 100%; width: 100%;">
+                                <div class="card-body ">
+                                    <h5 class="card-title text-truncate"
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <?= $product['name'] ?></h5>
 
-                                <div class="d-flex  gap-md-3 gap-sm-3 py-2">
-                                    <p class="h6">Price: <span
-                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                            <?= number_format($product['regular_price']) ?></span>
-                                    </p>
+                                    <div class="d-flex  gap-md-3 gap-sm-3 py-2">
+                                        <p class="h6">Price: <span
+                                                class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                                <?= number_format($product['regular_price']) ?></span>
+                                        </p>
 
-                                    <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                        <?= number_format($product['sales_price']) ?></p>
+                                        <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                            <?= number_format($product['sales_price']) ?></p>
+                                    </div>
+
+                                    <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
+                                        style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                        Details</a>
                                 </div>
-
-                                <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
-                                    style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
-                                    Details</a>
                             </div>
                         </div>
-                    </div>
                     <?php endwhile; ?>
                 </div>
             </div>

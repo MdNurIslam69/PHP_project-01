@@ -5,13 +5,13 @@ require_once './components/header.php';
 
 
 
-if (!isset($_SESSION['link3Tech'])) {
+if (!isset($_SESSION['imran_store'])) {
     header('location: sign-in.php');
     exit();
 }
 
 // pg_fetch_object 
-$userId = $_SESSION['link3Tech']['id'];
+$userId = $_SESSION['imran_store']['id'];
 
 
 // if (isset($_POST['changePassword'])) {
@@ -208,15 +208,15 @@ if (isset($_POST['changePassword'])) {
 
 <!-- this js for (change password) show password in checkbox -->
 <script>
-$(document).ready(function() {
-    $('#showPass').click(function() {
-        if ($(this).is(':checked')) {
-            $('input[type="password"]').attr('type', 'text');
-        } else {
-            $('input[type="text"]').attr('type', 'password');
-        }
+    $(document).ready(function() {
+        $('#showPass').click(function() {
+            if ($(this).is(':checked')) {
+                $('input[type="password"]').attr('type', 'text');
+            } else {
+                $('input[type="text"]').attr('type', 'password');
+            }
+        });
     });
-});
 </script>
 
 

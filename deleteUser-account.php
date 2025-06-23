@@ -6,7 +6,7 @@ require_once('./components/header.php');
 
 // delete account section
 if (isset($_POST['deleteUser'])) {
-    $userId = $_SESSION['link3Tech']['id'];
+    $userId = $_SESSION['imran_store']['id'];
     $deleteQuery = "DELETE FROM `users` WHERE `id` = '$userId'";
     if ($conn->query($deleteQuery)) {
         session_unset();

@@ -3,7 +3,7 @@ ob_start();
 $title = "Sign Up | Imran_Store";
 require_once 'components/header.php';
 
-if (isset($_SESSION['link3Tech'])) {
+if (isset($_SESSION['imran_store'])) {
     header("Location: index.php");
     exit();
 }

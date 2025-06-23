@@ -15,13 +15,13 @@
 
             <!-- its for admin Dashboard logo responsive -->
             <style>
-                .myIcons-1 {
-                    @media screen and (max-width: 576px) {
-                        width: 50px !important;
-                        margin-top: 1px !important;
+            .myIcons-1 {
+                @media screen and (max-width: 576px) {
+                    width: 50px !important;
+                    margin-top: 1px !important;
 
-                    }
                 }
+            }
             </style>
         </div>
 
@@ -69,7 +69,8 @@
 
 
                         <li><i class="menu-icon fa fa-fort-awesome"></i><a href="product-categories.php"
-                                style="font-weight: <?= $pageName == "product-categories.php" ? "bold" : "regular" ?>">Categories</a>
+                                style="font-weight: <?= $pageName == "product-categories.php" ? "bold" : "regular" ?>">Products
+                                Category</a>
                         </li>
 
 

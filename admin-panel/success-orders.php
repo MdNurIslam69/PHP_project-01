@@ -8,7 +8,8 @@ if (isset($_POST['updateStatus'])) {
 
     $order_item_id = $_POST['order_item_id'];
     $status = $_POST['status'];
-    $updateQuery = "UPDATE `order_items` SET `status` = '$status' WHERE `id` = '$order_item_id'";
+    $updateQuery = "UPDATE `orders` SET `status` = '$status' WHERE `id` = (SELECT order_id FROM order_items WHERE id = '$order_item_id')";
+
     if ($conn->query($updateQuery) === TRUE) {
         echo "<script>toastr.success('Status updated successfully!');</script>";
     } else {
@@ -25,8 +26,9 @@ FROM order_items
 INNER JOIN orders ON order_items.order_id = orders.id 
 INNER JOIN products ON order_items.product_id = products.id 
 INNER JOIN users ON orders.user_id = users.id 
-WHERE order_items.status != 'pending' AND order_items.status = 'success'
+WHERE orders.status = 'Success'
 ";
+
 
 
 $result = $conn->query($query);
@@ -44,7 +46,7 @@ $result = $conn->query($query);
                 Orders
             </h1>
 
-            <div class="page-header float-left">
+            <div>
                 <div class="">
 
                     <?php
@@ -102,7 +104,7 @@ $result = $conn->query($query);
                                         <td class="text-center align-middle"
                                             style="border: 1px solid black;  font-weight: bold;">
                                             <i class="fa-solid fa-bangladeshi-taka-sign pe-1 fw-bold"> </i>
-                                            <?= number_format($row['sub_total'], 2) ?>
+                                            <?= number_format($row['total_amount'], 2) ?>
                                         </td>
 
                                         <td class="text-center align-middle p-3" style="border: 1px solid black">
@@ -150,12 +152,15 @@ $result = $conn->query($query);
                                     </tr>
 
 
-                            <?php
+                                <?php
                                 }
-                            } else {
-                                echo "<p>No pending orders found</p>";
-                            }
-                            ?>
+                            } else { ?>
+
+                                <br><br><br><br>
+                                <p class="text-center text-danger" style="font-size: 30px;">No Success orders
+                                    found</p>
+
+                            <?php } ?>
                             </tbody>
                         </table>
                 </div>
