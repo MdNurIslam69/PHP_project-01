@@ -38,7 +38,7 @@ if (isset($_GET['token'])) {
 }
 ?>
 
-<!-- Forget Password Form -->
+<!-- Reset Password Form -->
 <section style="background-color: #d9ebeaa9;">
     <div class="container">
         <div class="row py-3">
@@ -67,7 +67,7 @@ if (isset($_GET['token'])) {
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="btn btn-primary" name="submit">Reset Password</button>
+                    <button type="submit" class="btn btn-primary mt-2" name="submit">Reset Password</button>
                 </form>
             </div>
         </div>

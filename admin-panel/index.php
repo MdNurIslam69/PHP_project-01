@@ -1,8 +1,8 @@
+<title><?php echo isset($title) ? $title : "Admin Dashboard | Imran_Store"; ?></title>
+
 <?php
-$title = "Dashboard | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
-
 
 ?>
 

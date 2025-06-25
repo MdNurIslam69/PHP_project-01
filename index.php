@@ -64,7 +64,7 @@ require_once './components/header.php';
 
 <!-- hero section-1 bottom (hr) -->
 <div>
-    <hr class="container heroSection-hr">
+    <div class="container heroSection-hr horizontalLine"></div>
 </div>
 
 
@@ -130,18 +130,20 @@ require_once './components/header.php';
 
 
     <!-- hr -->
-    <hr class="d-lg-none d-md-none d-sm-block">
+
+    <div class="d-lg-none d-md-none d-sm-block horizontalLine">
+    </div>
 
 
     <!-- inter section -->
     <div class="col-lg-10 col-md-8 col-sm-12 ">
 
         <!-- New Arrival Section start -->
-        <section class="py-20 bg-white overflow-hidden">
+        <section class="py-20 bg-white overflow-hidden ">
             <div class="container mt-3 p-0">
                 <h2 class="forSame-color text-center text-decoration-underline mb-4">New Arrival </h2>
 
-                <div class="row">
+                <div class="row varticalLine">
                     <?php
                     // select random 5 products from the database
                     $featuresProductsQuery = "SELECT * FROM products ORDER BY RAND() LIMIT 8";
@@ -179,7 +181,7 @@ require_once './components/header.php';
                 </div>
             </div>
             <!-- button -->
-            <div class="text-center mt-0 mb-3"><a class="viewDetailsBtns"
+            <div class="text-center mt-2 mb-3"><a class="viewDetailsBtns"
                     style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;"
                     href="index.php#featuresArrivalProduct">Click
                     to Show More</a>
@@ -190,15 +192,17 @@ require_once './components/header.php';
 
         <!-- hr -->
         <div class="mt-4 mb-2 px-0">
-            <hr>
+            <div class="container horizontalLine">
+
+            </div>
         </div>
 
 
         <!-- Best Sellers Books start -->
         <section class="py-10 bg-white overflow-hidden">
             <div class="container mt-4 p-0">
-                <h2 class="forSame-color text-center mb-4 text-decoration-underline">Best Sellers Books</h2>
-                <div class="row mb-24">
+                <h2 class="forSame-color text-center mb-4 text-decoration-underline mt-5">Best Sellers Books</h2>
+                <div class="row mb-24 varticalLine">
                     <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
 
                         <div class="p-6 bg-light rounded mb-0 border rounded-1">
@@ -431,7 +435,7 @@ require_once './components/header.php';
 
                 </div>
                 <!-- button -->
-                <div class="text-center mt-0 mb-2"><a class="viewDetailsBtns"
+                <div class="text-center mt-2 mb-2"><a class="viewDetailsBtns"
                         style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;"
                         href="index.php#featuresArrivalProduct">Click
                         to Show More</a>
@@ -448,7 +452,7 @@ require_once './components/header.php';
 
 <!-- hr -->
 <div class="mt-4 mb-2 container px-0 newArrival-hr">
-    <hr>
+    <div class="horizontalLine"></div>
 </div>
 
 
@@ -457,7 +461,7 @@ require_once './components/header.php';
 
 <section class="py-20 bg-white overflow-hidden">
     <div class="container mt-3 px-lg-0 px-md-0 px-sm-1">
-        <h2 class="forSame-color text-center mb-4 text-decoration-underline mt-4">Discover Our Products</h2>
+        <h2 class="forSame-color text-center mb-4 text-decoration-underline mt-5">Discover Our Products</h2>
         <div class="row mb-24">
 
             <div class="col-12 col-md-6 col-lg-3">

@@ -1,5 +1,6 @@
+<title><?php echo isset($title) ? $title : "Success Orders | Imran_Store"; ?></title>
+
 <?php
-$title = "All Orders | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
 

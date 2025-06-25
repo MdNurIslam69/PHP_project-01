@@ -4,6 +4,26 @@ body {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1750px) and (min-width: 775px) {
+  .varticalLine {
+    border-left: 1px solid #026fff;
+    padding-left: 13px !important;
+    margin-left: 1px !important;
+  }
+}
+
+.horizontalLine {
+  height: 1px !important;
+  background-color: #026fff;
+}
+
+@media screen and (max-width: 775px) {
+  .horizontalLine {
+    height: 1px !important;
+    background-color: #026fff;
+  }
+}
+
 /*.. 
 /* hero section start */
 .bg-primary-subtle {

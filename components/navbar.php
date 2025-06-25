@@ -39,74 +39,74 @@
                 <?php
                 if (!isset($_SESSION['imran_store'])) { ?>
 
-                    <li class="nav-item">
-                        <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in.php">Sign
-                            In</a>
+                <li class="nav-item">
+                    <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in.php">Sign
+                        In</a>
 
-                    </li>
+                </li>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up.php">Sign
-                            Up</a>
+                <li class="nav-item">
+                    <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up.php">Sign
+                        Up</a>
 
-                    </li>
+                </li>
 
                 <?php } else { ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle me-4 <?= $pageName == 'my-profile.php' || $pageName == 'change-password.php' || $pageName == 'change-profile-picture.php' || $pageName == 'my-orders.php' || $pageName == '../admin-panel' ? 'active' : null ?>"
-                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle me-4 <?= $pageName == 'my-profile.php' || $pageName == 'change-password.php' || $pageName == 'change-profile-picture.php' || $pageName == 'my-orders.php' || $pageName == '../admin-panel' ? 'active' : null ?>"
+                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                            <?php
+                        <?php
                             $fullNameArray = explode(" ", $_SESSION['imran_store']['name']);
                             echo $fullNameArray[1];
                             ?>
-                        </a>
+                    </a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item <?= $pageName == 'my-profile.php' ? 'active' : null ?>"
-                                    href="my-profile.php">My Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-
-                            <li><a class="dropdown-item <?= $pageName == 'change-password.php' ? 'active' : null ?>"
-                                    href="change-password.php">Change Password</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item <?= $pageName == 'my-profile.php' ? 'active' : null ?>"
+                                href="my-profile.php">My Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
 
-                            <li><a class="dropdown-item <?= $pageName == 'change-profile-picture.php' ? 'active' : null ?>"
-                                    href="change-profile-picture.php">Change Profile Picture</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
+                        <li><a class="dropdown-item <?= $pageName == 'change-password.php' ? 'active' : null ?>"
+                                href="change-password.php">Change Password</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
 
-                            <li><a class="dropdown-item <?= $pageName == 'my-orders.php' ? 'active' : null ?>"
-                                    href="my-orders.php">My Orders</a></li>
+                        <li><a class="dropdown-item <?= $pageName == 'change-profile-picture.php' ? 'active' : null ?>"
+                                href="change-profile-picture.php">Change Profile Picture</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+
+                        <li><a class="dropdown-item <?= $pageName == 'my-orders.php' ? 'active' : null ?>"
+                                href="my-orders.php">My Orders</a></li>
 
 
 
-                            <?php if ($_SESSION['imran_store']['role'] == 'admin') { ?>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
+                        <?php if ($_SESSION['imran_store']['role'] == 'admin') { ?>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
 
-                                <li><a class="dropdown-item <?= $pageName == 'admin-panel.php' ? 'active' : null ?>"
-                                        href="admin-panel">Admin Panel</a></li>
-                            <?php } ?>
+                        <li><a class="dropdown-item <?= $pageName == 'admin-panel.php' ? 'active' : null ?>"
+                                href="admin-panel">Admin Panel</a></li>
+                        <?php } ?>
 
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item <?= $pageName == 'logout.php' ? 'active' : null ?>"
-                                    href="logout.php">Log out</a></li>
-                        </ul>
-                    </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item <?= $pageName == 'logout.php' ? 'active' : null ?>"
+                                href="logout.php">Log out</a></li>
+                    </ul>
+                </li>
                 <?php } ?>
 
 

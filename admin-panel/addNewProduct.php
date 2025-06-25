@@ -1,5 +1,7 @@
+<title><?php echo isset($title) ? $title : "Add Products | Imran_Store"; ?></title>
+
+
 <?php
-$title = "Add New Product | Imran_Store";
 require_once('header.php');
 require_once('sidebar.php');
 
@@ -184,9 +186,9 @@ if (isset($_POST['addProduct'])) {
                             $getCategoryResult = $conn->query("SELECT * FROM `products_category`");
                             while ($category = $getCategoryResult->fetch_assoc()) {
                             ?>
-                            <option value="<?= $category['name'] ?>" data-id="<?= $category['id'] ?>"
-                                <?= isset($category_name) && $category_name == $category['name'] ? 'selected' : '' ?>>
-                                <?= $category['name'] ?></option>
+                                <option value="<?= $category['name'] ?>" data-id="<?= $category['id'] ?>"
+                                    <?= isset($category_name) && $category_name == $category['name'] ? 'selected' : '' ?>>
+                                    <?= $category['name'] ?></option>
                             <?php } ?>
                         </select>
                         <div class="invalid-feedback">
@@ -230,10 +232,10 @@ if (isset($_POST['addProduct'])) {
 <!-- JS to auto-fill Category ID,
  its for just automaticly filling category id, when category name is selected -->
 <script>
-document.getElementById('categorySelect').addEventListener('change', function() {
-    var selected = this.options[this.selectedIndex];
-    document.getElementById('categoryIdInput').value = selected.getAttribute('data-id') || '';
-});
+    document.getElementById('categorySelect').addEventListener('change', function() {
+        var selected = this.options[this.selectedIndex];
+        document.getElementById('categoryIdInput').value = selected.getAttribute('data-id') || '';
+    });
 </script>
 
 <?php require_once('footer.php'); ?>

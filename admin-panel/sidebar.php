@@ -27,21 +27,27 @@
 
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="./"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                <li>
+                    <a href="index.php" class="font-weight-bold"
+                        style=" color: <?= $pageName == "index.php" ? "white !important" : "" ?>">
+                        <i class="menu-icon fa-solid fa-house"
+                            style="color: <?= $pageName == "index.php" ? "white !important" : "" ?>"></i>Dashboard </a>
                 </li>
+
+
+
                 <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Slider</a>
 
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
+                        <li><i class="menu-icon fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
 
-                        <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
+                        <li><i class="menu-icon fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
 
 
-                        <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Add New Slider</a></li>
+                        <li><i class="menu-icon fa fa-id-badge"></i><a href="ui-badges.html">Add New Slider</a></li>
 
                     </ul>
                 </li>
@@ -49,80 +55,105 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Contact Info</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Info</a></li>
-                        <li><i class="fa fa-table"></i><a href="footer.php#footerSection">Social Media</a>
+                        <li><i class="menu-icon fa fa-table"></i><a href="tables-basic.html">Basic Info</a></li>
+                        <li><i class="menu-icon fa fa-table"></i><a href="footer.php#footerSection">Social Media</a>
                         </li>
                     </ul>
                 </li>
 
 
-                <h3 class="menu-title">E-commerce</h3><!-- /.menu-title -->
+                <h3 class="menu-title text-primary">E-commerce</h3><!-- /.menu-title -->
 
+                <!-- product section -->
                 <li
                     class="menu-item-has-children dropdown <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "show" : null ?>">
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="<?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? true : false ?>">
-                        <i class="menu-icon fa fa-tasks"></i>Products</a>
+                        aria-expanded="<?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? true : false ?>"
+                        style="color: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "yellow !important" : "" ?>">
+                        <i class="menu-icon fa-solid fa-shop"
+                            style="color: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "yellow !important" : "" ?>"></i>Products</a>
                     <ul
                         class="sub-menu children dropdown-menu <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "show" : null ?>">
 
-
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="product-categories.php"
-                                style="font-weight: <?= $pageName == "product-categories.php" ? "bold" : "regular" ?>">Products
+                        <!-- product category -->
+                        <li><i class="menu-icon fa-solid fa-table"
+                                style="color: <?= $pageName == "product-categories.php" ? "white !important" : "" ?>"></i><a
+                                href="product-categories.php"
+                                style="font-weight: <?= $pageName == "product-categories.php" ? "bold" : "regular" ?>; color: <?= $pageName == "product-categories.php" ? "white !important" : "" ?>">Products
                                 Category</a>
                         </li>
 
-
-                        <li><i class="menu-icon fa fa-fort-awesome"></i><a href="allProducts.php"
-                                style="font-weight: <?= $pageName == "allProducts.php" ? "bold" : "regular" ?>">All
+                        <!-- all products -->
+                        <li><i class="menu-icon fa-solid fa-list"
+                                style="color: <?= $pageName == "allProducts.php" ? "white !important" : "" ?>"></i><a
+                                href="allProducts.php"
+                                style="font-weight: <?= $pageName == "allProducts.php" ? "bold" : "regular" ?> ; color: <?= $pageName == "allProducts.php" ? "white !important" : "" ?>">All
                                 Products</a>
                         </li>
 
 
-                        <li><i class="menu-icon ti-themify-logo"></i><a href="addNewProduct.php"
-                                style="font-weight: <?= $pageName == "addNewProduct.php" ? "bold" : "regular" ?>">Add
+                        <li><i class="menu-icon fa-solid fa-notes-medical"
+                                style="color: <?= $pageName == "addNewProduct.php" ? "white !important" : "" ?>"></i><a
+                                href="addNewProduct.php"
+                                style="font-weight: <?= $pageName == "addNewProduct.php" ? "bold" : "regular" ?> ; color: <?= $pageName == "addNewProduct.php" ? "white !important" : "" ?>">Add
                                 New Products</a>
                         </li>
                     </ul>
                 </li>
 
 
+                <!-- order section -->
                 <li
-                    class="menu-item-has-children dropdown
-                <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "show" : null ?>">
+                    class="menu-item-has-children dropdown <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "show" : null ?>">
 
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="<?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? true : false ?>"><i
-                            class="menu-icon fa fa-bar-chart"></i>Orders</a>
-
+                        aria-expanded="<?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? true : false ?>"
+                        style="color: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "yellow !important" : "" ?>"><i
+                            class="menu-icon fa-solid fa-cart-shopping"
+                            style="color: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "yellow !important" : "" ?>"></i>Orders</a>
 
                     <ul
                         class="sub-menu children dropdown-menu <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "show" : null ?>">
 
-                        <li><i class="menu-icon fa fa-area-chart"></i><a href="pending-orders.php"
-                                style="font-weight: <?= $pageName == "pending-orders.php" ? "bold" : "regular" ?>">Pending
+                        <!-- pending orders -->
+                        <li><i class="menu-icon fa-solid fa-spinner"
+                                style="color: <?= $pageName == "pending-orders.php" ? "white !important" : "" ?>"></i><a
+                                href="pending-orders.php"
+                                style="font-weight: <?= $pageName == "pending-orders.php" ? "bold" : "regular" ?>; color: <?= $pageName == "pending-orders.php" ? "white !important" : "" ?>">Pending
                                 Orders</a>
                         </li>
 
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="shifted-orders.php"
-                                style="font-weight: <?= $pageName == "shifted-orders.php" ? "bold" : "regular" ?>">Shifted
+                        <!-- shifted orders -->
+                        <li><i class="menu-icon fa-solid fa-truck-fast"
+                                style="color: <?= $pageName == "shifted-orders.php" ? "white !important" : "" ?>"></i><a
+                                href="shifted-orders.php"
+                                style="font-weight: <?= $pageName == "shifted-orders.php" ? "bold" : "regular" ?>; color: <?= $pageName == "shifted-orders.php" ? "white !important" : "" ?>">Shifted
                                 Orders</a>
                         </li>
 
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="success-orders.php"
-                                style="font-weight: <?= $pageName == "success-orders.php" ? "bold" : "regular" ?>">Success
+                        <!-- success orders -->
+                        <li><i class="menu-icon fa-solid fa-circle-check"
+                                style="color: <?= $pageName == "success-orders.php" ? "white !important" : "" ?>"></i><a
+                                href="success-orders.php"
+                                style="font-weight: <?= $pageName == "success-orders.php" ? "bold" : "regular" ?>; color: <?= $pageName == "success-orders.php" ? "white !important" : "" ?>">Success
                                 Orders</a>
                         </li>
 
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="refunded-orders.php"
-                                style="font-weight: <?= $pageName == "refunded-orders.php" ? "bold" : "regular" ?>">Refunded
+                        <!-- refunded orders -->
+                        <li><i class="menu-icon fa-solid fa-arrows-rotate"
+                                style="color: <?= $pageName == "refunded-orders.php" ? "white !important" : "" ?>"></i><a
+                                href="refunded-orders.php"
+                                style="font-weight: <?= $pageName == "refunded-orders.php" ? "bold" : "regular" ?>; color: <?= $pageName == "refunded-orders.php" ? "white !important" : "" ?>">Refunded
                                 Orders</a>
                         </li>
 
-                        <li><i class="menu-icon fa fa-pie-chart"></i><a href="cancel-orders.php"
-                                style="font-weight: <?= $pageName == "cancel-orders.php" ? "bold" : "regular" ?>">Cancel
+                        <!-- refunded orders -->
+                        <li><i class="menu-icon fa-solid fa-ban"
+                                style="color: <?= $pageName == "cancel-orders.php" ? "white !important" : "" ?>"></i><a
+                                href="cancel-orders.php"
+                                style="font-weight: <?= $pageName == "cancel-orders.php" ? "bold" : "regular" ?>; color: <?= $pageName == "cancel-orders.php" ? "white !important" : "" ?>">Cancel
                                 Orders</a>
                         </li>
                     </ul>

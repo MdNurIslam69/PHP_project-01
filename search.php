@@ -23,8 +23,10 @@ $result = $conn->query($sql);
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center text-primary mt-5 mb-4 text-decoration-underline">Search
-                Result:_<?= htmlspecialchars($query) ?></h2>
+            <h2 class="text-center text-primary mt-5 mb-4" style="text-decoration: underline;">Search
+                Result:-
+                <span class="text-dark" style="text-decoration: underline;"><?= htmlspecialchars($query) ?></span>
+            </h2>
             <?php if ($result->num_rows > 0): ?>
 
             <div class="row">
