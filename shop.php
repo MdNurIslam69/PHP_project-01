@@ -39,11 +39,11 @@ $productsResult = $conn->query($productsQuery);
                 <h4 class="text-primary mb-3 text-center text-decoration-underline">Categories</h4>
 
                 <?php while ($category = $categoriesResult->fetch_assoc()): ?>
-                <a href="category.php?id=<?= $category['id'] ?>"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>">
-                    <?= htmlspecialchars($category['name']) ?>
-                    <span class="badge text-muted p-0">(<?= $category['total_products'] ?>)</span>
-                </a>
+                    <a href="category.php?id=<?= $category['id'] ?>"
+                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>">
+                        <?= htmlspecialchars($category['name']) ?>
+                        <span class="badge text-muted p-0">(<?= $category['total_products'] ?>)</span>
+                    </a>
                 <?php endwhile; ?>
 
             </div>
@@ -59,28 +59,28 @@ $productsResult = $conn->query($productsQuery);
             <div class="row">
 
                 <?php while ($product = $productsResult->fetch_assoc()): ?>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/img/products/<?= $product['images'] ?>"
-                            alt="<?= htmlspecialchars($product['product_name']) ?>"
-                            class="card-img-top img-thumbnail p-2"
-                            style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="card h-100">
+                            <img src="./assets/img/products/<?= $product['images'] ?>"
+                                alt="<?= htmlspecialchars($product['product_name']) ?>"
+                                class="card-img-top img-thumbnail p-2"
+                                style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
 
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate"
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <?= htmlspecialchars($product['product_name']) ?>
-                            </h5>
+                            <div class="card-body">
+                                <h5 class="card-title text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?= htmlspecialchars($product['product_name']) ?>
+                                </h5>
 
-                            <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
+                                <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
 
-                            <p class="card-text">Price: $<?= number_format($product['sales_price']) ?></p>
-                            <a href="single-product.php?id=<?= $product['product_id'] ?>" class="btn btn-primary">View
-                                Details</a>
+                                <p class="card-text">Price: $<?= number_format($product['sales_price']) ?></p>
+                                <a href="single-product.php?id=<?= $product['product_id'] ?>" class="btn btn-primary">View
+                                    Details</a>
 
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php endwhile; ?>
 
 
@@ -479,32 +479,32 @@ $productsResult = $conn->query($productsQuery);
                     $featuresProductsResult = $conn->query($featuresProductsQuery);
                     while ($product = $featuresProductsResult->fetch_assoc()):
                     ?>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4 ">
-                        <div class="card h-100">
-                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                                style="height: 100%; width: 100%;">
-                            <div class="card-body ">
-                                <h5 class="card-title text-truncate"
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    <?= $product['name'] ?></h5>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 ">
+                            <div class="card h-100">
+                                <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                    class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                    style="height: 100%; width: 100%;">
+                                <div class="card-body ">
+                                    <h5 class="card-title text-truncate"
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <?= $product['name'] ?></h5>
 
-                                <div class="d-flex  gap-md-3 gap-sm-3 py-2">
-                                    <p class="h6">Price: <span
-                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                            <?= number_format($product['regular_price']) ?></span>
-                                    </p>
+                                    <div class="d-flex  gap-md-3 gap-sm-3 py-2">
+                                        <p class="h6">Price: <span
+                                                class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                                <?= number_format($product['regular_price']) ?></span>
+                                        </p>
 
-                                    <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                        <?= number_format($product['sales_price']) ?></p>
+                                        <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                            <?= number_format($product['sales_price']) ?></p>
+                                    </div>
+
+                                    <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
+                                        style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                        Details</a>
                                 </div>
-
-                                <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
-                                    style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
-                                    Details</a>
                             </div>
                         </div>
-                    </div>
                     <?php endwhile; ?>
                 </div>
             </div>
@@ -527,112 +527,112 @@ $productsResult = $conn->query($productsQuery);
 
 <!-- this internal css for popUp/modal -->
 <style>
-.popUp-img {
-    width: 100%;
-    max-height: 400px;
-}
+    .popUp-img {
+        width: 100%;
+        max-height: 400px;
+    }
 
 
-.offer-content {
-    background-color: rgb(209, 248, 250);
-}
-
-.offer-content h1 {
-    font-family: "Agu Display", serif;
-    font-size: 3rem;
-    margin: 20px;
-    text-align: end;
-    padding-top: 7px;
-
-}
-
-.offer-content h3 {
-    font-size: 1.5rem;
-    text-decoration: underline;
-    text-align: start;
-    transform: rotate(-20deg);
-    margin: 0px;
-    margin-top: -30px;
-    margin-left: -3px;
-}
-
-
-/* responsive title */
-@media screen and (max-width: 500px) {
-    .offer-content h3 {
-        font-size: 1.4rem;
+    .offer-content {
+        background-color: rgb(209, 248, 250);
     }
 
     .offer-content h1 {
-        font-size: 2.9rem;
-    }
-}
+        font-family: "Agu Display", serif;
+        font-size: 3rem;
+        margin: 20px;
+        text-align: end;
+        padding-top: 7px;
 
-@media screen and (max-width: 480px) {
+    }
+
     .offer-content h3 {
-        font-size: 1.3rem;
-    }
-
-    .offer-content h1 {
-        font-size: 2.6rem;
-    }
-
-}
-
-@media screen and (max-width: 440px) {
-    .offer-content h3 {
-        font-size: 1.2rem;
-        margin-top: -26px;
+        font-size: 1.5rem;
+        text-decoration: underline;
+        text-align: start;
+        transform: rotate(-20deg);
+        margin: 0px;
+        margin-top: -30px;
         margin-left: -3px;
     }
 
-    .offer-content h1 {
-        font-size: 2.4rem;
+
+    /* responsive title */
+    @media screen and (max-width: 500px) {
+        .offer-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .offer-content h1 {
+            font-size: 2.9rem;
+        }
     }
 
-}
+    @media screen and (max-width: 480px) {
+        .offer-content h3 {
+            font-size: 1.3rem;
+        }
 
-@media screen and (max-width: 410px) {
-    .offer-content h3 {
-        font-size: 1rem;
-        margin-top: -25px;
-        margin-left: -3px;
+        .offer-content h1 {
+            font-size: 2.6rem;
+        }
+
     }
 
-    .offer-content h1 {
-        font-size: 2rem;
-        padding-top: 10px;
+    @media screen and (max-width: 440px) {
+        .offer-content h3 {
+            font-size: 1.2rem;
+            margin-top: -26px;
+            margin-left: -3px;
+        }
+
+        .offer-content h1 {
+            font-size: 2.4rem;
+        }
+
     }
 
-}
+    @media screen and (max-width: 410px) {
+        .offer-content h3 {
+            font-size: 1rem;
+            margin-top: -25px;
+            margin-left: -3px;
+        }
 
-@media screen and (max-width: 392px) {
-    .offer-content h3 {
-        font-size: 0.9rem;
-        margin-top: -25px;
-        margin-left: -3px;
+        .offer-content h1 {
+            font-size: 2rem;
+            padding-top: 10px;
+        }
+
     }
 
-    .offer-content h1 {
-        font-size: 2rem;
-        padding-top: 10px;
+    @media screen and (max-width: 392px) {
+        .offer-content h3 {
+            font-size: 0.9rem;
+            margin-top: -25px;
+            margin-left: -3px;
+        }
+
+        .offer-content h1 {
+            font-size: 2rem;
+            padding-top: 10px;
+        }
+
     }
 
-}
+    @media screen and (max-width: 365px) {
+        .offer-content h3 {
+            font-size: 0.9rem;
+            margin-top: -20px;
+            margin-left: -3px;
+        }
 
-@media screen and (max-width: 365px) {
-    .offer-content h3 {
-        font-size: 0.9rem;
-        margin-top: -20px;
-        margin-left: -3px;
+        .offer-content h1 {
+            font-size: 2rem;
+            padding-top: 10px;
+        }
+
     }
-
-    .offer-content h1 {
-        font-size: 2rem;
-        padding-top: 10px;
-    }
-
-}
 </style>
 
 <!-- Modal -->
@@ -669,12 +669,12 @@ $productsResult = $conn->query($productsQuery);
 
 <!-- Auto show modal after 3 seconds -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        myModal.show();
-    }, 1000);
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+        }, 3000);
+    });
 </script>
 
 <!-- popUp/Modal section end -->
