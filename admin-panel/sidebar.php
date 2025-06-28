@@ -44,34 +44,22 @@
 
 
 
-                <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Slider</a>
+                <h3 class="menu-title" style="color: rgba(128, 255, 0, 0.516)">Media Queries</h3>
 
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
-
-                        <li><i class="menu-icon fa fa-puzzle-piece"></i><a href="ui-buttons.html">All Slider</a></li>
-
-
-                        <li><i class="menu-icon fa fa-id-badge"></i><a href="ui-badges.html">Add New Slider</a></li>
-
-                    </ul>
-                </li>
-
-                <!-- contact info section -->
+                <!-- contact info section start -->
                 <li
                     class="menu-item-has-children dropdown <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "show" : null ?>">
 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="<?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? true : false ?>"
-                        style="color: <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "yellow !important" : "" ?>">
-                        <i class="menu-icon fa-solid fa-shop"
-                            style="color: <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "yellow !important" : "" ?>"></i>Contact
+                    <a href="#" id="contactInfo" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="<?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? true : false ?>">
+                        <i class="menu-icon fa-solid fa-address-card"></i>Contact
                         Info</a>
                     <ul
                         class="sub-menu children dropdown-menu <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "show" : null ?>">
+
+                        <!-- contact info section end -->
+
+
 
                         <!-- basic info -->
                         <li><i class="menu-icon fa-solid fa-address-card"
@@ -80,6 +68,7 @@
                                 style="font-weight: <?= $pageName == "../contact-us.php" ? "bold" : "regular" ?>; color: <?= $pageName == "../contact-us.php" ? "white !important" : "" ?>">Basic
                                 Info</a>
                         </li>
+
 
                         <!-- social media -->
                         <li><i class="menu-icon fa-solid fa-thumbs-up"
@@ -92,7 +81,7 @@
                 </li>
 
 
-                <h3 class="menu-title text-primary">E-commerce</h3><!-- /.menu-title -->
+                <h3 class="menu-title" style="color: rgba(128, 255, 0, 0.516)">E-commerce</h3><!-- /.menu-title -->
 
                 <!-- product section -->
                 <li
@@ -200,3 +189,37 @@
 </aside><!-- /#left-panel -->
 
 <!-- Left Panel -->
+
+
+
+
+<!-- this js for, contact info section -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const contactInfoLink = document.getElementById("contactInfo");
+    const dashboardLink = document.querySelector('a[href="index.php"]');
+
+    if (contactInfoLink && dashboardLink) {
+        contactInfoLink.addEventListener("click", function() {
+            // Style contactInfo link
+            contactInfoLink.style.setProperty("color", "yellow", "important");
+            contactInfoLink.style.setProperty("font-weight", "bold", "important");
+
+            // Style the icon inside contactInfo
+            const icon = contactInfoLink.querySelector("i");
+            if (icon) {
+                icon.style.setProperty("color", "yellow", "important");
+            }
+
+            // Now make dashboard link red
+            dashboardLink.style.setProperty("color", "#c6cad2", "important");
+
+            // Also the icon inside dashboard
+            const dashIcon = dashboardLink.querySelector("i");
+            if (dashIcon) {
+                dashIcon.style.setProperty("color", "#c6cad2", "important");
+            }
+        });
+    }
+});
+</script>

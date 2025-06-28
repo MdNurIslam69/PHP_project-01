@@ -2,10 +2,14 @@
 $title = "Shop | Imran_Store";
 require_once './components/header.php';
 
-
-$categoriesQuery = "SELECT * FROM `products_category`";
+// Fetch category with product count
+$categoriesQuery = "
+    SELECT c.id, c.name, COUNT(p.id) AS total_products
+    FROM products_category c
+    LEFT JOIN products p ON c.id = p.category_id
+    GROUP BY c.id, c.name
+";
 $categoriesResult = $conn->query($categoriesQuery);
-
 
 // select all from products
 $productsQuery = "SELECT 
@@ -20,27 +24,33 @@ INNER JOIN
     products_category ON products.category_id = products_category.id 
 ORDER BY RAND()";
 
-
 $productsResult = $conn->query($productsQuery);
-
 ?>
+
 
 <!-- shop (main-section) start -->
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-2">
+
+        <!-- product category list section start -->
+        <div class="col-md-2" id="category-list">
             <div class="list-group">
                 <h4 class="text-primary mb-3 text-center text-decoration-underline">Categories</h4>
 
                 <?php while ($category = $categoriesResult->fetch_assoc()): ?>
                     <a href="category.php?id=<?= $category['id'] ?>"
-                        class="list-group-item list-group-item-action <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>"><?= htmlspecialchars($category['name']) ?></a>
-
+                        class="list-group-item list-group-item-action d-flex justify-content-between align-items-center <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>">
+                        <?= htmlspecialchars($category['name']) ?>
+                        <span class="badge text-muted p-0">(<?= $category['total_products'] ?>)</span>
+                    </a>
                 <?php endwhile; ?>
 
             </div>
         </div>
+        <!-- product category list section end -->
+
+
 
         <div class="col-md-10">
 
@@ -117,8 +127,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -143,8 +153,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -170,8 +180,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -197,8 +207,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -226,8 +236,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -253,8 +263,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -282,8 +292,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -309,8 +319,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -337,8 +347,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -365,8 +375,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -393,8 +403,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
@@ -422,8 +432,8 @@ $productsResult = $conn->query($productsQuery);
                             <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
                         </p>
                     </a>
-                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1" href="#"
-                        style="width: 48px; height: 48px;">
+                    <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
+                        href="#" style="width: 48px; height: 48px;">
                         <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5" width="2" height="12" fill="#161616"></rect>
                             <rect x="12" y="5" width="2" height="12" transform="rotate(90 12 5)" fill="#161616">
