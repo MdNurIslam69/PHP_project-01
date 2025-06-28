@@ -29,22 +29,29 @@ if (isset($_POST['remove_from_cart'])) {
             <table class="table border table-bordered table-striped mb-4" style="border: 2px solid black !important;"
                 id="pendingOrdersTable">
                 <thead>
-                    <tr style="border: 2px solid black !important;">
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">SL
+                    <tr>
+                        <th class="text-center bg-secondary text-white align-middle" style="border: 2px solid black;">SL
                         </th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Product ID</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Product Image</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Product</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Quantity</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">S.
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">S.
                             Price</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Total</th>
-                        <th class="text-center bg-secondary text-white" style="border: 2px solid black !important;">
+                        <th class="text-center bg-secondary text-white align-middle"
+                            style="border: 2px solid black !important;">
                             Action</th>
                     </tr>
                 </thead>
@@ -68,7 +75,7 @@ if (isset($_POST['remove_from_cart'])) {
                         <td class="text-center align-middle"><?= $product['id']; ?></td>
                         <td class="text-center align-middle p-1">
                             <img src="./assets/img/products/<?= $product['images']; ?>" alt="<?= $product['name']; ?>"
-                                width="100">
+                                width="80" height="80" class=" object-fit-contain">
                         </td>
                         <td class="align-middle"><?= $product['name']; ?></td>
                         <td class="text-center align-middle"><?= $quantity ?></td>
@@ -121,7 +128,7 @@ if (isset($_POST['remove_from_cart'])) {
         <div class="col-md-12 my-4 text-end">
 
             <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0): ?>
-            <a href="checkout.php" class="btn btn-primary mb-0 viewDetailsBtnsSingle1">Proceed to
+            <a href="checkout" class="btn btn-primary mb-0 viewDetailsBtnsSingle1">Proceed to
                 Checkout</a>
             <?php endif; ?>
 

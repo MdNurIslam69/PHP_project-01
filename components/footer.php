@@ -76,10 +76,17 @@
         </section>
         <!-- Section: Form -->
 
-
+        <style>
+            @media screen and (max-width: 765px) {
+                .footerContents {
+                    text-align: justify;
+                }
+            }
+        </style>
         <!-- Section: Text -->
-        <section class=" mb-5">
-            <p>Imran_Store Brings You a Wide Range Of Quality Products At Unbeatable Prices. Enjoy a Seamless Online
+        <section class="mb-5">
+            <p class="footerContents">Imran_Store Brings You a Wide Range Of Quality Products At Unbeatable Prices.
+                Enjoy a Seamless Online
                 Shopping Experience With Fast Delivery, Secure Payments, and Friendly Support. Shop Smart, Shop Safe,
                 and Discover Everyday Essentials With Ease At Imran_Store.</p>
         </section>
@@ -165,7 +172,7 @@
                         </li>
                         <li>
                             <a href="#!" class="text-warnings"><i class="fas fa-envelope text-warnings"></i>
-                                example25@gmail.com</a>
+                                imranstore25@gmail.com</a>
                         </li>
 
                         <li>
@@ -189,7 +196,7 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        ©2025 All Copyright Reserved Imran_Store...by_<a class="text-warnings fst-italic opacity-75"
+        ©2025 All Copyright Reserved Imran_Store...by_<a class="text-warnings fst-italic opacity-50"
             href="https://www.linkedin.com/in/mdnurislam1" target="_blank">Imran</a>
     </div>
     <!-- Copyright -->

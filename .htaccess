@@ -1,0 +1,37 @@
+# RewriteEngine On
+# # RewriteBase /PHP/PHP_Project/PHP_project-01/
+
+
+# # 1. Hide .php extension (e.g., /store -> store.php)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}.php -f
+# RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# # 2. Redirect all unknown request to 404.php
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /404.php [L]
+
+# # 3. Force 404.php to return proper HTTP 404 status
+# ErrorDocument 404 /404.php
+
+
+
+
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /PHP/PHP_Project/PHP_project-01/
+
+# 1. Hide .php extension (e.g., /shop -> shop.php)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# 2. Redirect invalid URLs to 404.php with 404 status
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg)$ [NC]
+RewriteRule ^ /PHP/PHP_Project/PHP_project-01/404.php [L,R=404]
+
+# 3. Force proper 404 status
+ErrorDocument 404 /PHP/PHP_Project/PHP_project-01/404.php

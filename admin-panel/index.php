@@ -27,12 +27,29 @@ require_once('sidebar.php');
         </div>
     </div>
 
+
+    <style>
+        @media screen and (max-width: 1368px) {
+            .adminDashboardIndex {
+                margin-left: 5px !important;
+
+            }
+
+        }
+
+        @media screen and (max-width: 576px) {
+            .adminDashboardIndex {
+                margin-left: 0px !important;
+
+            }
+
+        }
+    </style>
+
     <div class="content mt-3">
 
-
-
         <div class="col-sm-6 col-lg-3">
-            <div class="card text-white bg-flat-color-1">
+            <div class="card text-white bg-flat-color-1 adminDashboardIndex">
                 <div class="card-body pb-0">
                     <div class="dropdown float-right">
                         <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"

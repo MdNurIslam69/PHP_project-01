@@ -24,14 +24,14 @@
 
                 <li class="nav-item">
                     <a class="nav-link me-4 <?= $pageName == 'shop.php' || $pageName == 'category.php' ? 'active' : null ?>"
-                        href="shop.php">Shop</a>
+                        href="shop">Shop</a>
 
                 </li>
 
 
                 <li class="nav-item">
                     <a class="nav-link me-4 <?= $pageName == 'contact-us.php' ? 'active' : null ?>"
-                        href="contact-us.php">Contact us</a>
+                        href="contact-us">Contact us</a>
 
                 </li>
 
@@ -40,14 +40,14 @@
                 if (!isset($_SESSION['imran_store'])) { ?>
 
                 <li class="nav-item">
-                    <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in.php">Sign
+                    <a class="nav-link me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>" href="sign-in">Sign
                         In</a>
 
                 </li>
 
 
                 <li class="nav-item">
-                    <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up.php">Sign
+                    <a class="nav-link me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>" href="sign-up">Sign
                         Up</a>
 
                 </li>
@@ -65,28 +65,28 @@
 
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item <?= $pageName == 'my-profile.php' ? 'active' : null ?>"
-                                href="my-profile.php">My Profile</a></li>
+                                href="my-profile">My Profile</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
 
                         <li><a class="dropdown-item <?= $pageName == 'change-password.php' ? 'active' : null ?>"
-                                href="change-password.php">Change Password</a></li>
+                                href="change-password">Change Password</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
 
                         <li><a class="dropdown-item <?= $pageName == 'change-profile-picture.php' ? 'active' : null ?>"
-                                href="change-profile-picture.php">Change Profile Picture</a></li>
+                                href="change-profile-picture">Change Profile Picture</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
 
                         <li><a class="dropdown-item <?= $pageName == 'my-orders.php' ? 'active' : null ?>"
-                                href="my-orders.php">My Orders</a></li>
+                                href="my-orders">My Orders</a></li>
 
 
 
@@ -104,7 +104,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item <?= $pageName == 'logout.php' ? 'active' : null ?>"
-                                href="logout.php">Log out</a></li>
+                                href="logout">Log out</a></li>
                     </ul>
                 </li>
                 <?php } ?>
@@ -113,7 +113,7 @@
                 <!-- add to cart -->
                 <li class="nav-item me-2">
                     <a class="nav-link me-2 position-relative <?= $pageName == 'cart.php' ? 'active' : null ?>"
-                        href="cart.php">
+                        href="cart">
 
                         <i class="fa-solid fa-cart-shopping"></i>
 

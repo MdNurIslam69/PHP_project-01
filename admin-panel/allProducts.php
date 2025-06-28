@@ -1,6 +1,5 @@
 <title><?php echo isset($title) ? $title : "All Products | Imran_Store"; ?></title>
 
-
 <?php
 require_once('header.php');
 require_once('sidebar.php');
@@ -14,7 +13,6 @@ $result = $conn->query($sql);
 
 <!-- Right Panel -->
 <div id="right-panel" class="right-panel">
-
     <?php require_once('topBar.php'); ?>
 
     <style>
@@ -45,15 +43,15 @@ $result = $conn->query($sql);
                         <table class="table table-striped table-bordered custom-table" id="productList">
                             <thead>
                                 <tr class="bg-info tableHearder">
-                                    <th class="align-middle">Serial ID</th>
-                                    <th class="align-middle">Database ID</th>
-                                    <th class="align-middle">Product Name</th>
-                                    <th class="align-middle">Regular Price</th>
-                                    <th class="align-middle">Sale Price</th>
-                                    <th class="align-middle">Category ID</th>
-                                    <th class="align-middle">Category Name</th>
-                                    <th class="align-middle">Image</th>
-                                    <th class="align-middle">Action</th>
+                                    <th>Serial ID</th>
+                                    <th>Database ID</th>
+                                    <th>Product Name</th>
+                                    <th>Regular Price</th>
+                                    <th>Sale Price</th>
+                                    <th>Category ID</th>
+                                    <th>Category Name</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +67,7 @@ $result = $conn->query($sql);
                                         <td class="text-center align-middle"><?= $product['category_name_real'] ?? 'N/A' ?></td>
                                         <td class="text-center">
                                             <img src="../assets/img/products/<?= $product['images'] ?>"
-                                                alt="<?= $product['name'] ?>" width="80">
+                                                alt="<?= $product['name'] ?>" width="80" height="80" class="object-fit-contain">
                                         </td>
                                         <td class="align-middle">
                                             <a href="allProducts.php?eid=<?= $product['id'] ?>"
@@ -94,18 +92,18 @@ $result = $conn->query($sql);
                         $name = sanitize($_POST['name']);
                         $regular_price = sanitize($_POST['regular_price']);
                         $sales_price = sanitize($_POST['sales_price']);
-                        $category_id = sanitize($_POST['category_id']);
                         $category_name = sanitize($_POST['category_name']);
+                        $category_id = sanitize($_POST['category_id']);
                         $description = sanitize($_POST['description']);
 
                         if (empty($name)) $errName = "Please update product name";
                         if (empty($regular_price)) $errRegular_price = "Please update regular price";
                         if (empty($sales_price)) $errSales_price = "Please update sale price";
-                        if (empty($category_id)) $errCategory_id = "Category ID missing";
                         if (empty($category_name)) $errCategory_name = "Please select category name";
+                        if (empty($category_id)) $errCategory_id = "Category ID missing";
                         if (empty($description)) $errDescription = "Please update description";
 
-                        if (!isset($errName, $errRegular_price, $errSales_price, $errCategory_id, $errCategory_name, $errDescription)) {
+                        if (!isset($errName, $errRegular_price, $errSales_price, $errCategory_name, $errCategory_id, $errDescription)) {
                             if (!empty($_FILES['images']['name'])) {
                                 $imageName = basename($_FILES['images']['name']);
                                 $target_dir = "../assets/img/products/";
@@ -115,6 +113,7 @@ $result = $conn->query($sql);
                                     $image = $imageName;
                                 } else {
                                     echo "<script>toastr.error('Image upload failed');</script>";
+                                    $image = $product['images'];
                                 }
                             } else {
                                 $image = $product['images'];
@@ -133,11 +132,11 @@ $result = $conn->query($sql);
                         }
                     }
                 ?>
+
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-9 col-sm-11 p-3">
                             <h1 class="text-center" style="font-size:40px; text-decoration:underline;">Edit Product</h1>
                             <form method="post" enctype="multipart/form-data" class="border p-4 border-primary rounded">
-                                <!-- Name -->
                                 <div class="mb-3">
                                     <input type="text" name="name" placeholder="Product Name"
                                         class="form-control <?= isset($errName) ? 'is-invalid' : '' ?>"
@@ -145,7 +144,6 @@ $result = $conn->query($sql);
                                     <div class="invalid-feedback"><?= $errName ?? '' ?></div>
                                 </div>
 
-                                <!-- Regular Price -->
                                 <div class="mb-3">
                                     <input type="text" name="regular_price" placeholder="Regular Price"
                                         class="form-control <?= isset($errRegular_price) ? 'is-invalid' : '' ?>"
@@ -153,7 +151,6 @@ $result = $conn->query($sql);
                                     <div class="invalid-feedback"><?= $errRegular_price ?? '' ?></div>
                                 </div>
 
-                                <!-- Sale Price -->
                                 <div class="mb-3">
                                     <input type="text" name="sales_price" placeholder="Sale Price"
                                         class="form-control <?= isset($errSales_price) ? 'is-invalid' : '' ?>"
@@ -161,16 +158,16 @@ $result = $conn->query($sql);
                                     <div class="invalid-feedback"><?= $errSales_price ?? '' ?></div>
                                 </div>
 
-                                <!-- Current Image -->
                                 <div class="mb-3 text-center">
-                                    <label style="cursor:pointer;">
-                                        <img src="../assets/img/products/<?= $product['images'] ?>" width="100">
-                                        <p>Click to change</p>
-                                        <input type="file" name="images" class="d-none">
+                                    <label for="image" style="cursor:pointer;">
+                                        <img src="../assets/img/products/<?= $product['images'] ?>"
+                                            alt="<?= $product['name'] ?>" width="100" id="currentImage">
+                                        <p class="mt-2">Click to change Image</p>
+                                        <input type="file" class="d-none <?= isset($errImage) ? "is-invalid" : null ?>"
+                                            name="images" id="image">
                                     </label>
                                 </div>
 
-                                <!-- Category Name Dropdown section -->
                                 <div class="mb-3">
                                     <select id="categorySelect" name="category_name"
                                         class="form-control <?= isset($errCategory_name) ? 'is-invalid' : '' ?>">
@@ -188,7 +185,6 @@ $result = $conn->query($sql);
                                     <div class="invalid-feedback"><?= $errCategory_name ?? '' ?></div>
                                 </div>
 
-                                <!-- Auto-filled Category ID -->
                                 <div class="mb-3">
                                     <input id="categoryIdInput" type="text" name="category_id" placeholder="Category ID"
                                         class="bg-white form-control <?= isset($errCategory_id) ? 'is-invalid' : '' ?>"
@@ -196,7 +192,6 @@ $result = $conn->query($sql);
                                     <div class="invalid-feedback"><?= $errCategory_id ?? '' ?></div>
                                 </div>
 
-                                <!-- Description -->
                                 <div class="mb-3">
                                     <textarea name="description" rows="3" placeholder="Description"
                                         class="form-control <?= isset($errDescription) ? 'is-invalid' : '' ?>"><?= htmlspecialchars($description ?? $product['description']) ?></textarea>
@@ -209,8 +204,6 @@ $result = $conn->query($sql);
                         </div>
                     </div>
 
-
-                    <!-- this javascript, for auto-filling category id section, when category name is selected -->
                     <script>
                         document.getElementById('categorySelect').addEventListener('change', function() {
                             var id = this.options[this.selectedIndex].getAttribute('data-id') || '';
@@ -233,21 +226,13 @@ $result = $conn->query($sql);
                             <div
                                 style="background:#fff; max-width:400px; padding:2rem; border-radius:10px; box-shadow:0 10px 25px rgba(0,0,0,0.2); text-align:center;">
                                 <h3 style="margin-bottom: 3rem; font-size: 1.25rem; color: purple;">Are you sure? do you
-                                    want
-                                    to
-                                    delete this item?</h3>
-
+                                    want to delete this item?</h3>
                                 <form method="post" action=""
                                     style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
-
-
                                     <button type="submit" name="deleteProduct"
-                                        style="background: #e74c3c; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer;  font-weight: bold;">Yes</button>
-
-
+                                        style="background: #e74c3c; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: bold;">Yes</button>
                                     <a href="allProducts.php"
                                         style="background: #3498db; color: #fff; border: none; padding: 0.5rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: bold;">No</a>
-
                                 </form>
                             </div>
                         </div>
@@ -268,6 +253,17 @@ $result = $conn->query($sql);
             lengthMenu: [5, 10, 25, 50, 100],
             pageLength: 5
         });
+    });
+
+    $('#image').on('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                $('#currentImage').attr('src', event.target.result);
+            }
+            reader.readAsDataURL(file);
+        }
     });
 </script>
 

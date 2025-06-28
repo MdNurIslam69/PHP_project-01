@@ -9,7 +9,7 @@ require_once './components/header.php';
 <div class=" heroSection-color">
     <div class="container row py-5 mx-auto d-flex align-items-center justify-content-between px-lg-0 px-md-0">
         <div class="col-lg-5 d-flex flex-column justify-content-center col-md-5 mt-4 position-relative">
-            <h1 class="forSame-color" style="font-size: 35px;">Welcome to Imran_Store Website</h1>
+            <h1 class="forSame-color" style="font-size: 35px;">Welcome to Imran_Store</h1>
             <p class="my-3 hero-contents">Explore a World of Quality, Style, and Convenience—Your Ultimate Destination
                 For
                 Premium Products, Unbeatable Prices, and Effortless Shopping. We've Got You Covered Whether You're
@@ -91,37 +91,37 @@ require_once './components/header.php';
                 $featuresProductsResult = $conn->query($featuresProductsQuery);
                 while ($product = $featuresProductsResult->fetch_assoc()):
                 ?>
-                <div class="col-12 mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                            class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                            style="height: 100%; width: 100%;">
-                        <div class="card-body ">
-                            <h5 class="card-title text-truncate"
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <?= $product['name'] ?></h5>
+                    <div class="col-12 mb-4">
+                        <div class="card h-100">
+                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                style="height: 100%; width: 100%;">
+                            <div class="card-body ">
+                                <h5 class="card-title text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?= $product['name'] ?></h5>
 
-                            <div
-                                class="d-flex gap-lg-0 gap-md-2 gap-sm-3 py-2 justify-content-lg-between justify-content-md-between px-lg-0 px-md-2 ">
-                                <p class="" style="font-size: 14px;">Price:
-                                    <span
-                                        class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                        <?= number_format($product['regular_price']) ?></span>
-                                </p>
+                                <div
+                                    class="d-flex gap-lg-0 gap-md-2 gap-sm-3 py-2 justify-content-lg-between justify-content-md-between px-lg-0 px-md-2 ">
+                                    <p class="" style="font-size: 14px;">Price:
+                                        <span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            <?= number_format($product['regular_price']) ?></span>
+                                    </p>
 
-                                <p class="priceFontSize" style="font-size: 14px; "><span
-                                        class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                    <?= number_format($product['sales_price']) ?></p>
+                                    <p class="priceFontSize" style="font-size: 14px; "><span
+                                            class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                        <?= number_format($product['sales_price']) ?></p>
+                                </div>
+
+                                <a href="single-product.php?id=<?= $product['id'] ?>"
+                                    class="viewDetailsBtns futuresProductsBTN"
+                                    style="color: white; background-color: #6d5ce8; text-decoration: none; border-radius: 5px;">View
+                                    Details</a>
                             </div>
 
-                            <a href="single-product.php?id=<?= $product['id'] ?>"
-                                class="viewDetailsBtns futuresProductsBTN"
-                                style="color: white; background-color: #6d5ce8; text-decoration: none; border-radius: 5px;">View
-                                Details</a>
                         </div>
-
                     </div>
-                </div>
                 <?php endwhile; ?>
             </div>
         </div>
@@ -151,32 +151,32 @@ require_once './components/header.php';
                     $featuresProductsResult = $conn->query($featuresProductsQuery);
                     while ($product = $featuresProductsResult->fetch_assoc()):
                     ?>
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                        <div class="card h-100">
-                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                                style="height: 100%; width: 100%;">
-                            <div class="card-body ">
-                                <h5 class="card-title text-truncate"
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    <?= $product['name'] ?></h5>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                            <div class="card h-100">
+                                <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                    class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                    style="height: 100%; width: 100%;">
+                                <div class="card-body ">
+                                    <h5 class="card-title text-truncate"
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <?= $product['name'] ?></h5>
 
-                                <div class="d-flex  gap-md-3 gap-sm-3 py-2">
-                                    <p class="h6">Price: <span
-                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                            <?= number_format($product['regular_price']) ?></span>
-                                    </p>
+                                    <div class="d-flex  gap-md-3 gap-sm-3 py-2">
+                                        <p class="h6">Price: <span
+                                                class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                                <?= number_format($product['regular_price']) ?></span>
+                                        </p>
 
-                                    <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                        <?= number_format($product['sales_price']) ?></p>
+                                        <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                            <?= number_format($product['sales_price']) ?></p>
+                                    </div>
+
+                                    <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
+                                        style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                        Details</a>
                                 </div>
-
-                                <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
-                                    style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
-                                    Details</a>
                             </div>
                         </div>
-                    </div>
                     <?php endwhile; ?>
                 </div>
             </div>
@@ -216,7 +216,14 @@ require_once './components/header.php';
                                 <h5 class="mb-2 ps-3"
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Unread Books
                                     at Home Still Spark</h5>
-                                <p class="h6 text-info ps-3">$20.89</p>
+                                <p class="h6 text-info ps-3">
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,250</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            1,050</span>
+                                    </span>
+                                </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
                                 href="#" style="width: 48px; height: 48px;">
@@ -243,8 +250,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Hand drawn
                                     book cartoon isolated</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$14.30</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,450</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            1,150</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -272,8 +283,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Browse
                                     Discounted Books Online</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$34.89</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,050</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            850</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -301,8 +316,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Business
                                     magazine grow book</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$199.90</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,050</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            850</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -330,8 +349,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">A Plague of
                                     Heretics: Amazon</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$89.90</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,150</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            950</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -359,8 +382,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Magazine
                                     Design Verve Branding</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$2169.90</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,150</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            950</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -388,8 +415,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Zero to One
                                     Convert</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$180.90</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,150</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            980</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -417,8 +448,12 @@ require_once './components/header.php';
                                     style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">The Learn
                                     StartUp Books</h5>
                                 <p class="h6 text-info ps-3">
-                                    <span>$89.90</span>
-                                    <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                                    <span class="pe-2"><i
+                                            class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,150</span>
+                                    <span class="small"><span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            1,050</span>
+                                    </span>
                                 </p>
                             </a>
                             <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -435,7 +470,7 @@ require_once './components/header.php';
 
                 </div>
                 <!-- button -->
-                <div class="text-center mt-2 mb-2"><a class="viewDetailsBtns"
+                <div class="text-center mt-2 mb-3"><a class="viewDetailsBtns"
                         style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;"
                         href="index.php#featuresArrivalProduct">Click
                         to Show More</a>
@@ -476,8 +511,11 @@ require_once './components/header.php';
 
                         <h5 class="mb-2 ps-3">BRILE water filter</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$24.30</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>10,500</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    8,050</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -502,8 +540,11 @@ require_once './components/header.php';
 
                         <h5 class="mb-2 ps-3">Bicycle S2023</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$14.30</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$15.90</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>7,500</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    5,500</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -529,8 +570,11 @@ require_once './components/header.php';
 
                         <h5 class="mb-2 ps-3">Nike basketball</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$34.89</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>2,250</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    1,550</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -556,8 +600,11 @@ require_once './components/header.php';
 
                         <h5 class="mb-2 ps-3">Kiteboard WH</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$199.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>3,650</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    2,850</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -585,8 +632,11 @@ require_once './components/header.php';
                             Linc
                             Pentonic Ballpoint Pens</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$89.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,050</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    950</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -612,8 +662,11 @@ require_once './components/header.php';
 
                         <h5 class="mb-2 ps-3">Buy Fan and Air cooler</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$199.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,150</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    1,000</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -641,8 +694,11 @@ require_once './components/header.php';
                             Honda CB
                             Hornet 160R ABS</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$2169.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>220,500</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    215,500</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -668,8 +724,11 @@ require_once './components/header.php';
 
                         <h5 class=" mb-2 ps-3">Walton Ceiling Fan 56"</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$180.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$33.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>3,400</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    3,150</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -696,8 +755,11 @@ require_once './components/header.php';
                         <h5 class="mb-2 ps-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                             Realman Scent For Men Pure Aqua</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$89.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>1,850</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    1,550</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -724,8 +786,11 @@ require_once './components/header.php';
                         <h5 class="mb-2 ps-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                             Men's Watches Waterproof Luminous</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$89.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>6,300</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    4,900</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -752,8 +817,11 @@ require_once './components/header.php';
                         <h5 class="mb-2 ps-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                             The Creation Lamis</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$89.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>2,250</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    1,850</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -781,8 +849,11 @@ require_once './components/header.php';
                         <h5 class="mb-2 ps-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                             vivo Watch 3 | vivo Globals</h5>
                         <p class="h6 text-info ps-3">
-                            <span>$89.90</span>
-                            <span class="small text-muted fw-normal text-decoration-line-through">$56.69</span>
+                            <span class="pe-2"><i class="fa-solid fa-bangladeshi-taka-sign pe-1"></i>7,000</span>
+                            <span class="small"><span
+                                    class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                    5,850</span>
+                            </span>
                         </p>
                     </a>
                     <a class="ms-auto me-1 d-flex align-items-center justify-content-center border rounded-3 mb-1 mb-1"
@@ -799,7 +870,7 @@ require_once './components/header.php';
 
         </div>
         <!-- button -->
-        <div class="text-center mt-0 mb-4"><a class="viewDetailsBtns"
+        <div class="text-center mt-0 mb-5"><a class="viewDetailsBtns"
                 style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;"
                 href="index.php#featuresArrivalProduct">Click
                 to Show More</a>

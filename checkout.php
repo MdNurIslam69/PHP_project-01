@@ -40,7 +40,8 @@ if (isset($_POST['place_order'])) {
     if ($conn->query($orderQuery)) {
         $orderId = $conn->insert_id;
 
-        // Insert order items
+
+        // Insert order_items table in database
         foreach ($cart as $id => $quantity) {
             $getProductQuery =  "SELECT * FROM `products` WHERE `id` = $id";
             $getProductResult = $conn->query($getProductQuery);
@@ -160,16 +161,16 @@ if (isset($_POST['place_order'])) {
                                 $subTotal = $product['sales_price'] * $quantity;
                                 $total += $subTotal; // ✅ Add to total
                     ?>
-                    <tr>
-                        <td class="text-center align-middle"><?= $quantity ?></td>
-                        <td><?= $product['name'] ?></td>
-                        <td class="text-center align-middle">
-                            <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
-                            <?= number_format($subTotal) ?>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                    <?php endforeach; ?>
+                                <tr>
+                                    <td class="text-center align-middle"><?= $quantity ?></td>
+                                    <td><?= $product['name'] ?></td>
+                                    <td class="text-center align-middle">
+                                        <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
+                                        <?= number_format($subTotal) ?>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
                 <tfoot>

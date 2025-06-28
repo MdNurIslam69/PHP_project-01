@@ -31,7 +31,15 @@
                     <a href="index.php" class="font-weight-bold"
                         style=" color: <?= $pageName == "index.php" ? "white !important" : "" ?>">
                         <i class="menu-icon fa-solid fa-house"
-                            style="color: <?= $pageName == "index.php" ? "white !important" : "" ?>"></i>Dashboard </a>
+                            style="color: <?= $pageName == "index.php" ? "white !important" : "" ?>"></i>Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="contact.php" class="font-weight-bold"
+                        style=" color: <?= $pageName == "contact.php" ? "#ffbe76 !important" : "" ?>">
+                        <i class="menu-icon fa-solid fa-envelope"
+                            style="color: <?= $pageName == "contact.php" ? "#ffbe76 !important" : "" ?>"></i>Contact
+                        Messages</a>
                 </li>
 
 
@@ -51,12 +59,34 @@
 
                     </ul>
                 </li>
-                <li class="menu-item-has-children dropdown">
+
+                <!-- contact info section -->
+                <li
+                    class="menu-item-has-children dropdown <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "show" : null ?>">
+
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Contact Info</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-table"></i><a href="tables-basic.html">Basic Info</a></li>
-                        <li><i class="menu-icon fa fa-table"></i><a href="footer.php#footerSection">Social Media</a>
+                        aria-expanded="<?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? true : false ?>"
+                        style="color: <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "yellow !important" : "" ?>">
+                        <i class="menu-icon fa-solid fa-shop"
+                            style="color: <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "yellow !important" : "" ?>"></i>Contact
+                        Info</a>
+                    <ul
+                        class="sub-menu children dropdown-menu <?= $pageName == "../contact-us.php" || $pageName == "../social-media.php" ? "show" : null ?>">
+
+                        <!-- basic info -->
+                        <li><i class="menu-icon fa-solid fa-address-card"
+                                style="color: <?= $pageName == "../contact-us.php" ? "white !important" : "" ?>"></i><a
+                                href="../contact-us.php"
+                                style="font-weight: <?= $pageName == "../contact-us.php" ? "bold" : "regular" ?>; color: <?= $pageName == "../contact-us.php" ? "white !important" : "" ?>">Basic
+                                Info</a>
+                        </li>
+
+                        <!-- social media -->
+                        <li><i class="menu-icon fa-solid fa-thumbs-up"
+                                style="color: <?= $pageName == "../social-media.php" ? "white !important" : "" ?>"></i><a
+                                href="../social-media.php"
+                                style="font-weight: <?= $pageName == "../social-media.php" ? "bold" : "regular" ?>; color: <?= $pageName == "../social-media.php" ? "white !important" : "" ?>">Social
+                                Media</a>
                         </li>
                     </ul>
                 </li>
@@ -70,7 +100,9 @@
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="<?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? true : false ?>"
-                        style="color: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "yellow !important" : "" ?>">
+                        style="color: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "yellow !important" : "" ?>;
+                        
+                        font-weight: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "bold" : "regular" ?>">
                         <i class="menu-icon fa-solid fa-shop"
                             style="color: <?= $pageName == "addNewProduct.php" || $pageName == "allProducts.php" || $pageName == "product-categories.php" ? "yellow !important" : "" ?>"></i>Products</a>
                     <ul
@@ -105,12 +137,14 @@
 
                 <!-- order section -->
                 <li
-                    class="menu-item-has-children dropdown <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "show" : null ?>">
+                    class="menu-item-has-children dropdown <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "show" : null ?>; font-weight: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "bold" : "regular" ?>">
 
 
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="<?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? true : false ?>"
-                        style="color: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "yellow !important" : "" ?>"><i
+                        style="color: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "yellow !important" : "" ?>;
+                        
+                        font-weight: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "bold" : "regular" ?>"><i
                             class="menu-icon fa-solid fa-cart-shopping"
                             style="color: <?= $pageName == "pending-orders.php" || $pageName == "shifted-orders.php" || $pageName == "success-orders.php" || $pageName == "refunded-orders.php" || $pageName == "cancel-orders.php" ? "yellow !important" : "" ?>"></i>Orders</a>
 
