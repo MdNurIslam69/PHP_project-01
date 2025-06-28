@@ -62,15 +62,15 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'imran_store');
 
     <!-- toastr customaization start  -->
     <script>
-    toastr.options = {
-        "progressBar": true,
-        "positionClass": "toast-top-center",
-        "timeOut": "2000",
-        "showMethod": "slideDown",
+        toastr.options = {
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "timeOut": "2000",
+            "showMethod": "slideDown",
 
-        // custom css
-        "toastClass": "toastr",
-    }
+            // custom css
+            "toastClass": "toastr",
+        }
     </script>
     <!-- toastr customaization end  -->
 
@@ -86,7 +86,6 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'imran_store');
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.dataTables.min.css">
 
     <script src="https://cdn.datatables.net/2.3.0/js/dataTables.min.js"> </script>
-
 
 </head>
 
