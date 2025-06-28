@@ -36,7 +36,8 @@ if ($result && $result->num_rows > 0) {
     </h2>
 
     <p class="fw-bold mb-2 text-decoration-underline" id="product-count">
-        Total Item's Available: <strong class="h6 text-muted">(<?= count($products) ?>)</strong>
+        Total <?= htmlspecialchars($category_name) ?> Available: <strong
+            class="h6 text-muted">(<?= count($products) ?>)</strong>
 
     </p>
 

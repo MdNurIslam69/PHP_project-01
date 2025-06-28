@@ -1027,13 +1027,13 @@ require_once './components/header.php';
     </div>
 </div>
 
-<!-- Auto show modal after 3 seconds -->
+<!-- Auto show modal after 1 seconds -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
             myModal.show();
-        }, 3000);
+        }, 500);
     });
 </script>
 
