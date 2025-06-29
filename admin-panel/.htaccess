@@ -1,0 +1,23 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /PHP/PHP_Project/PHP_project-01/admin-panel/
+
+# 1. Rewrite to add .php automatically if it exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# 2. Optional: force URLs without .php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php\sHTTP
+RewriteRule ^ %1 [R=301,L]
+
+
+
+# 2. Redirect invalid URLs to 404.php with 404 status
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg)$ [NC]
+RewriteRule ^ /PHP/PHP_Project/PHP_project-01/admin-panel/404_2.php [L,R=404]
+
+# 3. Force proper 404 status
+ErrorDocument 404 /PHP/PHP_Project/PHP_project-01/admin-panel/404_2.php
