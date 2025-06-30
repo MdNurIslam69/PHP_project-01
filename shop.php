@@ -42,7 +42,8 @@ $productsResult = $conn->query($productsQuery);
                 <a href="category.php?id=<?= $category['id'] ?>"
                     class="list-group-item list-group-item-action d-flex justify-content-between align-items-center <?= isset($_GET['id']) && $_GET['id'] == $category['id'] ? 'active' : '' ?>">
                     <?= htmlspecialchars($category['name']) ?>
-                    <span class="small text-muted p-0">(<?= $category['total_products'] ?>)</span>
+                    <span class="small text-muted p-0">(<?= $category['total_products'] ?>)<sub class="text-muted">pc
+                        </sub></span>
                 </a>
                 <?php endwhile; ?>
 
@@ -52,7 +53,7 @@ $productsResult = $conn->query($productsQuery);
 
 
 
-        <div class="col-md-10">
+        <div class="col-md-10" data-aos="fade-up" data-aos-duration="1000">
 
             <h1 class="text-primary mb-3 text-center text-decoration-underline">All Products</h1>
 
@@ -660,11 +661,8 @@ $productsResult = $conn->query($productsQuery);
 
             <div class="modal-footer p-2">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- <a href="./#bestSellersBooks" type="button" id="save-changes" class="btn btn-primary">Save
-                    changes</a> -->
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save
                     changes</button>
-
             </div>
         </div>
     </div>
@@ -683,6 +681,36 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- popUp/Modal section end -->
 
 
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
+
+
+<!-- this internal css is for removing padding-right, when modal is open, to distrub chat-bot section,
+ it's permanently close for use this internal css👇 -->
+<style>
+/* Always show scrollbar to prevent Bootstrap from adding padding-right */
+html {
+    overflow-y: scroll;
+}
+
+/* Forcefully reset body padding */
+body.modal-open {
+    padding-right: 0 !important;
+}
+</style>
 
 
 

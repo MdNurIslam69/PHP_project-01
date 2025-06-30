@@ -97,9 +97,9 @@ if (isset($_POST['changeProfilePicture'])) {
                         <?php
                         if (!isset($_SESSION['imran_store']['picture'])) {
                         ?>
-                            <span class="text-muted translate-middle"
-                                style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
-                                id="imgDropText">Image Drop Here</span>
+                        <span class="text-muted translate-middle"
+                            style="top: 52%; left: 50%; transform: translate(-48%, -50%); position: absolute; cursor: pointer;"
+                            id="imgDropText">Image Drop Here</span>
 
                         <?php
                         }
@@ -132,25 +132,43 @@ if (isset($_POST['changeProfilePicture'])) {
 
 
 <script>
-    $('#profile_picture').change(function() {
-        const file = this.files[0];
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            $('#ppimg').attr('src', event.target.result);
-        }
-        reader.readAsDataURL(file);
-    })
+$('#profile_picture').change(function() {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        $('#ppimg').attr('src', event.target.result);
+    }
+    reader.readAsDataURL(file);
+})
 
 
-    // it's for hide span_(drop image text)
-    document.getElementById('ppimg').addEventListener('click', function() {
-        const span = document.getElementById('imgDropText');
-        if (span) {
-            span.style.display = 'none';
+// it's for hide span_(drop image text)
+document.getElementById('ppimg').addEventListener('click', function() {
+    const span = document.getElementById('imgDropText');
+    if (span) {
+        span.style.display = 'none';
 
-        }
-    });
+    }
+});
 </script>
+
+
+
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
 
 
 <?php

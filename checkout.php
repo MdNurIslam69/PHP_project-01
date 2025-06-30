@@ -62,12 +62,6 @@ if (isset($_POST['place_order'])) {
         echo "<script>toastr.error('Failed to place order: " . addslashes($conn->error) . "');</script>";
     }
 }
-
-
-
-
-
-
 ?>
 
 
@@ -161,16 +155,16 @@ if (isset($_POST['place_order'])) {
                                 $subTotal = $product['sales_price'] * $quantity;
                                 $total += $subTotal; // ✅ Add to total
                     ?>
-                                <tr>
-                                    <td class="text-center align-middle"><?= $quantity ?></td>
-                                    <td><?= $product['name'] ?></td>
-                                    <td class="text-center align-middle">
-                                        <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
-                                        <?= number_format($subTotal) ?>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        <?php endforeach; ?>
+                    <tr>
+                        <td class="text-center align-middle"><?= $quantity ?></td>
+                        <td><?= $product['name'] ?></td>
+                        <td class="text-center align-middle">
+                            <i class="fa-solid fa-bangladeshi-taka-sign pe-1 text-muted"></i>
+                            <?= number_format($subTotal) ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                    <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
                 <tfoot>
@@ -233,7 +227,19 @@ if (isset($_POST['place_order'])) {
 
 
 
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
 
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
 
 
 

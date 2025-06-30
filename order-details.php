@@ -140,4 +140,24 @@ $orderId = $_GET['id'] ?? null;
     </a>
 </div>
 
+
+
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
+
+
+
 <?php require_once './components/footer.php'; ?>

@@ -20,7 +20,7 @@ if ($result->num_rows == 0) {
             <div class="col-md-12">
 
                 <h1 class="mb-5 mt-3 text-primary text-center" style="text-decoration: underline; font-size: 40px;">
-                    Contact Messages</h1>
+                    Contact-us Message</h1>
 
                 <table class="table border table-bordered table-striped mb-4" id="contactTable"
                     style="border: 2px solid black !important;">
@@ -42,27 +42,27 @@ if ($result->num_rows == 0) {
                         $sl = 1;
                         while ($row = $result->fetch_assoc()) {
                         ?>
-                            <tr>
-                                <td class="text-center align-middle" style="border: 1px solid black"><?= $sl++ ?></td>
+                        <tr>
+                            <td class="text-center align-middle" style="border: 1px solid black"><?= $sl++ ?></td>
 
-                                <td class="text-center align-middle" style="border: 1px solid black">
-                                    <?= $row['name'] ?></td>
+                            <td class="text-center align-middle" style="border: 1px solid black">
+                                <?= $row['name'] ?></td>
 
-                                <td class="text-center align-middle" style="border: 1px solid black">
-                                    <?= $row['email'] ?></td>
+                            <td class="text-center align-middle" style="border: 1px solid black">
+                                <?= $row['email'] ?></td>
 
-                                <td class="text-center align-middle" style="border: 1px solid black">
-                                    <?= $row['phone'] ?></td>
+                            <td class="text-center align-middle" style="border: 1px solid black">
+                                <?= $row['phone'] ?></td>
 
-                                <td class="align-middle" style="border: 1px solid black">
-                                    <?= $row['message'] ?></td>
+                            <td class="align-middle" style="border: 1px solid black">
+                                <?= $row['message'] ?></td>
 
-                                <td class="text-center align-middle p-3" style="border: 1px solid black">
-                                    <?= date('F j, Y, g:i a', strtotime($row['create_at'])) ?>
-                                </td>
+                            <td class="text-center align-middle p-3" style="border: 1px solid black">
+                                <?= date('F j, Y, g:i a', strtotime($row['create_at'])) ?>
+                            </td>
 
 
-                            </tr>
+                        </tr>
                         <?php
                         }
                         ?>
@@ -76,16 +76,16 @@ if ($result->num_rows == 0) {
 
 
 <script>
-    $(document).ready(function() {
-        $('#contactTable').DataTable({
-            responsive: true,
-            order: [
-                [0, "desc"]
-            ],
-            lengthMenu: [3, 5, 10, 25, 30, 50, 80, 100],
-            pageLength: 10
-        });
+$(document).ready(function() {
+    $('#contactTable').DataTable({
+        responsive: true,
+        order: [
+            [0, "desc"]
+        ],
+        lengthMenu: [3, 5, 10, 25, 30, 50, 80, 100],
+        pageLength: 10
     });
+});
 </script>
 
 <?php

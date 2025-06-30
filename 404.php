@@ -19,17 +19,17 @@
 
 <!-- this internal css, for 404 button -->
 <style>
-    .viewDetailsBtns:hover {
-        background-color: #0f6efd !important;
-        font-size: 18px !important;
-        transition: all 0.6s ease-in-out;
-    }
+.viewDetailsBtns:hover {
+    background-color: #0f6efd !important;
+    font-size: 18px !important;
+    transition: all 0.6s ease-in-out;
+}
 </style>
 
 
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="container text-center">
-        <h1 class="display-4">404 Not Found</h1>
+        <h1 class="display-4"><span style="font-weight: bold;">404</span> Not Found</h1>
         <p class="lead">Sorry, the page you are looking for could not be found.</p>
 
         <!-- button -->

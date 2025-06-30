@@ -30,40 +30,43 @@ if ($result && $result->num_rows > 0) {
 }
 ?>
 
-<div class="container">
+<div class="container" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-center text-primary my-4 text-decoration-underline">
         All <?= htmlspecialchars($category_name) ?> Item's
     </h2>
 
-    <p class="fw-bold mb-2 text-decoration-underline" id="product-count">
-        Total <?= htmlspecialchars($category_name) ?> Available: <strong
-            class="h6 text-muted">(<?= count($products) ?>)</strong>
 
+    <p class="fw-bold mb-2" id="product-count">
+        <span class="text-decoration-underline">Total <?= htmlspecialchars($category_name) ?> Available:</span><strong
+            class="h6 text-muted"> (<?= count($products) ?>)<sub class="text-muted">pc
+            </sub></strong>
     </p>
+
+
 
     <div class="row">
         <?php if (!empty($products)): ?>
-            <?php foreach ($products as $product): ?>
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="./assets/img/products/<?= htmlspecialchars($product['images']) ?>"
-                            alt="<?= htmlspecialchars($product['name']) ?>" class="card-img-top img-thumbnail p-2"
-                            style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
+        <?php foreach ($products as $product): ?>
+        <div class="col-lg-3 col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="./assets/img/products/<?= htmlspecialchars($product['images']) ?>"
+                    alt="<?= htmlspecialchars($product['name']) ?>" class="card-img-top img-thumbnail p-2"
+                    style="height: 200px; object-fit: contain; border-bottom-left-radius:0; border-bottom-right-radius:0;">
 
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate"
-                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <?= htmlspecialchars($product['name']) ?>
-                            </h5>
-                            <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
-                            <p class="card-text">Price: $<?= number_format($product['sales_price'], 2) ?></p>
-                            <a href="single-product.php?id=<?= $product['id'] ?>" class="btn btn-primary">View Details</a>
-                        </div>
-                    </div>
+                <div class="card-body">
+                    <h5 class="card-title text-truncate"
+                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        <?= htmlspecialchars($product['name']) ?>
+                    </h5>
+                    <p class="card-text">Category: <?= htmlspecialchars($product['category_name']) ?></p>
+                    <p class="card-text">Price: $<?= number_format($product['sales_price'], 2) ?></p>
+                    <a href="single-product.php?id=<?= $product['id'] ?>" class="btn btn-primary">View Details</a>
                 </div>
-            <?php endforeach; ?>
+            </div>
+        </div>
+        <?php endforeach; ?>
         <?php else: ?>
-            <p class="text-center">No products found in this category</p>
+        <p class="text-center">No products found in this category</p>
         <?php endif; ?>
     </div>
 

@@ -164,9 +164,9 @@ if (isset($_POST['updateProfile'])) {
                         <option value="">Select Country</option>
 
                         <?php foreach ($allCountryList as $countries) { ?>
-                            <option value="<?= $countries ?>"
-                                <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
-                                <?= $countries ?></option>
+                        <option value="<?= $countries ?>"
+                            <?= isset($userInfo['country']) && $userInfo['country'] == $countries ? "selected" : null ?>>
+                            <?= $countries ?></option>
                         <?php } ?>
                     </select>
 
@@ -217,15 +217,34 @@ if (isset($_POST['updateProfile'])) {
 
 <!-- quill editor -->
 <script>
-    const quill = new Quill('#editor', {
-        theme: 'snow',
+const quill = new Quill('#editor', {
+    theme: 'snow',
 
-    });
-    $('#editor').on('keyup', function() {
-        const html = quill.root.innerHTML;
-        $('#hiddenAddress').val(html);
-    });
+});
+$('#editor').on('keyup', function() {
+    const html = quill.root.innerHTML;
+    $('#hiddenAddress').val(html);
+});
 </script>
+
+
+
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
+
 
 
 <?php

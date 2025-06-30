@@ -8,7 +8,8 @@ require_once './components/header.php';
 
 <div class=" heroSection-color">
     <div class="container row py-5 mx-auto d-flex align-items-center justify-content-between px-lg-0 px-md-0">
-        <div class="col-lg-5 d-flex flex-column justify-content-center col-md-5 mt-4 position-relative">
+        <div class="col-lg-5 d-flex flex-column justify-content-center col-md-5 mt-4 position-relative"
+            data-aos="fade-right" data-aos-delay="200">
             <h1 class="forSame-color" style="font-size: 35px;">Welcome to Imran_Store</h1>
             <p class="my-3 hero-contents">Explore a World of Quality, Style, and Convenience—Your Ultimate Destination
                 For
@@ -44,7 +45,7 @@ require_once './components/header.php';
 
         </div>
 
-        <div class="col-lg-6 col-md-6 p-0 mt-lg-4 mt-md-4 mt-sm-1"
+        <div class="col-lg-6 col-md-6 p-0 mt-lg-4 mt-md-4 mt-sm-1" data-aos="fade-left" data-aos-delay="200"
             style="border-left: 25px solid #6d5ce8; border-top-left-radius: 25px; border-bottom-left-radius: 150px;">
             <img src="./assets/img/pro-img-hero.jpeg" class="img-fluid heroImg-redious" alt="hero-image"
                 style="border-bottom-left-radius: 130px;">
@@ -91,37 +92,37 @@ require_once './components/header.php';
                 $featuresProductsResult = $conn->query($featuresProductsQuery);
                 while ($product = $featuresProductsResult->fetch_assoc()):
                 ?>
-                    <div class="col-12 mb-4">
-                        <div class="card h-100">
-                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                                style="height: 100%; width: 100%;">
-                            <div class="card-body ">
-                                <h5 class="card-title text-truncate"
-                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                    <?= $product['name'] ?></h5>
+                <div class="col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                            class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                            style="height: 100%; width: 100%;">
+                        <div class="card-body ">
+                            <h5 class="card-title text-truncate"
+                                style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <?= $product['name'] ?></h5>
 
-                                <div
-                                    class="d-flex gap-lg-0 gap-md-2 gap-sm-3 py-2 justify-content-lg-between justify-content-md-between px-lg-0 px-md-2 ">
-                                    <p class="" style="font-size: 14px;">Price:
-                                        <span
-                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                            <?= number_format($product['regular_price']) ?></span>
-                                    </p>
+                            <div
+                                class="d-flex gap-lg-0 gap-md-2 gap-sm-3 py-2 justify-content-lg-between justify-content-md-between px-lg-0 px-md-2 ">
+                                <p class="" style="font-size: 14px;">Price:
+                                    <span
+                                        class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                        <?= number_format($product['regular_price']) ?></span>
+                                </p>
 
-                                    <p class="priceFontSize" style="font-size: 14px; "><span
-                                            class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                        <?= number_format($product['sales_price']) ?></p>
-                                </div>
-
-                                <a href="single-product.php?id=<?= $product['id'] ?>"
-                                    class="viewDetailsBtns futuresProductsBTN"
-                                    style="color: white; background-color: #6d5ce8; text-decoration: none; border-radius: 5px;">View
-                                    Details</a>
+                                <p class="priceFontSize" style="font-size: 14px; "><span
+                                        class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                    <?= number_format($product['sales_price']) ?></p>
                             </div>
 
+                            <a href="single-product.php?id=<?= $product['id'] ?>"
+                                class="viewDetailsBtns futuresProductsBTN"
+                                style="color: white; background-color: #6d5ce8; text-decoration: none; border-radius: 5px;">View
+                                Details</a>
                         </div>
+
                     </div>
+                </div>
                 <?php endwhile; ?>
             </div>
         </div>
@@ -139,7 +140,7 @@ require_once './components/header.php';
     <div class="col-lg-10 col-md-8 col-sm-12 ">
 
         <!-- New Arrival Section start -->
-        <section class="py-20 bg-white overflow-hidden ">
+        <section class="py-20 bg-white overflow-hidden" data-aos="fade-left" data-aos-delay="20">
             <div class="container mt-3 p-0">
                 <h2 class="forSame-color text-center text-decoration-underline mb-4">New Arrival </h2>
 
@@ -151,32 +152,32 @@ require_once './components/header.php';
                     $featuresProductsResult = $conn->query($featuresProductsQuery);
                     while ($product = $featuresProductsResult->fetch_assoc()):
                     ?>
-                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                            <div class="card h-100">
-                                <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
-                                    class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
-                                    style="height: 100%; width: 100%;">
-                                <div class="card-body ">
-                                    <h5 class="card-title text-truncate"
-                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                        <?= $product['name'] ?></h5>
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                        <div class="card h-100">
+                            <img src="./assets/img/products/<?= $product['images'] ?>" alt="<?= $product['name'] ?>"
+                                class="card-img-top img-fluid d-flex align-content-center border-bottom px-2 object-fit-contain"
+                                style="height: 100%; width: 100%;">
+                            <div class="card-body ">
+                                <h5 class="card-title text-truncate"
+                                    style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?= $product['name'] ?></h5>
 
-                                    <div class="d-flex  gap-md-3 gap-sm-3 py-2">
-                                        <p class="h6">Price: <span
-                                                class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
-                                                <?= number_format($product['regular_price']) ?></span>
-                                        </p>
+                                <div class="d-flex  gap-md-3 gap-sm-3 py-2">
+                                    <p class="h6">Price: <span
+                                            class="text-decoration-line-through text-muted small fa-solid fa-bangladeshi-taka-sign">
+                                            <?= number_format($product['regular_price']) ?></span>
+                                    </p>
 
-                                        <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
-                                            <?= number_format($product['sales_price']) ?></p>
-                                    </div>
-
-                                    <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
-                                        style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
-                                        Details</a>
+                                    <p class="h6 priceFontSize"><span class="fa-solid fa-bangladeshi-taka-sign"></span>
+                                        <?= number_format($product['sales_price']) ?></p>
                                 </div>
+
+                                <a href="single-product.php?id=<?= $product['id'] ?>" class="viewDetailsBtns"
+                                    style="color: white; background-color: #6d5ce8; text-decoration: none; padding: 9px 12px; border-radius: 5px;">View
+                                    Details</a>
                             </div>
                         </div>
+                    </div>
                     <?php endwhile; ?>
                 </div>
             </div>
@@ -199,7 +200,8 @@ require_once './components/header.php';
 
 
         <!-- Best Sellers Books start -->
-        <section class="py-10 bg-white overflow-hidden" id="bestSellersBooks">
+        <section class="py-10 bg-white overflow-hidden" id="bestSellersBooks" data-aos="fade-up-left"
+            data-aos-delay="50">
             <div class="container mt-4 p-0">
                 <h2 class="forSame-color text-center mb-4 text-decoration-underline mt-5">Best Sellers Books</h2>
                 <div class="row mb-24 varticalLine">
@@ -494,7 +496,7 @@ require_once './components/header.php';
 
 <!-- Discover Our Products start -->
 
-<section class="py-20 bg-white overflow-hidden">
+<section class="py-20 bg-white overflow-hidden" data-aos="zoom-in-up" data-aos-delay="50">
     <div class="container mt-3 px-lg-0 px-md-0 px-sm-1">
         <h2 class="forSame-color text-center mb-4 text-decoration-underline mt-5">Discover Our Products</h2>
         <div class="row mb-24">
@@ -884,116 +886,120 @@ require_once './components/header.php';
 
 
 
+
+
+
+
 <!-- popUp/Modal section start -->
 
 <!-- this internal css for popUp/modal -->
 <style>
-    .popUp-img {
-        width: 100%;
-        max-height: 400px;
-    }
+.popUp-img {
+    width: 100%;
+    max-height: 400px;
+}
 
 
-    .offer-content {
-        background-color: rgb(209, 248, 250);
+.offer-content {
+    background-color: rgb(209, 248, 250);
+}
+
+.offer-content h1 {
+    font-family: "Agu Display", serif;
+    font-size: 3rem;
+    margin: 20px;
+    text-align: end;
+    padding-top: 7px;
+
+}
+
+.offer-content h3 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-align: start;
+    transform: rotate(-20deg);
+    margin: 0px;
+    margin-top: -30px;
+    margin-left: -3px;
+}
+
+
+/* responsive title */
+@media screen and (max-width: 500px) {
+    .offer-content h3 {
+        font-size: 1.4rem;
     }
 
     .offer-content h1 {
-        font-family: "Agu Display", serif;
-        font-size: 3rem;
-        margin: 20px;
-        text-align: end;
-        padding-top: 7px;
+        font-size: 2.9rem;
+    }
+}
 
+@media screen and (max-width: 480px) {
+    .offer-content h3 {
+        font-size: 1.3rem;
     }
 
+    .offer-content h1 {
+        font-size: 2.6rem;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
     .offer-content h3 {
-        font-size: 1.5rem;
-        text-decoration: underline;
-        text-align: start;
-        transform: rotate(-20deg);
-        margin: 0px;
-        margin-top: -30px;
+        font-size: 1.2rem;
+        margin-top: -26px;
         margin-left: -3px;
     }
 
-
-    /* responsive title */
-    @media screen and (max-width: 500px) {
-        .offer-content h3 {
-            font-size: 1.4rem;
-        }
-
-        .offer-content h1 {
-            font-size: 2.9rem;
-        }
+    .offer-content h1 {
+        font-size: 2.4rem;
     }
 
-    @media screen and (max-width: 480px) {
-        .offer-content h3 {
-            font-size: 1.3rem;
-        }
+}
 
-        .offer-content h1 {
-            font-size: 2.6rem;
-        }
-
+@media screen and (max-width: 410px) {
+    .offer-content h3 {
+        font-size: 1rem;
+        margin-top: -25px;
+        margin-left: -3px;
     }
 
-    @media screen and (max-width: 440px) {
-        .offer-content h3 {
-            font-size: 1.2rem;
-            margin-top: -26px;
-            margin-left: -3px;
-        }
-
-        .offer-content h1 {
-            font-size: 2.4rem;
-        }
-
+    .offer-content h1 {
+        font-size: 2rem;
+        padding-top: 10px;
     }
 
-    @media screen and (max-width: 410px) {
-        .offer-content h3 {
-            font-size: 1rem;
-            margin-top: -25px;
-            margin-left: -3px;
-        }
+}
 
-        .offer-content h1 {
-            font-size: 2rem;
-            padding-top: 10px;
-        }
-
+@media screen and (max-width: 392px) {
+    .offer-content h3 {
+        font-size: 0.9rem;
+        margin-top: -25px;
+        margin-left: -3px;
     }
 
-    @media screen and (max-width: 392px) {
-        .offer-content h3 {
-            font-size: 0.9rem;
-            margin-top: -25px;
-            margin-left: -3px;
-        }
-
-        .offer-content h1 {
-            font-size: 2rem;
-            padding-top: 10px;
-        }
-
+    .offer-content h1 {
+        font-size: 2rem;
+        padding-top: 10px;
     }
 
-    @media screen and (max-width: 365px) {
-        .offer-content h3 {
-            font-size: 0.9rem;
-            margin-top: -20px;
-            margin-left: -3px;
-        }
+}
 
-        .offer-content h1 {
-            font-size: 2rem;
-            padding-top: 10px;
-        }
-
+@media screen and (max-width: 365px) {
+    .offer-content h3 {
+        font-size: 0.9rem;
+        margin-top: -20px;
+        margin-left: -3px;
     }
+
+    .offer-content h1 {
+        font-size: 2rem;
+        padding-top: 10px;
+    }
+
+}
 </style>
 
 <!-- Modal -->
@@ -1029,18 +1035,47 @@ require_once './components/header.php';
 
 <!-- Auto show modal after 1 seconds -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            myModal.show();
-        }, 500);
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        myModal.show();
+    }, 500);
+});
 </script>
 
 <!-- popUp/Modal section end -->
 
 
 
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
+
+
+<!-- this internal css is for removing padding-right, when modal is open, to distrub chat-bot section,
+ it's permanently close for use this internal css👇 -->
+<style>
+/* Always show scrollbar to prevent Bootstrap from adding padding-right */
+html {
+    overflow-y: scroll;
+}
+
+/* Forcefully reset body padding */
+body.modal-open {
+    padding-right: 0 !important;
+}
+</style>
 
 
 <?php

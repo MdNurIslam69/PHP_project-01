@@ -3,7 +3,7 @@ $title = "My Orders | Imran_Store";
 require_once './components/header.php';
 ?>
 
-<div class="container mb-5">
+<div class="container mb-5" data-aos="fade-up" data-aos-duration="1000">
 
     <!-- my orders -->
     <h2 class="forSame-color text-center my-5 text-decoration-underline">My Orders</h2>
@@ -55,6 +55,24 @@ require_once './components/header.php';
     </div>
 
 </div>
+
+
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
+
+
 
 <?php
 require_once './components/footer.php';

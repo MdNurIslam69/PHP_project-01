@@ -83,7 +83,7 @@ if (isset($_POST['send_message'])) {
 
 
 
-<!-- Contact 6 - Bootstrap Brain Component -->
+<!-- Contact us - Bootstrap Brain Component -->
 <section class="py-3 mb-5 mt-1">
     <div class="container">
         <h2 class="display-5 mt-4 text-center fw-bold text-decoration-underline forSame-color">Contact us</h2>
@@ -97,7 +97,8 @@ if (isset($_POST['send_message'])) {
 
 
 
-        <div class="row col-md-7 border border-2 border-dark-subtle shadow m-0 p-0 getInTouchBorder1">
+        <div class="row col-md-7 border border-2 border-dark-subtle shadow m-0 p-0 getInTouchBorder1"
+            data-aos="fade-right" data-aos-duration="1000">
 
 
             <div class="col-lg-5 col-md-6 bg-dark pt-2 getInTouchBorder2 align-content-center">
@@ -230,86 +231,86 @@ if (isset($_POST['send_message'])) {
 
         <!-- this internal css is for responsive contact us-> Get In Touch section -->
         <style>
-            @media screen and (max-width: 1750px) {
-                .getInTouch {
-                    padding-left: 40px !important;
-                }
-
-                .getInTouchBorder1 {
-                    border-radius: 12px !important;
-                }
-
-                .getInTouchBorder2 {
-                    border-top-left-radius: 10px !important;
-                    border-bottom-left-radius: 10px !important;
-
-                }
-
-                .getInTouchBorder3 {
-                    border-top-right-radius: 10px !important;
-                    border-bottom-right-radius: 10px !important;
-
-                }
-
-                .BSTlocal {
-                    display: block;
-                }
+        @media screen and (max-width: 1750px) {
+            .getInTouch {
+                padding-left: 40px !important;
             }
 
-            @media screen and (max-width: 992px) {
-                .getInTouch {
-                    padding-left: 30px !important;
-                }
-
-                .getInTouchBorder1 {
-                    border-radius: 12px !important;
-                }
-
-                .getInTouchBorder2 {
-                    border-top-right-radius: 0px !important;
-                    border-bottom-left-radius: 10px !important;
-
-                }
-
-                .getInTouchBorder3 {
-                    border-bottom-left-radius: 0px !important;
-                    border-bottom-right-radius: 10px !important;
-                    border-top-right-radius: 10px !important;
-
-                }
+            .getInTouchBorder1 {
+                border-radius: 12px !important;
             }
 
-            @media screen and (max-width: 767px) {
-
-                .getInTouchBorder2 {
-                    border-top-right-radius: 10px !important;
-                    border-bottom-left-radius: 0px !important;
-
-                }
-
-                .getInTouchBorder3 {
-                    border-bottom-left-radius: 10px !important;
-                    border-bottom-right-radius: 10px !important;
-                    border-top-right-radius: 0px !important;
-
-                }
-
-                .getInTouch {
-                    padding-left: 0px !important;
-                    margin-top: 50px !important;
-                }
-
+            .getInTouchBorder2 {
+                border-top-left-radius: 10px !important;
+                border-bottom-left-radius: 10px !important;
 
             }
 
-            @media screen and (max-width: 1200px) {
-                .BSTlocal {
-                    display: inline-block;
-                }
+            .getInTouchBorder3 {
+                border-top-right-radius: 10px !important;
+                border-bottom-right-radius: 10px !important;
+
             }
+
+            .BSTlocal {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .getInTouch {
+                padding-left: 30px !important;
+            }
+
+            .getInTouchBorder1 {
+                border-radius: 12px !important;
+            }
+
+            .getInTouchBorder2 {
+                border-top-right-radius: 0px !important;
+                border-bottom-left-radius: 10px !important;
+
+            }
+
+            .getInTouchBorder3 {
+                border-bottom-left-radius: 0px !important;
+                border-bottom-right-radius: 10px !important;
+                border-top-right-radius: 10px !important;
+
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .getInTouchBorder2 {
+                border-top-right-radius: 10px !important;
+                border-bottom-left-radius: 0px !important;
+
+            }
+
+            .getInTouchBorder3 {
+                border-bottom-left-radius: 10px !important;
+                border-bottom-right-radius: 10px !important;
+                border-top-right-radius: 0px !important;
+
+            }
+
+            .getInTouch {
+                padding-left: 0px !important;
+                margin-top: 50px !important;
+            }
+
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            .BSTlocal {
+                display: inline-block;
+            }
+        }
         </style>
 
-        <div class="row col-md-5 m-0 p-0 align-content-center getInTouch">
+        <div class="row col-md-5 m-0 p-0 align-content-center getInTouch" data-aos="fade-left" data-aos-duration="1000">
             <!-- google map iframe in dhaka -->
 
             <h2 class="h3 mb-3 text-dark fw-bold text-center text-decoration-underline forSame-color">Our Location</h2>
@@ -326,8 +327,26 @@ if (isset($_POST['send_message'])) {
 
 
 
+<!-- screen chat-bot section start -->
+<div class="chat-bot" id="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
 
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
 
+<script>
+document.getElementById('chat-bot').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+});
+</script>
+<!-- screen chat-bot section end -->
 
 
 

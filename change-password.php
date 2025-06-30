@@ -143,16 +143,32 @@ if (isset($_POST['changePassword'])) {
 
 <!-- this js for (change password) show password in checkbox -->
 <script>
-    $(document).ready(function() {
-        $('#showPass').click(function() {
-            if ($(this).is(':checked')) {
-                $('input[type="password"]').attr('type', 'text');
-            } else {
-                $('input[type="text"]').attr('type', 'password');
-            }
-        });
+$(document).ready(function() {
+    $('#showPass').click(function() {
+        if ($(this).is(':checked')) {
+            $('input[type="password"]').attr('type', 'text');
+        } else {
+            $('input[type="text"]').attr('type', 'password');
+        }
     });
+});
 </script>
+
+
+
+<!-- screen chat-bot section start -->
+<div class="chat-bot">
+    <a href="contact-us.php"><img src="assets/img/chat-bot.png" alt="chat-bot" width="60px" height="60px" /></a>
+</div>
+
+<style>
+.chat-bot {
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+}
+</style>
+<!-- screen chat-bot section end -->
 
 
 

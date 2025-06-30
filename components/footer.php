@@ -77,11 +77,11 @@
         <!-- Section: Form -->
 
         <style>
-            @media screen and (max-width: 765px) {
-                .footerContents {
-                    text-align: justify;
-                }
+        @media screen and (max-width: 765px) {
+            .footerContents {
+                text-align: justify;
             }
+        }
         </style>
         <!-- Section: Text -->
         <section class="mb-5">
@@ -209,6 +209,14 @@
 <!-- bootstrap cdn link  -->
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 
+
+<!-- this is animation, js link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration: 500,
+});
+</script>
 
 </body>
 
