@@ -39,76 +39,76 @@
                 <?php
                 if (!isset($_SESSION['imran_store'])) { ?>
 
-                <li class="nav-item">
-                    <a class="nav-link fw-bold me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>"
-                        href="sign-in">Sign
-                        In</a>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold me-4 <?= $pageName == 'sign-in.php' ? 'active' : null ?>"
+                            href="sign-in">Sign
+                            In</a>
 
-                </li>
+                    </li>
 
 
-                <li class="nav-item">
-                    <a class="nav-link fw-bold me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>"
-                        href="sign-up">Sign
-                        Up</a>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold me-4 <?= $pageName == 'sign-up.php' ? 'active' : null ?>"
+                            href="sign-up">Sign
+                            Up</a>
 
-                </li>
+                    </li>
 
                 <?php } else { ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle  fw-bold me-4 <?= $pageName == 'my-profile.php' || $pageName == 'change-password.php' || $pageName == 'change-profile-picture.php' || $pageName == 'my-orders.php' || $pageName == '../admin-panel' ? 'active' : null ?>"
-                        href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle  fw-bold me-4 <?= $pageName == 'my-profile.php' || $pageName == 'change-password.php' || $pageName == 'change-profile-picture.php' || $pageName == 'my-orders.php' || $pageName == '../admin-panel' ? 'active' : null ?>"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                        <?php
+                            <?php
                             $fullNameArray = explode(" ", $_SESSION['imran_store']['name']);
                             echo $fullNameArray[1];
                             ?>
-                    </a>
+                        </a>
 
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'my-profile.php' ? 'active' : null ?>"
-                                href="my-profile">My Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'change-password.php' ? 'active' : null ?>"
-                                href="change-password">Change Password</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item fw-bold <?= $pageName == 'my-profile.php' ? 'active' : null ?>"
+                                    href="my-profile">My Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
 
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'change-profile-picture.php' ? 'active' : null ?>"
-                                href="change-profile-picture">Change Profile Picture</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                            <li><a class="dropdown-item fw-bold <?= $pageName == 'change-password.php' ? 'active' : null ?>"
+                                    href="change-password">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
 
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'my-orders.php' ? 'active' : null ?>"
-                                href="my-orders">My Orders</a></li>
+                            <li><a class="dropdown-item fw-bold <?= $pageName == 'change-profile-picture.php' ? 'active' : null ?>"
+                                    href="change-profile-picture">Change Profile Picture</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+
+                            <li><a class="dropdown-item fw-bold <?= $pageName == 'my-orders.php' ? 'active' : null ?>"
+                                    href="my-orders">My Orders</a></li>
 
 
 
-                        <?php if ($_SESSION['imran_store']['role'] == 'admin') { ?>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                            <?php if ($_SESSION['imran_store']['role'] == 'admin') { ?>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'admin-panel.php' ? 'active' : null ?>"
-                                href="admin-panel">Admin Panel</a></li>
-                        <?php } ?>
+                                <li><a class="dropdown-item fw-bold <?= $pageName == 'admin-panel.php' ? 'active' : null ?>"
+                                        href="admin-panel">Admin Panel</a></li>
+                            <?php } ?>
 
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item fw-bold <?= $pageName == 'logout.php' ? 'active' : null ?>"
-                                href="logout">Log out</a></li>
-                    </ul>
-                </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item fw-bold <?= $pageName == 'logout.php' ? 'active' : null ?>"
+                                    href="logout">Log out</a></li>
+                        </ul>
+                    </li>
                 <?php } ?>
 
 
@@ -143,7 +143,8 @@
             <form class="m-1" method="get" action="search.php">
                 <div class="input-group">
 
-                    <input type="text" class="form-control rounded-end-0" placeholder="Search..." name="query">
+                    <input type="text" class="form-control rounded-end-0" placeholder="Search..." name="query"
+                        value="<?= isset($_GET['query']) ? $_GET['query'] : null ?>">
 
                     <button class="input-group-text rounded-start-0 btn btn-info " id="basic-addon1">
                         <i class="fa-solid fa-magnifying-glass"></i>

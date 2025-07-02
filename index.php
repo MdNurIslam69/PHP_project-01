@@ -46,10 +46,25 @@ require_once './components/header.php';
         </div>
 
         <div class="col-lg-6 col-md-6 p-0 mt-lg-4 mt-md-4 mt-sm-1" data-aos="fade-left" data-aos-delay="200"
-            style="border-left: 25px solid #6d5ce8; border-top-left-radius: 25px; border-bottom-left-radius: 150px;">
-            <img src="./assets/img/pro-img-hero.jpeg" class="img-fluid heroImg-redious" alt="hero-image"
-                style="border-bottom-left-radius: 130px;">
+            style="border-left: 24px solid #6d5ce8; border-top-left-radius: 25px; border-bottom-left-radius: 150px;">
+            <img src="./assets/img/pro-img-hero.jpeg" class=" heroImg-redious heroImageResponsive" alt="hero-image"
+                style="border-bottom-left-radius: 130px; max-width: 100%; height: 420px;">
         </div>
+
+        <!-- this internal css for hero image responsive -->
+        <style>
+        @media screen and (max-width: 970px) {
+            .heroImageResponsive {
+                height: 370px !important;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .heroImageResponsive {
+                height: 340px !important;
+            }
+        }
+        </style>
     </div>
 
     <div class="z-index ">
@@ -62,6 +77,10 @@ require_once './components/header.php';
 </div>
 
 <!-- hero section end -->
+
+
+
+
 
 <!-- hero section-1 bottom (hr) -->
 <div>
@@ -137,7 +156,7 @@ require_once './components/header.php';
 
 
     <!-- inter section -->
-    <div class="col-lg-10 col-md-8 col-sm-12 ">
+    <div class="col-lg-10 col-md-8 col-sm-12 overflow-hidden">
 
         <!-- New Arrival Section start -->
         <section class="py-20 bg-white overflow-hidden" data-aos="fade-left" data-aos-delay="20">
@@ -1059,9 +1078,6 @@ document.addEventListener('DOMContentLoaded', function() {
     right: 5px;
 }
 </style>
-<!-- screen chat-bot section end -->
-
-
 
 <!-- this internal css is for removing padding-right, when modal is open, to distrub chat-bot section,
  it's permanently close for use this internal css👇 -->
@@ -1076,6 +1092,8 @@ body.modal-open {
     padding-right: 0 !important;
 }
 </style>
+<!-- screen chat-bot section end -->
+
 
 
 <?php

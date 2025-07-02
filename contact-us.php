@@ -93,7 +93,7 @@ if (isset($_POST['send_message'])) {
 
     </div>
 
-    <div class="container row mx-auto">
+    <div class="container row mx-auto overflow-hidden">
 
 
 
@@ -231,83 +231,83 @@ if (isset($_POST['send_message'])) {
 
         <!-- this internal css is for responsive contact us-> Get In Touch section -->
         <style>
-        @media screen and (max-width: 1750px) {
-            .getInTouch {
-                padding-left: 40px !important;
+            @media screen and (max-width: 1750px) {
+                .getInTouch {
+                    padding-left: 40px !important;
+                }
+
+                .getInTouchBorder1 {
+                    border-radius: 12px !important;
+                }
+
+                .getInTouchBorder2 {
+                    border-top-left-radius: 10px !important;
+                    border-bottom-left-radius: 10px !important;
+
+                }
+
+                .getInTouchBorder3 {
+                    border-top-right-radius: 10px !important;
+                    border-bottom-right-radius: 10px !important;
+
+                }
+
+                .BSTlocal {
+                    display: block;
+                }
             }
 
-            .getInTouchBorder1 {
-                border-radius: 12px !important;
+            @media screen and (max-width: 992px) {
+                .getInTouch {
+                    padding-left: 30px !important;
+                }
+
+                .getInTouchBorder1 {
+                    border-radius: 12px !important;
+                }
+
+                .getInTouchBorder2 {
+                    border-top-right-radius: 0px !important;
+                    border-bottom-left-radius: 10px !important;
+
+                }
+
+                .getInTouchBorder3 {
+                    border-bottom-left-radius: 0px !important;
+                    border-bottom-right-radius: 10px !important;
+                    border-top-right-radius: 10px !important;
+
+                }
             }
 
-            .getInTouchBorder2 {
-                border-top-left-radius: 10px !important;
-                border-bottom-left-radius: 10px !important;
+            @media screen and (max-width: 767px) {
 
-            }
+                .getInTouchBorder2 {
+                    border-top-right-radius: 10px !important;
+                    border-bottom-left-radius: 0px !important;
 
-            .getInTouchBorder3 {
-                border-top-right-radius: 10px !important;
-                border-bottom-right-radius: 10px !important;
+                }
 
-            }
+                .getInTouchBorder3 {
+                    border-bottom-left-radius: 10px !important;
+                    border-bottom-right-radius: 10px !important;
+                    border-top-right-radius: 0px !important;
 
-            .BSTlocal {
-                display: block;
-            }
-        }
+                }
 
-        @media screen and (max-width: 992px) {
-            .getInTouch {
-                padding-left: 30px !important;
-            }
+                .getInTouch {
+                    padding-left: 0px !important;
+                    margin-top: 50px !important;
+                }
 
-            .getInTouchBorder1 {
-                border-radius: 12px !important;
-            }
-
-            .getInTouchBorder2 {
-                border-top-right-radius: 0px !important;
-                border-bottom-left-radius: 10px !important;
-
-            }
-
-            .getInTouchBorder3 {
-                border-bottom-left-radius: 0px !important;
-                border-bottom-right-radius: 10px !important;
-                border-top-right-radius: 10px !important;
-
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-
-            .getInTouchBorder2 {
-                border-top-right-radius: 10px !important;
-                border-bottom-left-radius: 0px !important;
 
             }
 
-            .getInTouchBorder3 {
-                border-bottom-left-radius: 10px !important;
-                border-bottom-right-radius: 10px !important;
-                border-top-right-radius: 0px !important;
-
+            @media screen and (max-width: 1200px) {
+                .BSTlocal {
+                    display: inline-block;
+                }
             }
-
-            .getInTouch {
-                padding-left: 0px !important;
-                margin-top: 50px !important;
-            }
-
-
-        }
-
-        @media screen and (max-width: 1200px) {
-            .BSTlocal {
-                display: inline-block;
-            }
-        }
         </style>
 
         <div class="row col-md-5 m-0 p-0 align-content-center getInTouch" data-aos="fade-left" data-aos-duration="1000">
@@ -333,18 +333,18 @@ if (isset($_POST['send_message'])) {
 </div>
 
 <style>
-.chat-bot {
-    position: fixed;
-    bottom: 10px;
-    right: 5px;
-}
+    .chat-bot {
+        position: fixed;
+        bottom: 10px;
+        right: 5px;
+    }
 </style>
 
 <script>
-document.getElementById('chat-bot').addEventListener('click', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-});
+    document.getElementById('chat-bot').addEventListener('click', function(e) {
+        e.preventDefault();
+        this.style.display = 'none';
+    });
 </script>
 <!-- screen chat-bot section end -->
 
